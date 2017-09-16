@@ -8,7 +8,7 @@ module.exports = {
     var embed = utils.generateDekuDiv(message);
     if (message.content.match(expression)[2]) {
       var game = message.content.match(expression)[2];
-      var count = message.guild.members.filter(m => {if(m.user.presence.game){ if(m.user.presence.game.name == game){return true;}}}).size;
+      var count = message.guild.members.filter(m => {if(m.user.presence.game){ if(m.user.presence.game.name.toLowerCase() == game.toLowerCase()){return true;}}}).size;
       var text = '';
       if (count == 0) {
         text = "There is **no one** in this guild playing `" + game + "` at the moment";
