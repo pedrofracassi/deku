@@ -28,7 +28,7 @@ client.on('guildCreate', guild => {
   embed.addField(`Hi, i'm Deku!`, `I was made by **pedrofracassi#4623** to help organize your beautiful Guild.\n\nIf you want to know more about me, type \`+help\`.\n\n<:izuku:358407294100439040> [Add me to your server](https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot)`);
   embed.setColor(config.embedColor);
   embed.setThumbnail('https://i.imgur.com/lUVxkAK.png');
-  guild.defaultChannel.send({ embed });
+  guild.channels.filter(c=>c.type=='text').first().send({ embed });
 })
 
 var token = config.tokens.discord_beta || config.tokens.discord;
