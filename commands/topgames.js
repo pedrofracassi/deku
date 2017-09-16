@@ -38,7 +38,6 @@ module.exports = {
     })
 
     embed.addField('Most played games:', text);
-    embed.setColor(config.embedColor);
     message.channel.send(embed);
   }
 };

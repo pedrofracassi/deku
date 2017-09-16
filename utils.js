@@ -20,6 +20,7 @@ module.exports = {
   },
   generateDekuDiv: function(message) {
     var embed = new Discord.RichEmbed;
+    console.log(config);
     embed.setColor(config.colors.embed);
     embed.setFooter('Requested by ' + message.author.tag, message.author.avatarURL);
     return embed;
