@@ -14,5 +14,8 @@ module.exports = {
     } catch (e) {
       console.log(e);
     }
+  },
+  addRequestedText: function(embed, message) {
+    embed.setFooter('Requested by ' + message.author.tag, message.author.avatarURL);
   }
 }
