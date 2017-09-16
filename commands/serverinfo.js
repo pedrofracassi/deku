@@ -22,7 +22,6 @@ module.exports = {
     var region = regions[guild.region] || guild.region;
     var offline = guild.members.filter(m=>m.presence.status=="offline").size;
     var online = guild.members.size - offline;
-    embed.setColor(config.embedColor);
     embed.addField('Name', guild.name, true);
     embed.addField('Members', online + '/' + guild.members.size + ' online', true);
     embed.addField('Owner', guild.owner.user.tag, true);
