@@ -1,3 +1,6 @@
+const Discord = require('discord.js');
+const config = require('./config.js');
+
 module.exports = {
   commandExists: function(command) {
     try {
@@ -15,7 +18,10 @@ module.exports = {
       console.log(e);
     }
   },
-  addRequestedText: function(embed, message) {
+  generateDekuDiv: function(message) {
+    var embed = new Discord.RichEmbed;
+    embed.setColor(config.embedColor);
     embed.setFooter('Requested by ' + message.author.tag, message.author.avatarURL);
+    return embed;
   }
 }

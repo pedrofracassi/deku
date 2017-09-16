@@ -6,7 +6,7 @@ module.exports = {
   run: function(message) {
     if (message.channel.type != 'text') return;
     var guild = message.guild;
-    var embed = new Discord.RichEmbed;
+    var embed = utils.generateDekuDiv(message);
     var regions = {
       'brazil': ':flag_br: Brazil',
       'eu-central': ':flag_eu: EU Central',
@@ -31,7 +31,6 @@ module.exports = {
     embed.addField('Roles', guild.roles.size, true);
     embed.addField('ID', guild.id, true);
     embed.setThumbnail(guild.iconURL);
-    utils.addRequestedText(embed, message);
 
     message.channel.send({embed});
   }
