@@ -1,4 +1,4 @@
-# Izuku Midoriya, the Discord bot.
+# Deku, the Discord bot.
 
 For Izuku to work, you have to add a file to it's root folder, called `tokens.js`. It should look like this:
 ```javascript
