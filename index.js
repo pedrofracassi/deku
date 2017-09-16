@@ -19,7 +19,7 @@ client.on('message', message => {
 
   if (message.content.match(expression)) {
     var command = message.content.match(expression)[1];
-    if (utils.commandExists(command)) utils.runCommand(command, message);
+    if (utils.commandExists(command)) utils.runCommand(command, message, betaMode);
   }
 })
 
