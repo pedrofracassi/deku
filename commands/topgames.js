@@ -4,6 +4,7 @@ const utils = require('../utils.js');
 
 module.exports = {
   run: function(message) {
+    if (message.channel.type != 'text') return;
     var embed = new Discord.RichEmbed;
     var games = {};
     var text = '';

@@ -3,6 +3,7 @@ const config = require('../config.js');
 
 module.exports = {
   run: function(message) {
+    if (message.channel.type != 'text') return;
     var guild = message.guild;
     var embed = new Discord.RichEmbed;
     var regions = {
