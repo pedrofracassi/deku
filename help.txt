@@ -7,6 +7,7 @@
 **Useful stuff:**
 `d!topgames` - Shows the top games being played right now on the server
 `d!serverinfo` - Displays server information
+`d!playing <game>` - How many people are playing <game> at the moment
 
 **Add me to your server:** <http://bit.ly/add-deku>
 **Join my server:** <https://discord.gg/9W7yyBA>
