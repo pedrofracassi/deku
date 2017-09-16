@@ -25,6 +25,9 @@ module.exports = {
     embed.addField('Members', online + '/' + guild.members.size + ' online', true);
     embed.addField('Owner', guild.owner.user.tag, true);
     embed.addField('Region', region, true);
+    embed.addField('Emojis', guild.emojis.size, true);
+    embed.addField('Roles', guild.roles.size, true);
+    embed.addField('ID', guild.id, true);
     embed.setThumbnail(guild.iconURL);
     embed.setFooter('Requested by ' + message.author.tag, message.author.avatarURL);
 
