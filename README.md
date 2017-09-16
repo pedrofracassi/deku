@@ -7,7 +7,7 @@ module.exports = {
 }
 ```
 
-| Propriety             | Required? |                                                |
+| Propriety             | Required? | Description                                    |
 |-----------------------|-----------|------------------------------------------------|
 |    `tokens.discord`   |   `yes`   | The bot's token                                |
 | `tokens.discord_beta` |    `no`   | The bot's beta token. Will be used if existent |
