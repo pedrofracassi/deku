@@ -23,4 +23,6 @@ client.on('guildCreate', guild => {
   guild.defaultChannel.send({ embed });
 })
 
-client.login(config.tokens.discord_beta);
+var token = config.tokens.discord_beta || config.tokens.discord;
+
+client.login(token);
