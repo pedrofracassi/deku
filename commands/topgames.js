@@ -28,7 +28,10 @@ module.exports = {
       return b[1] - a[1];
     });
 
+    var only10 = 0;
     sortable.map((s, i)=> {
+      if (only10 == 10) return;
+      only10++;
       var place = i + 1;
       text = text + '`#' + place +  '` with `' + s[1] + '` players: **' + s[0] + '**\n';
     })
