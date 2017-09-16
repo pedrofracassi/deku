@@ -29,7 +29,7 @@ module.exports = {
     embed.addField('Roles', guild.roles.size, true);
     embed.addField('ID', guild.id, true);
     embed.setThumbnail(guild.iconURL);
-    embed.setFooter('Requested by ' + message.author.tag, message.author.avatarURL);
+    utils.addRequestedText(embed, message);
 
     message.channel.send({embed});
   }
