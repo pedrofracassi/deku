@@ -58,4 +58,4 @@ typings/
 .env
 
 # Private stuff
-tokens.js
+config.js
