@@ -8,7 +8,11 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  var expression = /^[d]\!(\w+) *(.*)/;
+  if (config.tokens.discord_beta) {
+    var expression = /^[d][b]\!(\w+) *(.*)/;
+  } else {
+    var expression = /^[d]\!(\w+) *(.*)/;
+  }
   if (message.content.match(expression)) {
     var command = message.content.match(expression)[1];
     if (utils.commandExists(command)) utils.runCommand(command, message);
