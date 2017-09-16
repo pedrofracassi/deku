@@ -3,16 +3,18 @@ const client = new Discord.Client();
 const config = require('./config.js');
 const utils = require('./utils.js');
 
+var betaMode = false;
+if (config.tokens.discord_beta) betaMode = true;
+
 client.on('ready', () => {
   console.log('Ready! Authenticated as ' + client.user.tag);
 });
 
 client.on('message', message => {
-  if (config.tokens.discord_beta) {
-    var expression = /^[d][b]\!(\w+) *(.*)/;
-  } else {
-    var expression = /^[d]\!(\w+) *(.*)/;
-  }
+  var expression = /^[d]\!(\w+) *(.*)/;
+  if (betaMode) expression = /^[d][b]\!(\w+) *(.*)/; // Use db!command instead of d!command if in beta mode
+
+
   if (message.content.match(expression)) {
     var command = message.content.match(expression)[1];
     if (utils.commandExists(command)) utils.runCommand(command, message);
@@ -28,5 +30,4 @@ client.on('guildCreate', guild => {
 })
 
 var token = config.tokens.discord_beta || config.tokens.discord;
-
 client.login(token);
