@@ -3,6 +3,7 @@ const utils = require('../utils.js');
 
 module.exports = {
   run: function(message, betaMode) {
+    if (message.channel.type != 'text') return;
     var expression = /^[d]\!(\w+) *(.*)/;
     if (betaMode) expression = /^[d][b]\!(\w+) *(.*)/; // Use db!command instead of d!command if in beta mode
     var embed = utils.generateDekuDiv(message);
