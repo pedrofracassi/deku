@@ -7,6 +7,8 @@ var betaMode = false;
 if (config.tokens.discord_beta) betaMode = true;
 
 client.on('ready', () => {
+  client.user.setGame('d!help');
+  if (betaMode) client.user.setGame('AAAAAAAAAA');
   console.log('Ready! Authenticated as ' + client.user.tag);
 });
 
