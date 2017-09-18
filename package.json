@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/pedrofracassi/izuku-bot#readme",
   "dependencies": {
-    "discord.js": "^11.2.1"
+    "discord.js": "^11.2.1",
+    "nodesu": "^0.6.2"
   }
 }
