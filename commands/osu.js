@@ -24,7 +24,7 @@ module.exports = {
           embed.addField('Ranks', `<:osu_ss:359141983123537921> ${user.count_rank_ss} <:osu_s:359141982754308116> ${user.count_rank_s} <:osu_a:359141980908814336> ${user.count_rank_a}`, true);
           embed.addField('Level', Math.floor(user.level), true);embed.addField('Play Count', user.playcount, true);
           embed.addField('Total Score', nf.format(user.total_score.toLocaleString()), true);
-          embed.addField('Ranked Score', nf.format(user.total_score.toLocaleString()), true);
+          embed.addField('Ranked Score', nf.format(user.ranked_score.toLocaleString()), true);
           embed.addField('Accuracy', parseFloat(user.accuracy).toFixed(2) + '%', true);
         } else {
           embed.setColor(config.colors.error);
