@@ -2,10 +2,9 @@ const config = require('../config.js');
 const utils = require('../utils.js');
 
 module.exports = {
-  run: function(message, betaMode) {
+  run: function(message) {
     if (message.channel.type != 'text') return;
-    var expression = /^[d]\!(\w+) *(.*)/;
-    if (betaMode) expression = /^[d][b]\!(\w+) *(.*)/; // Use db!command instead of d!command if in beta mode
+    var expression = /^\w+\!(\w+) *(.*)/;
     var embed = utils.generateDekuDiv(message);
     if (message.content.match(expression)[2]) {
       var game = message.content.match(expression)[2];
