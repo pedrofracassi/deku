@@ -10,7 +10,7 @@ module.exports = {
     var text = '';
 
     message.guild.members.map(member => {
-      if (member.user.presence.game) {
+      if (member.user.presence.game && !member.user.bot) {
         if (games[member.user.presence.game.name]) {
           games[member.user.presence.game.name]++;
         } else {
