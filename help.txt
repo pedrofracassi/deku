@@ -1,0 +1,14 @@
+<:izuku:358407294100439040> **Here are my commands:**
+
+**Memes**
+`d!headbang` - GIF of myself headbanging
+`d!smart` - You won't feed if you don't play
+
+**Useful stuff:**
+`d!topgames` - Shows the top games being played right now on the server
+`d!serverinfo` - Displays server information
+`d!playing <game>` - How many people are playing <game> at the moment
+`d!avatar [member]` - Displays yours or [member]'s profile picture
+
+**Add me to your server:** <http://bit.ly/add-deku>
+**Join my server:** <https://discord.gg/9W7yyBA>

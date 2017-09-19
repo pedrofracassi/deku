@@ -1,3 +1,6 @@
+const Discord = require('discord.js');
+const config = require('./config.js');
+
 module.exports = {
   commandExists: function(command) {
     try {
@@ -8,14 +11,30 @@ module.exports = {
       return false;
     }
   },
-  runCommand: function(command, message, lolaccounts, bans) {
+  runCommand: function(command, message, betaMode) {
     try {
-      require('./commands/' + command).run(message, lolaccounts, bans);
+      require('./commands/' + command).run(message, betaMode);
     } catch (e) {
       console.log(e);
     }
   },
-  addRequestedText: function(embed, message) {
-    embed.setFooter('Requested by ' + message.author.tag, message.author.avatarURL);
+  generateDekuDiv: function(message) {
+    var embed = new Discord.RichEmbed;
+    embed.setColor(config.colors.embed);
+    embed.setFooter(message.author.tag, message.author.avatarURL);
+    return embed;
+  },
+  arrayToStringWithCommas: function(array, last) {
+    var string = "";
+    for (i = 0; i < array.length; i++) {
+      if (i == (array.length - 1)) {
+        string = string + array[i];
+      } else if (i == (array.length - 2)) {
+        string = string + array[i] + last;
+      } else {
+        string = string + array[i] + ", ";
+      }
+    }
+    return string;
   }
 }

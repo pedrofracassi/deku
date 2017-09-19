@@ -4,7 +4,8 @@ const utils = require('../utils.js');
 
 module.exports = {
   run: function(message) {
-    var embed = new Discord.RichEmbed;
+    if (message.channel.type != 'text') return;
+    var embed = utils.generateDekuDiv(message);
     var games = {};
     var text = '';
 
@@ -28,14 +29,15 @@ module.exports = {
       return b[1] - a[1];
     });
 
+    var only10 = 0;
     sortable.map((s, i)=> {
+      if (only10 == 10) return;
+      only10++;
       var place = i + 1;
       text = text + '`#' + place +  '` with `' + s[1] + '` players: **' + s[0] + '**\n';
     })
 
     embed.addField('Most played games:', text);
-    embed.setColor(config.embedColor);
-    utils.addRequestedText(embed, message);
     message.channel.send(embed);
   }
 };

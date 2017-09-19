@@ -1,10 +1,15 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const tokens = require('./tokens.js');
 const config = require('./config.js');
 const utils = require('./utils.js');
 
+// Express Server for /docs testing
+//   const website = require('./website.js');
+//   website.start();
+
 var betaMode = false;
-if (config.tokens.discord_beta) betaMode = true;
+if (tokens.discord_beta) betaMode = true;
 
 client.on('ready', () => {
   client.user.setGame('d!help');
@@ -15,21 +20,20 @@ client.on('ready', () => {
 client.on('message', message => {
   var expression = /^[d]\!(\w+) *(.*)/;
   if (betaMode) expression = /^[d][b]\!(\w+) *(.*)/; // Use db!command instead of d!command if in beta mode
-
-
+  
   if (message.content.match(expression)) {
     var command = message.content.match(expression)[1];
-    if (utils.commandExists(command)) utils.runCommand(command, message);
+    if (utils.commandExists(command)) utils.runCommand(command, message, betaMode);
   }
 })
 
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed;
-  embed.addField(`Hi, i'm Deku!`, `I was made by **pedrofracassi#4623** to help organize your beautiful Guild.\n\nIf you want to know more about me, type \`+help\`.\n\n<:izuku:358407294100439040> [Add me to your server](https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot)`);
-  embed.setColor(config.embedColor);
+  embed.addField(`Hi, i'm Deku!`, `I was made by **pedrofracassi#4623** to help organize your beautiful Guild.\n\nIf you want to know more about me, type \`d!help\`.\n\n<:izuku:358407294100439040> [Add me to your server](https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot) | [Join my server](https://discord.gg/9W7yyBA)`);
+  embed.setColor(config.colors.embed);
   embed.setThumbnail('https://i.imgur.com/lUVxkAK.png');
-  guild.defaultChannel.send({ embed });
+  guild.channels.filter(c=>c.type=='text').first().send({ embed });
 })
 
-var token = config.tokens.discord_beta || config.tokens.discord;
+var token = tokens.discord_beta || tokens.discord;
 client.login(token);
