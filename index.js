@@ -4,6 +4,10 @@ const tokens = require('./tokens.js');
 const config = require('./config.js');
 const utils = require('./utils.js');
 
+// Express Server for /docs testing
+//   const website = require('./website.js');
+//   website.start();
+
 var betaMode = false;
 if (tokens.discord_beta) betaMode = true;
 
@@ -16,8 +20,7 @@ client.on('ready', () => {
 client.on('message', message => {
   var expression = /^[d]\!(\w+) *(.*)/;
   if (betaMode) expression = /^[d][b]\!(\w+) *(.*)/; // Use db!command instead of d!command if in beta mode
-
-
+  
   if (message.content.match(expression)) {
     var command = message.content.match(expression)[1];
     if (utils.commandExists(command)) utils.runCommand(command, message, betaMode);
