@@ -3,7 +3,7 @@
     "and": " a ",
     "server_join": {
         "hi_im_deku": "Ahoj, jsem Deku!",
-        "description": "Vytvořil mě **pedrofracassi#4623** abych mohl pomoct organizovat tvůj cech.\n\nPokud se o mě chceš dozvědět víc, napiš `d!help`.\n\n{0} [Přidej mě na tvůj server]({1}) | [Připoj se na můj server]({2})"
+        "description": "Vytvořil mě **pedrofracassi#4623** abych mohl pomoct organizovat tvůj server.\n\nPokud se o mě chceš dozvědět víc, napiš `d!help`.\n\n{0} [Přidej mě na tvůj server]({1}) | [Připoj se na můj server]({2})"
     },
     "commands": {
         "osu": {
@@ -27,8 +27,8 @@
         "playing": {
             "_description": "Ukáže kolik lidí zrovna hraje danou hru",
             "_usage": "d!playing <hra>",
-            "zero": "V tomto cechu zrovna **nikdo** `{0}` nehraje",
-            "one": "V tomto cechu zrovna hraje **jeden člověk** `{0}`",
+            "zero": "Na tomto serveru zrovna **nikdo** `{0}` nehraje",
+            "one": "Na tomto serveru zrovna hraje **jeden člověk** `{0}`",
             "more": "**{1}** lidí zrovna hraje `{0}`",
             "error_no_args": "Musíš specifikovat hru!",
             "usage": "**Použití:** `d!playing <hra>`\n**Například:** `d!playing Overwatch`"
@@ -37,7 +37,7 @@
             "_description": "Změní můj jazyk v serveru",
             "_usage": "d!setlang <jazyk>",
             "no_args": "Musíš specifikovat jazyk.",
-            "no_permission": "Potřebuješ právo **\"Spravovat Cech\"** aby jsi mohl změnit můj jazyk.",
+            "no_permission": "Potřebuješ právo **\"Spravovat Server\"** aby jsi mohl změnit můj jazyk.",
             "not_supported": "\"{0}\" není podporovaný jazyk.",
             "usage": "**Použití:** d!setlang <jazyk>\n**Příklad:** d!setlang cs_CZ\n\n**Podporované jazyky:**\n{0}.",
             "success": "Jazyk úspěšně změněn na `{0}`!"
