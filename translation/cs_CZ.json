@@ -1,38 +1,59 @@
 {
-  "code": "cs_CZ",
-  "server_join": {
-    "hi_im_deku": "Ahoj, jsem Deku!",
-    "description": "Vytvořil mě **pedrofracassi#4623** abych mohl pomoct organizovat tvůj cech.\n\nPokud se o mě chceš dozvědět víc, napiš `d!help`.\n\n{0} [Přidej mě na tvůj server]({1}) | [Připoj se na můj server]({2})"
-  },
-  "osu": {
-    "title": "Profil hráče {0}",
-    "player_doesnt_exist": "Tento hráč neexistuje.",
-    "is_spelled_correctly": "Zkontroluj si prosím, jestli jsi to jméno napsal správně.",
-    "specify_player": "Prosím, specifikuj hráče.",
-    "usage": "**Použití:** `d!osu <id nebo uživatelské jméno>`\n**Například:** `d!osu electricas`",
-    "accuracy": "Přesnost",
-    "ranked_score": "Hodnocené skóre",
-    "total_score": "Celkové skóre",
-    "level": "Level",
-    "ranks": "Pořadí",
-    "performance": "Výkon",
-    "country_ranking": "Státní Hodnocení",
-    "global_ranking": "Globalní Hodnocení",
-    "play_count": "Počet her"
-  },
-  "playing": {
-    "zero": "V tomto cechu zrovna **nikdo** `{0}` nehraje",
-    "one": "V tomto cechu zrovna hraje **jeden člověk** `{0}`",
-    "more": "**{1}** lidí zrovna hraje `{0}`",
-    "error_no_args": "Musíš specifikovat hru!",
-    "usage": "**Použití:** `d!playing <hra>`\n**Například:** `d!playing Overwatch`"
-  },
-  "and": " a ",
-  "setlang": {
-    "no_args": "Musíš specifikovat jazyk.",
-    "no_permission": "Potřebuješ právo **\"Spravovat Cech\"** aby jsi mohl změnit můj jazyk.",
-    "not_supported": "\"{0}\" není podporovaný jazyk.",
-    "usage": "**Použití:** d!setlang <jazyk>\n**Příklad:** d!setlang cs_CZ\n\n**Podporované jazyky:**\n{0}.",
-    "success": "Jazyk úspěšně změněn na `{0}`!"
-  }
+    "code": "cs_CZ",
+    "and": " a ",
+    "server_join": {
+        "hi_im_deku": "Ahoj, jsem Deku!",
+        "description": "Vytvořil mě **pedrofracassi#4623** abych mohl pomoct organizovat tvůj cech.\n\nPokud se o mě chceš dozvědět víc, napiš `d!help`.\n\n{0} [Přidej mě na tvůj server]({1}) | [Připoj se na můj server]({2})"
+    },
+    "commands": {
+        "osu": {
+            "_description": "Shows an osu! profile",
+            "_usage": "d!osu <id or username>",
+            "title": "Profil hráče {0}",
+            "player_doesnt_exist": "Tento hráč neexistuje.",
+            "is_spelled_correctly": "Zkontroluj si prosím, jestli jsi to jméno napsal správně.",
+            "specify_player": "Prosím, specifikuj hráče.",
+            "usage": "**Použití:** `d!osu <id nebo uživatelské jméno>`\n**Například:** `d!osu electricas`",
+            "accuracy": "Přesnost",
+            "ranked_score": "Hodnocené skóre",
+            "total_score": "Celkové skóre",
+            "level": "Level",
+            "ranks": "Pořadí",
+            "performance": "Výkon",
+            "country_ranking": "Státní Hodnocení",
+            "global_ranking": "Globalní Hodnocení",
+            "play_count": "Počet her"
+        },
+        "playing": {
+            "_description": "Shows how many people are playing a certain game at the moment",
+            "_usage": "d!playing <game>",
+            "zero": "V tomto cechu zrovna **nikdo** `{0}` nehraje",
+            "one": "V tomto cechu zrovna hraje **jeden člověk** `{0}`",
+            "more": "**{1}** lidí zrovna hraje `{0}`",
+            "error_no_args": "Musíš specifikovat hru!",
+            "usage": "**Použití:** `d!playing <hra>`\n**Například:** `d!playing Overwatch`"
+        },
+        "setlang": {
+            "_description": "Changes my language in the server",
+            "_usage": "d!setlang <language>",
+            "no_args": "Musíš specifikovat jazyk.",
+            "no_permission": "Potřebuješ právo **\"Spravovat Cech\"** aby jsi mohl změnit můj jazyk.",
+            "not_supported": "\"{0}\" není podporovaný jazyk.",
+            "usage": "**Použití:** d!setlang <jazyk>\n**Příklad:** d!setlang cs_CZ\n\n**Podporované jazyky:**\n{0}.",
+            "success": "Jazyk úspěšně změněn na `{0}`!"
+        },
+        "botinfo": {
+            "_description": "Shows information about me",
+            "_usage": "d!botinfo",
+            "error_ip": "There was an error while getting my own IP",
+            "error_ip_desc": "Please contact my owner, pedrofracassi#4623",
+            "users": "Users",
+            "servers": "Servers",
+            "server_location": "Server Location",
+            "uptime": "Uptime",
+            "channels": "Channels",
+            "ram": "RAM Usage",
+            "djs_v": "Discord.js Version"
+        }
+    }
 }
