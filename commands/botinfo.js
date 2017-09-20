@@ -3,6 +3,7 @@ const config = require('../config.js');
 const utils = require('../utils.js');
 const request = require('request');
 const geoip = require('geoip-lite');
+const os = require('os');
 
 String.prototype.toHHMMSS = function () {
   var sec_num = parseInt(this, 10); // don't forget the second param
@@ -16,6 +17,13 @@ String.prototype.toHHMMSS = function () {
   var time    = hours+':'+minutes+':'+seconds;
   return time;
 }
+
+function bytesToSize(bytes) {
+   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+   if (bytes == 0) return '0 Byte';
+   var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+   return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+};
 
 module.exports = {
   run: function(message, lang) {
@@ -45,6 +53,9 @@ module.exports = {
           channels = channels + guild.channels.size;
         });
         embed.addField(lang.botinfo.channels, channels, true);
+        embed.addField(lang.botinfo.djs_v, Discord.version, true);
+        var usedram = os.totalmem() - os.freemem();
+        embed.addField(lang.botinfo.ram, bytesToSize(usedram) + '/' + bytesToSize(os.totalmem()), true);
       }
       message.channel.send({embed});
     });

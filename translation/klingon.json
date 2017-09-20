@@ -1,0 +1,48 @@
+{
+  "and": " je ",
+  "server_join": {
+    "hi_im_deku": "bIpIv'a', deku!",
+    "description": "pong chenmoH jIH ** pedrofracassi#4623 ** 'IH guild.\n\nif latlh vIHtaHbogh jIHvaD Sov DaneH'a' organize QaH Segh d!help'.\n\n{0} [jIHvaD chel server]({1}) | [muv jabwI'] ({2}) "
+  },
+  "osu": {
+    "title": "{0} qoghDu'DajDaq",
+    "player_doesnt_exist": "doesn't nIv'e' DawI'pu'.",
+    "is_spelled_correctly": "DubelmoHchugh vaj chu'wI' username spelled SoH correctly check",
+    "specify_player": "nuqneH DawI'pu' per",
+    "usage": "** Usage: ** d!osu < id pagh username > \n**example: ** d!osu pedrofracassi",
+    "accuracy": "Accuracy",
+    "ranked_score": "patlh pe''egh",
+    "total_score": "Total pe''egh",
+    "level": "patlh",
+    "ranks": "patlh",
+    "performance": "yIqaw",
+    "country_ranking": "Sep Ranking",
+    "global_ranking": "Global Ranking",
+    "play_count": "Quj 'ech"
+  },
+  "playing": {
+    "zero": "tu'lu' ** pagh ** reH guild {0} Quj DeSDu' ghomchoH",
+    "one": "tu'lu' ** wa' nuv ** qaStaHvIS guild {0} Quj DeSDu' ghomchoH",
+    "more": "tu'lu' ** {1} ** {0} Quj DeSDu' ghomchoH nuvpu'",
+    "error_no_args": "Quj per Daghaj!",
+    "usage": "**Usage:** d!Quj <game>vaj \n**Example:** d!Overwatch reH"
+  },
+  "setlang": {
+    "no_args": "Hol per Daghaj.",
+    "no_permission": "bImejnIS **\"Manage Guild\"** choHwI' wIlIng in order to Hol choH.",
+    "not_supported": "\"{0}\"'oHbe' ngaq Hol.",
+    "usage": "**Usage:** `d!setlang <language>` \n**Example:** `d!setlang klingon` \n\n**supported Hol: ** \n {0}.",
+    "success": "choH Hol {0} Qapla'!"
+  },
+  "botinfo": {
+    "error_ip": "tu'lu' Qagh poStaHvIS ip Suq",
+    "error_ip_desc": "DubelmoHchugh owner, pedrofracassi#4623 contact",
+    "users": "Users",
+    "servers'": "jabwI'",
+    "server_location": "jabwI' Location",
+    "uptime": "Uptime",
+    "channels": "Channels",
+    "ram": "RAM Usage",
+    "djs_v": "discord.js Version"
+  }
+}

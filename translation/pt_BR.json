@@ -42,7 +42,7 @@
     "server_location": "Localização do Servidor",
     "uptime": "Uptime",
     "channels": "Canais",
-    "ram": "RAM Usage",
-    "djs_version": "Discord.js Version"
+    "ram": "Uso de RAM",
+    "djs_v": "Versão do Discord.js"
   }
 }
