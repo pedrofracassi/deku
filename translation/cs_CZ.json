@@ -7,8 +7,8 @@
     },
     "commands": {
         "osu": {
-            "_description": "Shows an osu! profile",
-            "_usage": "d!osu <id or username>",
+            "_description": "Ukáže osu! profil",
+            "_usage": "d!osu <id nebo uživatelské jméno>",
             "title": "Profil hráče {0}",
             "player_doesnt_exist": "Tento hráč neexistuje.",
             "is_spelled_correctly": "Zkontroluj si prosím, jestli jsi to jméno napsal správně.",
@@ -25,8 +25,8 @@
             "play_count": "Počet her"
         },
         "playing": {
-            "_description": "Shows how many people are playing a certain game at the moment",
-            "_usage": "d!playing <game>",
+            "_description": "Ukáže kolik lidí zrovna hraje danou hru",
+            "_usage": "d!playing <hra>",
             "zero": "V tomto cechu zrovna **nikdo** `{0}` nehraje",
             "one": "V tomto cechu zrovna hraje **jeden člověk** `{0}`",
             "more": "**{1}** lidí zrovna hraje `{0}`",
@@ -34,8 +34,8 @@
             "usage": "**Použití:** `d!playing <hra>`\n**Například:** `d!playing Overwatch`"
         },
         "setlang": {
-            "_description": "Changes my language in the server",
-            "_usage": "d!setlang <language>",
+            "_description": "Změní můj jazyk v serveru",
+            "_usage": "d!setlang <jazyk>",
             "no_args": "Musíš specifikovat jazyk.",
             "no_permission": "Potřebuješ právo **\"Spravovat Cech\"** aby jsi mohl změnit můj jazyk.",
             "not_supported": "\"{0}\" není podporovaný jazyk.",
@@ -43,17 +43,17 @@
             "success": "Jazyk úspěšně změněn na `{0}`!"
         },
         "botinfo": {
-            "_description": "Shows information about me",
+            "_description": "Ukáže info o mě",
             "_usage": "d!botinfo",
-            "error_ip": "There was an error while getting my own IP",
-            "error_ip_desc": "Please contact my owner, pedrofracassi#4623",
-            "users": "Users",
-            "servers": "Servers",
-            "server_location": "Server Location",
-            "uptime": "Uptime",
-            "channels": "Channels",
-            "ram": "RAM Usage",
-            "djs_v": "Discord.js Version"
+            "error_ip": "Nastala chyba při získávání mé vlastní IP",
+            "error_ip_desc": "Prosím kontaktuj mého majitele, pedrofracassi#4623",
+            "users": "Uživatelé",
+            "servers": "Servery",
+            "server_location": "Lokace serveru",
+            "uptime": "Doba provozu",
+            "channels": "Kanály",
+            "ram": "Využití RAM",
+            "djs_v": "Verze Discord.js"
         }
     }
 }
