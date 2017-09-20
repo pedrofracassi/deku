@@ -1,4 +1,5 @@
 {
+  "code": "cs_CZ",
   "server_join": {
     "hi_im_deku": "Ahoj, jsem Deku!",
     "description": "Vytvořil mě **pedrofracassi#4623** abych mohl pomoct organizovat tvůj cech.\n\nPokud se o mě chceš dozvědět víc, napiš `d!help`.\n\n{0} [Přidej mě na tvůj server]({1}) | [Připoj se na můj server]({2})"
