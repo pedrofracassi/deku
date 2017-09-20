@@ -2,7 +2,7 @@ const config = require('../config.js');
 const utils = require('../utils.js');
 
 module.exports = {
-  run: function(message) {
+  run: function(message, lang) {
     if (message.channel.type != 'text') return;
     var expression = /^\w+\!(\w+) *(.*)/;
     var embed = utils.generateDekuDiv(message);
@@ -11,16 +11,16 @@ module.exports = {
       var count = message.guild.members.filter(m => {if(m.user.presence.game){ if(m.user.presence.game.name.toLowerCase() == game.toLowerCase()){return true;}}}).size;
       var text = '';
       if (count == 0) {
-        text = "There is **no one** in this guild playing `" + game + "` at the moment";
+        text = lang.playing.zero.replace('{0}', game);
       } else if (count == 1) {
-        text = "There is **one person** in this guild playing `" + game + "` at the moment";
+        text = lang.playing.one.replace('{0}', game);
       } else {
-        text = "There are **" + count + "** people playing `" + game + "` at the moment";
+        text = lang.playing.more.replace('{0}', game).replace('{1}', count);
       }
-      embed.addField("Currently playing", text);
+      embed.setDescription(text);
     } else {
       embed.setColor(config.colors.error);
-      embed.addField('You have to specify the game!', '**Usage:** `d!playing <game>`\n**Example:** `d!playing Overwatch`');
+      embed.addField(lang.playing.error_no_args, lang.playing.usage);
     }
     message.channel.send({embed});
   }

@@ -11,9 +11,9 @@ module.exports = {
       return false;
     }
   },
-  runCommand: function(command, message, betaMode) {
+  runCommand: function(command, message, lang, langdb) {
     try {
-      require('./commands/' + command).run(message, betaMode);
+      require('./commands/' + command).run(message, lang, langdb);
     } catch (e) {
       console.log(e);
     }

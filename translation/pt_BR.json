@@ -1,0 +1,37 @@
+{
+  "and": " e ",
+  "server_join": {
+    "hi_im_deku": "Oi, eu sou Deku!",
+    "description": "Fui feito pelo **pedrofracassi#4623** pra ajudar a organizar o seu lindo servidor.\n\nSe você quiser saber mais sobre mim, digite `d!help`.\n\n{0} [Me adicione ao seu servidor]({1}) | [Entre no meu servidor]({2})"
+  },
+  "osu": {
+    "title": "Perfil de {0}",
+    "player_doesnt_exist": "Esse jogador não existe.",
+    "is_spelled_correctly": "Por favor verifique se você escreveu o nome de usuário corretamente",
+    "specify_player": "Por favor especifique um jogador",
+    "usage": "**Uso:** `d!osu <id ou nome de usuário>`\n**Exemplo:** `d!osu pedrofracassi`",
+    "accuracy": "Precisão",
+    "ranked_score": "Pontuação Ranqueada",
+    "total_score": "Pontuação Total",
+    "level": "Nível",
+    "ranks": "Notas",
+    "performance": "Desempenho",
+    "country_ranking": "Colocação Nacional",
+    "global_ranking": "Colocação Global",
+    "play_count": "Partidas Jogadas"
+  },
+  "playing": {
+    "zero": "Não tem ninguém nesse servidor jogando `{0}` no momento",
+    "one": "Tem **uma pessoa** nesse servidor jogando `{0}` no momento",
+    "more": "Tem **{1}** pessoas nesse servidor jogando `{0}` no momento",
+    "error_no_args": "Você precisa especificar um jogo!",
+    "usage": "**Uso:** `d!playing <jogo>`\n**Exemplo:** `d!playing Overwatch`"
+  },
+  "setlang": {
+    "no_args": "Você precisa especificar um idioma.",
+    "no_permission": "Você precisa da permissão **\"Manage Guild\"** pra mudar meu idioma.",
+    "not_supported": "\"{0}\" não é um idioma suportado.",
+    "usage": "**Uso:** `d!setlang <idioma>`\n**Exemplo:** `d!setlang pt_BR`\n\n**Idiomas suportados:**\n{0}.",
+    "success": "Idioma alterado para `{0}` com sucesso!"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "server_join": {
+    "hi_im_deku": "Ahoj, jsem Deku!",
+    "description": "Vytvořil mě **pedrofracassi#4623** abych mohl pomoct organizovat tvůj cech.\n\nPokud se o mě chceš dozvědět víc, napiš `d!help`.\n\n{0} [Přidej mě na tvůj server]({1}) | [Připoj se na můj server]({2})"
+  },
+  "osu": {
+    "title": "Profil hráče {0}",
+    "player_doesnt_exist": "Tento hráč neexistuje.",
+    "is_spelled_correctly": "Zkontroluj si prosím, jestli jsi to jméno napsal správně.",
+    "specify_player": "Prosím, specifikuj hráče.",
+    "usage": "**Použití:** `d!osu <id nebo uživatelské jméno>`\n**Například:** `d!osu electricas`",
+    "accuracy": "Přesnost",
+    "ranked_score": "Hodnocené skóre",
+    "total_score": "Celkové skóre",
+    "level": "Level",
+    "ranks": "Pořadí",
+    "performance": "Výkon",
+    "country_ranking": "Státní Hodnocení",
+    "global_ranking": "Globalní Hodnocení",
+    "play_count": "Počet her"
+  },
+  "playing": {
+    "zero": "V tomto cechu zrovna **nikdo** `{0}` nehraje",
+    "one": "V tomto cechu zrovna hraje **jeden člověk** `{0}`",
+    "more": "**{1}** lidí zrovna hraje `{0}`",
+    "error_no_args": "Musíš specifikovat hru!",
+    "usage": "**Použití:** `d!playing <hra>`\n**Například:** `d!playing Overwatch`"
+  },
+  "and": " a ",
+  "setlang": {
+    "no_args": "Musíš specifikovat jazyk.",
+    "no_permission": "Potřebuješ právo **\"Spravovat Cech\"** aby jsi mohl změnit můj jazyk.",
+    "not_supported": "\"{0}\" není podporovaný jazyk.",
+    "usage": "**Použití:** d!setlang <jazyk>\n**Příklad:** d!setlang cs_CZ\n\n**Podporované jazyky:**\n{0}.",
+    "success": "Jazyk úspěšně změněn na `{0}`!"
+  }
+}
