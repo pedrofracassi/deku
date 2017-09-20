@@ -44,7 +44,7 @@ module.exports = {
         message.client.guilds.map(guild => {
           channels = channels + guild.channels.size;
         });
-        embed.addField(lang.botinfo.channels, uptime, true);
+        embed.addField(lang.botinfo.channels, channels, true);
       }
       message.channel.send({embed});
     });
