@@ -1,0 +1,59 @@
+{
+    "code": "it_IT",
+    "and": "e",
+    "server_join": {
+        "hi_im_deku": "Ciao, sono Deku!",
+        "description": "Sono stato creato da **pedrofracassi#4623** per aiutarti ad organizzare la tua bellissima gilda!\n\nSe vuoi sapere di più su di me, digita `d!help`.\n\n{0} [Aggiungimi nel tuo server]({1}) | [Entra nel mio server]({2})"
+    },
+    "commands": {
+        "osu": {
+            "_description": "Mostra un profilo osu!",
+            "_usage": "d!osu <id o username>",
+            "title": "profilo di {0}",
+            "player_doesnt_exist": "Questo giocatore non esiste.",
+            "is_spelled_correctly": "Per favore verifica di aver scritto correttamente il nome del giocatore.",
+            "specify_player": "Per favore specifica un player.",
+            "usage": "**Utilizzo:** `d!osu <id o username>`\n**Esempio:** `d!osu pedrofracassi`",
+            "accuracy": "Precisione.",
+            "ranked_score": "Punteggio Ranked.",
+            "total_score": "Punteggio totale.",
+            "level": "Livello.",
+            "ranks": "Rank.",
+            "performance": "Prestazione.",
+            "country_ranking": "Rank nazionale.",
+            "global_ranking": "Rank globale.",
+            "play_count": "Numero di partite."
+        },
+        "playing": {
+            "_description": "Mostra quante persone stanno giocando ad un determinato gioco in questo momento.",
+            "_usage": "d!playing <gioco>",
+            "zero": "Nessuno in questo Server sta giocando a `{0}` al momento",
+            "one": "C'è **una persona** in questo server che sta giocando a `{0}` al momento.",
+            "more": "Ci sono **{1}** persone che stanno giocando a `{0}` al momento",
+            "error_no_args": "Devi specificare il gioco!",
+            "usage": "**Utilizzo:** `d!playing <gioco>`\n**Esempio:** `d!playing Overwatch`"
+        },
+        "setlang": {
+            "_description": "Cambia la mia lingua su questo server.",
+            "_usage": "d!setlang <lingua>",
+            "no_args": "Devi specificare una lingua!",
+            "no_permission": "Ti serve il permesso **\"Manage Guild\"** per cambiare la mia lingua.",
+            "not_supported": "\n \"{0}\" non è una lingua supportata.",
+            "usage": "**Utilizzo:** `d!setlang <lingua>`\n**Esempio:** `d!setlang it_IT`\n\n**Lingue supportate:**\n{0}.",
+            "success": "La lingua è stata cambiata in `{0}` con successo!"
+        },
+        "botinfo": {
+            "_description": "Mostra informazioni su di me.",
+            "_usage": "d!botinfo",
+            "error_ip": "C'è stato un errore durante l'ottenimento del mio ip.",
+            "error_ip_desc": "Per favore, contatta il mio creatore, pedrofracassi#4623",
+            "users": "Utenti",
+            "servers": "Servers",
+            "server_location": "Locazione del Server",
+            "uptime": "Uptime",
+            "channels": "Canali",
+            "ram": "Utilizzo di RAM",
+            "djs_v": "Versione di discord.js"
+        }
+    }
+}
