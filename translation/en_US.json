@@ -33,5 +33,16 @@
     "not_supported": "\"{0}\" is not a supported language.",
     "usage": "**Usage:** `d!setlang <language>`\n**Example:** `d!setlang en_US`\n\n**Supported languages:**\n{0}.",
     "success": "Language changed to `{0}` with success!"
+  },
+  "botinfo": {
+    "error_ip": "There was an error while getting my own IP",
+    "error_ip_desc": "Please contact my owner, pedrofracassi#4623",
+    "users": "Users",
+    "servers": "Servers",
+    "server_location": "Server Location",
+    "uptime": "Uptime",
+    "channels": "Channels",
+    "ram": "RAM Usage",
+    "djs_v": "Discord.js Version"
   }
 }
