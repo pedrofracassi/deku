@@ -7,9 +7,9 @@
     },
     "commands": {
         "osu": {
-            "_description": "Shows an osu! profile",
-            "_usage": "d!osu <id or username>",
-            "title": "Perfil do {0}",
+            "_description": "Mostra um perfil do osu!",
+            "_usage": "d!osu <id ou username>",
+            "title": "Perfil de {0}",
             "player_doesnt_exist": "Esse jogador não existe.",
             "is_spelled_correctly": "Vê se escreveste bem o nome do jogador, por favor",
             "specify_player": "Especifica um jogador.",
@@ -25,8 +25,8 @@
             "play_count": "Contagem de Jogos"
         },
         "playing": {
-            "_description": "Shows how many people are playing a certain game at the moment",
-            "_usage": "d!playing <game>",
+            "_description": "Mostra quantas pessoas estão a jogar um certo jogo no momento",
+            "_usage": "d!playing <jogo>",
             "zero": "Não há **ninguem** nesta guild a jogar `{0}` agora",
             "one": "Há **uma pessoa** nesta guild a jogar `{0}` agora",
             "more": "Há **{1}** pessoas a jogar `{0}` agora",
@@ -34,8 +34,8 @@
             "usage": "**Utilização:** `d!playing <jogo>`\n**Exemplo:** `d!playing Overwatch`"
         },
         "setlang": {
-            "_description": "Changes my language in the server",
-            "_usage": "d!setlang <language>",
+            "_description": "Muda a minha língua no servidor",
+            "_usage": "d!setlang <lingua>",
             "no_args": "Tens de dizer uma língua.",
             "no_permission": "Precisas da permissão **\"Manage Guild\"** para puderes mudar a minha língua.",
             "not_supported": "\"{0}\" não é uma língua suportada.",
@@ -43,17 +43,17 @@
             "success": "Língua mudada para `{0}` com sucesso!"
         },
         "botinfo": {
-            "_description": "Shows information about me",
+            "_description": "Mostra informações sobre mim",
             "_usage": "d!botinfo",
-            "error_ip": "There was an error while getting my own IP",
-            "error_ip_desc": "Please contact my owner, pedrofracassi#4623",
-            "users": "Users",
-            "servers": "Servers",
-            "server_location": "Server Location",
+            "error_ip": "Houve um erro a obter o meu IP.",
+            "error_ip_desc": "Por favor contacta o meu dono, pedrofracassi#4623",
+            "users": "Usuários",
+            "servers": "Servidores",
+            "server_location": "Localização do servidor",
             "uptime": "Uptime",
-            "channels": "Channels",
-            "ram": "RAM Usage",
-            "djs_v": "Discord.js Version"
+            "channels": "Canais",
+            "ram": "Utilização de RAM",
+            "djs_v": "Versão do Discord.js"
         }
     }
 }
