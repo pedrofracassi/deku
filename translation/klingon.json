@@ -5,6 +5,7 @@
     "hi_im_deku": "bIpIv'a', deku!",
     "description": "pong chenmoH jIH ** pedrofracassi#4623 ** 'IH guild.\n\nif latlh vIHtaHbogh jIHvaD Sov DaneH'a' organize QaH Segh d!help'.\n\n{0} [jIHvaD chel server]({1}) | [muv jabwI'] ({2}) "
   },
+  "commands": {
   "osu": {
     "title": "{0} qoghDu'DajDaq",
     "player_doesnt_exist": "doesn't nIv'e' DawI'pu'.",
@@ -46,4 +47,5 @@
     "ram": "RAM Usage",
     "djs_v": "discord.js Version"
   }
+}
 }
