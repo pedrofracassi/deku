@@ -10,7 +10,6 @@ module.exports = {
     var args = message.content.match(expression)[2].split(' ');
     var embed = utils.generateDekuDiv(message);
     if (message.member.hasPermission('MANAGE_GUILD')) {
-      console.log(args);
       if (args[0]) {
         fs.readdir('./translation/', (err, files) => {
           if (files.includes(args[0] + '.json')) {
