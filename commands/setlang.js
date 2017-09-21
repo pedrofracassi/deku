@@ -19,32 +19,32 @@ module.exports = {
                 if (err) throw err;
                 var newLang = JSON.parse(data);
                 embed.setColor(config.colors.success);
-                embed.setDescription(newLang.setlang.success.replace('{0}', args[0]));
+                embed.setDescription(newLang.commands.setlang.success.replace('{0}', args[0]));
                 message.channel.send({embed});
               });
             });
           } else {
             embed.setColor(config.colors.error);
-            embed.setTitle(lang.setlang.not_supported.replace('{0}', args[0]));
+            embed.setTitle(lang.commands.setlang.not_supported.replace('{0}', args[0]));
             var languageCodes = [];
             files.map(file => languageCodes.push(file.replace('.json', '')));
-            embed.setDescription(lang.setlang.usage.replace('{0}', utils.arrayToStringWithCommas(languageCodes, lang.and)));
+            embed.setDescription(lang.commands.setlang.usage.replace('{0}', utils.arrayToStringWithCommas(languageCodes, lang.and)));
             message.channel.send({embed});
           }
         })
       } else {
         fs.readdir('./translation/', (err, files) => {
           embed.setColor(config.colors.error);
-          embed.setTitle(lang.setlang.no_args);
+          embed.setTitle(lang.commands.setlang.no_args);
           var languageCodes = [];
           files.map(file => languageCodes.push(file.replace('.json', '')));
-          embed.setDescription(lang.setlang.usage.replace('{0}', utils.arrayToStringWithCommas(languageCodes, lang.and)));
+          embed.setDescription(lang.commands.setlang.usage.replace('{0}', utils.arrayToStringWithCommas(languageCodes, lang.and)));
           message.channel.send({embed});
         })
       }
     } else {
       embed.setColor(config.colors.error);
-      embed.setDescription(lang.setlang.no_permission);
+      embed.setDescription(lang.commands.setlang.no_permission);
       message.channel.send({embed});
     }
   }

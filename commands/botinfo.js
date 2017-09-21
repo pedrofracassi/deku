@@ -32,30 +32,30 @@ module.exports = {
     request('http://api.ipify.org/?format=json', function (error, response, body) {
       if (error) {
         embed.setColor(config.colors.error);
-        embed.setTitle(lang.botinfo.error_ip);
-        embed.setDescription(lang.botinfo.error_ip_desc);
+        embed.setTitle(lang.commands.botinfo.error_ip);
+        embed.setDescription(lang.commands.botinfo.error_ip_desc);
       } else {
         var ip = JSON.parse(body).ip;
         var geo = geoip.lookup(ip);
-        embed.addField(lang.botinfo.server_location, `:flag_${geo.country.toLowerCase()}: ${geo.city}`, true);
+        embed.addField(lang.commands.botinfo.server_location, `:flag_${geo.country.toLowerCase()}: ${geo.city}`, true);
         embed.setThumbnail(message.client.user.displayAvatarURL);
-        embed.addField(lang.botinfo.servers, message.client.guilds.size, true);
+        embed.addField(lang.commands.botinfo.servers, message.client.guilds.size, true);
         var users = 0;
         message.client.guilds.map(guild => {
           users = users + guild.members.size;
         });
-        embed.addField(lang.botinfo.users, users, true);
+        embed.addField(lang.commands.botinfo.users, users, true);
         var time = process.uptime();
         var uptime = (time + "").toHHMMSS();
-        embed.addField(lang.botinfo.uptime, uptime, true);
+        embed.addField(lang.commands.botinfo.uptime, uptime, true);
         var channels = 0;
         message.client.guilds.map(guild => {
           channels = channels + guild.channels.size;
         });
-        embed.addField(lang.botinfo.channels, channels, true);
-        embed.addField(lang.botinfo.djs_v, Discord.version, true);
+        embed.addField(lang.commands.botinfo.channels, channels, true);
+        embed.addField(lang.commands.botinfo.djs_v, Discord.version, true);
         var usedram = os.totalmem() - os.freemem();
-        embed.addField(lang.botinfo.ram, bytesToSize(usedram) + '/' + bytesToSize(os.totalmem()), true);
+        embed.addField(lang.commands.botinfo.ram, bytesToSize(usedram) + '/' + bytesToSize(os.totalmem()), true);
       }
       message.channel.send({embed});
     });
