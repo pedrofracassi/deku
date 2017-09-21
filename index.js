@@ -34,8 +34,8 @@ client.on('message', message => {
         fs.readFile('./translation/' + value + '.json', 'utf8', function (err, data) {
           if (err) throw err;
           strings = JSON.parse(data);
-          console.log(strings[command]);
-          if (strings[command]) {
+          console.log(strings);
+          if (strings.commands[command]) {
             utils.runCommand(command, message, strings, langdb);
           } else {
             fs.readFile('./translation/en_US.json', 'utf8', function (err, data) {
@@ -52,20 +52,21 @@ client.on('message', message => {
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed;
   var locale = 'en_US';
-  if (guild.region == 'brazil') locale = 'pt_BR';
-  fs.readFile('./translation/' + locale + '.json', 'utf8', function (err, data) {
-    if (err) throw err;
-    lang = JSON.parse(data);
-    embed.addField(lang.server_join.hi_im_deku, lang.server_join.description
-      .replace('{0}', '<:izuku:358407294100439040>')
-      .replace('{1}', 'https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot')
-      .replace('{2}', 'https://discord.gg/9W7yyBA'));
-      embed.setColor(config.colors.embed);
-      embed.setThumbnail('https://i.imgur.com/lUVxkAK.png');
-      guild.channels.filter(c=>c.type=='text').first().send({ embed });
+  langdb.get(message.guild.id, function (err, value) {
+    if (err) value = 'en_US';
+    fs.readFile('./translation/' + value + '.json', 'utf8', function (err, data) {
+      if (err) throw err;
+      lang = JSON.parse(data);
+      embed.addField(lang.server_join.hi_im_deku, lang.server_join.description
+        .replace('{0}', '<:izuku:358407294100439040>')
+        .replace('{1}', 'https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot')
+        .replace('{2}', 'https://discord.gg/9W7yyBA'));
+        embed.setColor(config.colors.embed);
+        embed.setThumbnail('https://i.imgur.com/lUVxkAK.png');
+        guild.channels.filter(c=>c.type=='text').first().send({ embed });
+      });
     });
-
-  })
+  });
 
   var token = tokens.discord_beta || tokens.discord;
   client.login(token);
