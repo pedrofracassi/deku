@@ -1,11 +1,36 @@
 {
     "code": "en_US",
     "and": " and ",
+    "usage": "**Usage:**",
+    "example": "**Example:**",
     "server_join": {
         "hi_im_deku": "Hi, i'm Deku!",
         "description": "I was made by **pedrofracassi#4623** to help organize your beautiful Guild.\n\nIf you want to know more about me, type `d!help`.\n\n{0} [Add me to your server]({1}) | [Join my server]({2})"
     },
     "commands": {
+        "lol": {
+            "mastery_points": "Mastery Points",
+            "summoner_level": "Summoner Level",
+            "rankeds": "Rankeds",
+            "Region": "Region",
+            "valid_regions": "**Valid Regions:**",
+            "summoner_error": "There was an error while getting this summoner profile.",
+            "summoner_error_desc": "Please contact my owner (pedrofracassi#4623) so he can fix this.",
+            "summoner_region_error": "You have to specify a summoner and a region!",
+            "invalid_region_error": "\"{0}\" is not a valid region!",
+            "error_desc": "**Usage:** `d!lol <region> <summoner>`\n**Example:** `d!lol br pedrinholuizf`",
+            "error_desc_with_regions": "**Usage:** `d!lol <region> <summoner>`\n**Example:** `d!lol br pedrinholuizf`\n\n**Valid regions:**\n{0}.",
+            "no_summoner_error": "You have to specify a summoner!",
+            "elos": {
+                "UNRANKED": "Unranked",
+                "BRONZE": "Bronze",
+                "SILVER": "Silver",
+                "GOLD": "Gold",
+                "DIAMOND": "Diamond",
+                "MASTER": "Master",
+                "CHALLENGER": "Challenger"
+            }
+        },
         "osu": {
             "_description": "Shows an osu! profile",
             "_usage": "d!osu <id or username>",
