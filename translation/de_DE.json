@@ -1,32 +1,59 @@
 {
-  "code": "de_DE",
-  "server_join": {
-    "hi_im_deku": "Hallo, Ich bin Deku!",
-    "description": "Ich wurde von **pedrofracassi#4623** erschaffen, um dir zu helfen, deine Gilde zu organisieren.\n\nWenn du mehr über mich erfahren möchtest, tippe d!help.\n\n{0} [Füge mich zu deinem Server hinzu]({1}) | [Trete meinem Server bei]({2})"
-  },
-  "commands": {
-    "osu": {
-      "title": "{0}'s profile",
-      "player_doesnt_exist": "Dieser Spieler existiert nicht.",
-      "is_spelled_correctly": "Bitte überprüfe, ob du den Namen des Spielers richtig geschrieben hast.",
-      "specify_player": "Bitte gebe einen Spieler an.",
-      "usage": "**Nutzung:** d!osu <ID oder Nutzername>\n**Beispiel:** d!osu pedrofracassi",
-      "accuracy": "Genauigkeit",
-      "ranked_score": "Geordnete Punktzahl",
-      "total_score": "Gesamtpunktzahl",
-      "level": "Level",
-      "ranks": "Ränge",
-      "performance": "Leistung",
-      "country_ranking": "Länder Ranking",
-      "global_ranking": "Weltweites Ranking",
-      "play_count": "Spielzähler"
+    "code": "de_DE",
+    "and": "␣und ",
+    "server_join": {
+        "hi_im_deku": "Hallo, Ich bin Deku!",
+        "description": "Ich wurde von **pedrofracassi#4623** erschaffen, um dir zu helfen, deine Gilde zu organisieren.\n\nWenn du mehr über mich erfahren möchtest, tippe d!help.\n\n{0} [Füge mich zu deinem Server hinzu]({1}) | [Trete meinem Server bei]({2})"
     },
-    "playing": {
-      "zero": "Es gibt **niemanden** in dieser gilde, die momentan {0} spielt",
-      "one": "Aktuell spielt in dieser gilde **eine** Person {0}",
-      "more": "Aktuell spielen **{1}** spieler {0}",
-      "error_no_args": "Du musst das spiel angeben!",
-      "usage": "**Nutzung:** d!playing <spiel>\n**Beispiel:** d!playing Overwatch"
+    "commands": {
+        "osu": {
+            "_description": "Zeigt ein osu!-Profil",
+            "_usage": "d!osu <ID oder Nutzername>",
+            "title": "{0}'s profile",
+            "player_doesnt_exist": "Dieser Spieler existiert nicht.",
+            "is_spelled_correctly": "Bitte überprüfe, ob du den Namen des Spielers richtig geschrieben hast.",
+            "specify_player": "Bitte gebe einen Spieler an.",
+            "usage": "**Nutzung:** d!osu <ID oder Nutzername>\n**Beispiel:** d!osu pedrofracassi",
+            "accuracy": "Genauigkeit",
+            "ranked_score": "Geordnete Punktzahl",
+            "total_score": "Gesamtpunktzahl",
+            "level": "Level",
+            "ranks": "Ränge",
+            "performance": "Leistung",
+            "country_ranking": "Länder Ranking",
+            "global_ranking": "Weltweites Ranking",
+            "play_count": "Spielzähler"
+        },
+        "playing": {
+            "_description": "Zeigt, wie viele Menschen ein bestimmtes Spiel im Moment spielen",
+            "_usage": "d!playing <Spiel>",
+            "zero": "Es gibt **niemanden** in dieser gilde, die momentan {0} spielt",
+            "one": "Aktuell spielt in dieser gilde **eine** Person {0}",
+            "more": "Aktuell spielen **{1}** spieler {0}",
+            "error_no_args": "Du musst das spiel angeben!",
+            "usage": "**Nutzung:** `d!playing <Spiel>`\n**Beispiel:** `d!playing Overwatch`"
+        },
+        "setlang": {
+            "_description": "Ändert meine Sprache auf dem Server",
+            "_usage": "d!setlang <Sprache>",
+            "no_args": "Du musst eine Sprache auswählen.",
+            "no_permission": "Du brauchst die **\"Manage Guild\"** Berechtigung, um meine Sprache zu ändern.",
+            "not_supported": "\"{0}\" ist keine unterstützte Sprache.",
+            "usage": "**Nutzung:** `d!setlang <Sprache>`\n**Beispiel:** `d!setlang en_US`\n\n**Unterstützte Sprachen:**\n{0}",
+            "success": "Die Sprache wurde erfolgreich zu `{0}`geändert!"
+        },
+        "botinfo": {
+            "_description": "Zeigt Informationen über mich",
+            "_usage": "d!botinfo",
+            "error_ip": "Es ist ein Fehler beim ermitteln meiner eigenen IP aufgetreten",
+            "error_ip_desc": "Bitte kontaktiere meinen Besitzer, pedrofracassi#4623",
+            "users": "Nutzer",
+            "servers": "Server",
+            "server_location": "Serverstandort",
+            "uptime": "Betriebszeit",
+            "channels": "Kanäle",
+            "ram": "Arbeitsspeicherauslastung",
+            "djs_v": "Discord.js Version"
+        }
     }
-  }
 }
