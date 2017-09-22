@@ -1,0 +1,32 @@
+{
+  "code": "de_DE",
+  "server_join": {
+    "hi_im_deku": "Hallo, Ich bin Deku!",
+    "description": "Ich wurde von **pedrofracassi#4623** erschaffen, um dir zu helfen, deine Gilde zu organisieren.\n\nWenn du mehr über mich erfahren möchtest, tippe d!help.\n\n{0} [Füge mich zu deinem Server hinzu]({1}) | [Trete meinem Server bei]({2})"
+  },
+  "commands": {
+    "osu": {
+      "title": "{0}'s profile",
+      "player_doesnt_exist": "Dieser Spieler existiert nicht.",
+      "is_spelled_correctly": "Bitte überprüfe, ob du den Namen des Spielers richtig geschrieben hast.",
+      "specify_player": "Bitte gebe einen Spieler an.",
+      "usage": "**Nutzung:** d!osu <ID oder Nutzername>\n**Beispiel:** d!osu pedrofracassi",
+      "accuracy": "Genauigkeit",
+      "ranked_score": "Geordnete Punktzahl",
+      "total_score": "Gesamtpunktzahl",
+      "level": "Level",
+      "ranks": "Ränge",
+      "performance": "Leistung",
+      "country_ranking": "Länder Ranking",
+      "global_ranking": "Weltweites Ranking",
+      "play_count": "Spielzähler"
+    },
+    "playing": {
+      "zero": "Es gibt **niemanden** in dieser gilde, die momentan {0} spielt",
+      "one": "Aktuell spielt in dieser gilde **eine** Person {0}",
+      "more": "Aktuell spielen **{1}** spieler {0}",
+      "error_no_args": "Du musst das spiel angeben!",
+      "usage": "**Nutzung:** d!playing <spiel>\n**Beispiel:** d!playing Overwatch"
+    }
+  }
+}
