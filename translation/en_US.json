@@ -8,6 +8,10 @@
         "description": "I was made by **pedrofracassi#4623** to help organize your beautiful Guild.\n\nIf you want to know more about me, type `d!help`.\n\n{0} [Add me to your server]({1}) | [Join my server]({2})"
     },
     "commands": {
+        "lmgtfy": {
+            "_description": "Generates a \"Let Me Google That For You\" link",
+            "_usage": "d!lmgtfy <search term> [--explain]"
+        },
         "lol": {
             "mastery_points": "Mastery Points",
             "summoner_level": "Summoner Level",
