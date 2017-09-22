@@ -35,11 +35,11 @@ client.on('message', message => {
           if (err) throw err;
           strings = JSON.parse(data);
           if (strings.commands[command]) {
-            utils.runCommand(command, message, strings, langdb);
+            utils.runCommand(command, message, strings);
           } else {
             fs.readFile('./translation/en_US.json', 'utf8', function (err, data) {
               strings = JSON.parse(data);
-              utils.runCommand(command, message, strings, langdb);
+              utils.runCommand(command, message, strings);
             });
           }
         });
