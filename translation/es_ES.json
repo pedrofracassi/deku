@@ -54,6 +54,31 @@
             "channels": "Canales",
             "ram": "Uso de RAM",
             "djs_v": " Versión de Discord.js"
+        },
+        "lol": {
+            "mastery_points": "Puntos de maestría",
+            "summoner_level": "Nivel Invocador",
+            "rankeds": "Clasificados",
+            "Region": "Región",
+            "valid_regions": "**Regiones validas:**",
+            "summoner_error": "Se ha producido un error al obtener este perfil de invocador.",
+            "summoner_error_desc": "Póngase en contacto con mi propietario (pedrofracassi#4623) para que pueda arreglar esto.",
+            "summoner_region_error": "¡Tienes que especificar un summoner y una región!",
+            "invalid_region_error": "\"{0}\" no es una región valida!",
+            "error_desc": "**Uso:** `d!lol <región> <invocador>`\n**Ejemplo:** `d!lol br pedrinholuizf`",
+            "error_desc_with_regions": "**Uso:** `d!lol <región> <invocador>`\n**Ejemplo:** `d!lol br pedrinholuizf`",
+            "no_summoner_error": "¡Tienes que especificar un summoner!",
+            "elos": {
+                "UNRANKED": "Sin clasificar",
+                "BRONZE": "Bronce",
+                "SILVER": "Plata",
+                "GOLD": "Oro",
+                "DIAMOND": "Diamante",
+                "MASTER": "Dominador",
+                "CHALLENGER": "Desafiador"
+            }
         }
-    }
+    },
+    "usage": "**Uso:**",
+    "example": "**Ejemplo:**"
 }
