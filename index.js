@@ -34,7 +34,6 @@ client.on('message', message => {
         fs.readFile('./translation/' + value + '.json', 'utf8', function (err, data) {
           if (err) throw err;
           strings = JSON.parse(data);
-          console.log(strings);
           if (strings.commands[command]) {
             utils.runCommand(command, message, strings, langdb);
           } else {
