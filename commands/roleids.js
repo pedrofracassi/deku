@@ -9,7 +9,7 @@ exports.run = function (message, lang) {
     roles = roles + role + "\n";
     ids = ids + role.id + "\n";
   });
-  embed.addField('Role', roles, true);
-  embed.addField('ID', ids, true);
+  embed.addField(lang.commands.roleids.role, roles, true);
+  embed.addField(lang.commands.roleids.id, ids, true);
   message.channel.send({embed});
 };

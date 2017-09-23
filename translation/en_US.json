@@ -35,6 +35,12 @@
             "role_remove_fail": "I wasn't able to remove the role {0} from you.",
             "please_ask_owner": "Please ask the server owner to check my permissions."
         },
+        "roleids": {
+          "_usage": "d!roleids",
+          "_description": "Shows the IDs of the server's roles",
+          "role": "Role",
+          "id": "ID"
+        },
         "lol": {
             "mastery_points": "Mastery Points",
             "summoner_level": "Summoner Level",
