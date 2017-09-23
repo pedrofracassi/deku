@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const config = require('./config.js');
 
 module.exports = {
+  expression = /^\w+\!(\w+) *(.*)/,
   commandExists: function(command) {
     try {
       let commandFile = require('./commands/' + command);
