@@ -6,7 +6,10 @@ const utils   = require('./utils.js');
 const fs      = require('fs');
 const levelup = require('levelup');
 
-var langdb = levelup('./databases/language');
+var databases = {
+  roleme_config: levelup('./databases/roleme'),
+  language_config: levelup('./databases/language')
+}
 
 // Express Server for /docs testing
 //   const website = require('./website.js');
@@ -35,11 +38,11 @@ client.on('message', message => {
           if (err) throw err;
           strings = JSON.parse(data);
           if (strings.commands[command]) {
-            utils.runCommand(command, message, strings);
+            utils.runCommand(command, message, strings, databases);
           } else {
             fs.readFile('./translation/en_US.json', 'utf8', function (err, data) {
               strings = JSON.parse(data);
-              utils.runCommand(command, message, strings);
+              utils.runCommand(command, message, strings, databases);
             });
           }
         });

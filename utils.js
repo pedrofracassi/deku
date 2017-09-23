@@ -12,9 +12,9 @@ module.exports = {
       return false;
     }
   },
-  runCommand: function(command, message, lang, langdb) {
+  runCommand: function(command, message, lang, databases) {
     try {
-      require('./commands/' + command).run(message, lang, langdb);
+      require('./commands/' + command).run(message, lang, databases);
     } catch (e) {
       console.log(e);
     }

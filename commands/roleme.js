@@ -5,7 +5,7 @@ const levelup = require('levelup');
 var db = levelup('./databases/roleme');
 
 // d!roleme [--add|--remove] <role name> [role id]
-exports.run = function (message, lang) {
+exports.run = function (message, lang, databases) {
   var embed = utils.generateDekuDiv(message);
   var args = message.content.match(utils.expression)[2].split(' ');
   if (args[0] == '--add') { // --add was passed, check if user has permission and add the role
@@ -15,12 +15,12 @@ exports.run = function (message, lang) {
           var role_id = args[1];
           args.splice(0, 2);
           var role_key = args.join(" ").toLowerCase();
-          db.get(message.guild.id, (err, result) => {
+          databases.roleme_config.get(message.guild.id, (err, result) => {
             if (result) {
               if (err) console.log(err);
               var json = JSON.parse(result);
               json[role_key] = role_id;
-              db.put(message.guild.id, JSON.stringify(json), err => {
+              databases.roleme_config.put(message.guild.id, JSON.stringify(json), err => {
                 if (err) console.log(err);
                 embed.setColor(config.colors.success);
                 embed.setDescription(lang.commands.roleme.add_success
@@ -31,7 +31,7 @@ exports.run = function (message, lang) {
             } else {
               var object = {};
               object[role_key] = role_id;
-              db.put(message.guild.id, JSON.stringify(object), err => {
+              databases.roleme_config.put(message.guild.id, JSON.stringify(object), err => {
                 if (err) console.log(err);
                 embed.setColor(config.colors.success);
                 embed.setDescription(lang.commands.roleme.add_success
@@ -61,14 +61,14 @@ exports.run = function (message, lang) {
   } else if (args[0] == '--remove') {
     if (message.member.hasPermission('MANAGE_GUILD')) {
       if (args[1]) {
-        db.get(message.guild.id, (err, result) => {
+        databases.roleme_config.get(message.guild.id, (err, result) => {
           if (result) {
             args.splice(0, 1);
             var role_key = args.join(" ").toLowerCase();
             var json = JSON.parse(result);
             if (json[role_key]) {
               delete json[role_key];
-              db.put(message.guild.id, JSON.stringify(json), err => {
+              databases.roleme_config.put(message.guild.id, JSON.stringify(json), err => {
                 if (err) console.log(err);
                 embed.setColor(config.colors.success)
                 embed.setDescription(lang.commands.roleme.remove_success.replace('{0}', role_key));
@@ -98,7 +98,7 @@ exports.run = function (message, lang) {
     }
   } else {
     // No flags were passed, proceed to check if role is avaliable and give it
-    db.get(message.guild.id, (err, result) => {
+    databases.roleme_config.get(message.guild.id, (err, result) => {
       if (result) {
         if (err) console.log(err);
         console.log(json);

@@ -3,10 +3,8 @@ const utils = require('../utils.js');
 const config = require('../config.js');
 const fs = require('fs');
 
-var db = levelup('./databases/language');
-
 module.exports = {
-  run: function(message, lang) {
+  run: function(message, lang, databases) {
     var expression = /^\w+\!(\w+) *(.*)/;
     var args = message.content.match(expression)[2].split(' ');
     var embed = utils.generateDekuDiv(message);
@@ -14,7 +12,7 @@ module.exports = {
       if (args[0]) {
         fs.readdir('./translation/', (err, files) => {
           if (files.includes(args[0] + '.json')) {
-            db.put(message.guild.id, args[0], function (err) {
+            databases.language_config.put(message.guild.id, args[0], function (err) {
               fs.readFile('./translation/' + args[0] + '.json', 'utf8', function (error, data) {
                 if (err) throw err;
                 var newLang = JSON.parse(data);
