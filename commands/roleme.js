@@ -4,11 +4,6 @@ const levelup = require('levelup');
 
 var db = levelup('./databases/roleme');
 
-var roles = {
-  friends: "358454098380587008",
-  translators: "359749807092400139"
-}
-
 // d!roleme [--add|--remove] <role name> [role id]
 exports.run = function (message, lang) {
   var embed = utils.generateDekuDiv(message);
@@ -28,7 +23,9 @@ exports.run = function (message, lang) {
               db.put(message.guild.id, JSON.stringify(json), err => {
                 if (err) console.log(err);
                 embed.setColor(config.colors.success);
-                embed.setDescription(`Added ${message.guild.roles.get(role_id)} to \`d!roleme\` as \`${role_key}\``);
+                embed.setDescription(lang.commands.roleme.add_success
+                  .replace('{0}', message.guild.roles.get(role_id))
+                  .replace('{1}', role_key));
                 message.channel.send({embed});
               });
             } else {
@@ -37,24 +34,29 @@ exports.run = function (message, lang) {
               db.put(message.guild.id, JSON.stringify(object), err => {
                 if (err) console.log(err);
                 embed.setColor(config.colors.success);
-                embed.setDescription(`Added ${message.guild.roles.get(role_id)} to \`d!roleme\` as \`${role_key}\``);
+                embed.setDescription(lang.commands.roleme.add_success
+                  .replace('{0}', message.guild.roles.get(role_id))
+                  .replace('{1}', role_key));
                 message.channel.send({embed});
               })
             }
           });
         } else {
           embed.setColor(config.colors.error);
-          embed.setDescription('`{0}` isn\'t a valid role ID for this server.');
+          embed.setDescription(lang.commands.roleme.id_not_role
+            .replace('{0}', args[1]));
           message.channel.send({embed});
         }
       } else {
         embed.setColor(config.colors.error);
-        embed.setTitle('You need to specify a role name and role ID!');
-        embed.setDescription('**Usage:** `d!roleme --add <role name> <role id>`\n**Example:** `d!roleme --add lol 358446520334286851`\n\nPro tip: You can get the role IDs from d!roleids');
+        embed.setTitle(lang.commands.roleme.insuficcient_args_add);
+        embed.setDescription(lang.commands.roleme.add_usage);
         message.channel.send({embed});
       }
     } else {
-      console.log('a')
+      embed.setColor(config.colors.error);
+      embed.setDescription(lang.commands.roleme.no_permission);
+      message.channel.send({embed});
     }
   } else if (args[0] == '--remove') {
     if (message.member.hasPermission('MANAGE_GUILD')) {
@@ -69,25 +71,30 @@ exports.run = function (message, lang) {
               db.put(message.guild.id, JSON.stringify(json), err => {
                 if (err) console.log(err);
                 embed.setColor(config.colors.success)
-                embed.setDescription('I removed `{0}` from the `d!roleme` roles.'.replace('{0}', role_key));
+                embed.setDescription(lang.commands.roleme.remove_success.replace('{0}', role_key));
                 message.channel.send({embed});
               });
             } else {
               embed.setColor(config.colors.error)
-              embed.setDescription('`{0}` isn\'t a `d!roleme` role.'.replace('{0}', role_key));
+              embed.setDescription(lang.commands.roleme.not_roleme.replace('{0}', role_key));
               message.channel.send({embed});
             }
           } else {
             embed.setColor(config.colors.error);
-            embed.setDescription('This server doesen\'t have `d!roleme` roles.');
+            embed.setDescription(lang.commands.roleme.no_roleme_roles);
             message.channel.send({embed});
           }
         });
       } else {
-        message.reply('Not enough args');
+        embed.setColor(config.colors.error);
+        embed.setTitle(lang.commands.roleme.insuficcient_args_remove);
+        embed.setDescription(lang.commands.roleme.remove_usage);
+        message.channel.send({embed});
       }
     } else {
-      message.reply('No perms');
+      embed.setColor(config.colors.error);
+      embed.setDescription(lang.commands.roleme.no_permission);
+      message.channel.send({embed});
     }
   } else {
     // No flags were passed, proceed to check if role is avaliable and give it
@@ -106,7 +113,7 @@ exports.run = function (message, lang) {
             }
           } else {
             embed.setColor(config.colors.error);
-            embed.setDescription('**"{0}"** isn\'t a `d!roleme` role.'.replace('{0}', args.join(" ")));
+            embed.setDescription(lang.command.roleme.not_roleme.replace('{0}', args.join(" ")));
             message.channel.send({embed});
           }
         } else {
@@ -116,13 +123,13 @@ exports.run = function (message, lang) {
             commands = commands + "`d!roleme " + key + "`\n";
             roles = roles + message.guild.roles.get(json[key]) + '\n';
           });
-          embed.addField('Command', commands, true);
-          embed.addField('Role', roles, true);
-          message.channel.send('<:izuku:358407294100439040> **Here\'s a list of avaliable roles:**', {embed: embed});
+          embed.addField(lang.commands.roleme.command, commands, true);
+          embed.addField(lang.commands.roleme.role, roles, true);
+          message.channel.send(`<:izuku:358407294100439040> **${lang.commands.roleme.heres_a_list}**`, {embed: embed});
         }
       } else {
         embed.setColor(config.colors.error);
-        embed.setDescription('This server doesen\'t have `d!roleme` roles.');
+        embed.setDescription(lang.commands.roleme.no_roles);
         message.channel.send({embed});
       }
     });
@@ -132,9 +139,9 @@ exports.run = function (message, lang) {
 function success(embed, lang, message, roleid, add) {
   embed.setColor(config.colors.success)
   if (add) {
-    embed.setDescription('I gave you the role {0}.'.replace('{0}', message.guild.roles.get(roleid)));
+    embed.setDescription(lang.commands.roleme.role_give_success.replace('{0}', message.guild.roles.get(roleid)));
   } else {
-    embed.setDescription('I removed the role {0} from you.'.replace('{0}', message.guild.roles.get(roleid)));
+    embed.setDescription(lang.commands.roleme.role_remove_success.replace('{0}', message.guild.roles.get(roleid)));
   }
   message.channel.send({embed});
 }
@@ -142,12 +149,12 @@ function success(embed, lang, message, roleid, add) {
 function fail(embed, lang, message, roleid, add, err) {
   embed.setColor(config.colors.error)
   if (add) {
-    embed.setTitle('I wasn\'t able to give you the role {0}.'.replace('{0}', message.guild.roles.get(roleid)));
+    embed.setTitle(lang.commands.roleme.role_give_fail.replace('{0}', message.guild.roles.get(roleid)));
   } else {
-    embed.setTitle('I wasn\'t able to remove the role {0} from you.'.replace('{0}', message.guild.roles.get(roleid)));
+    embed.setTitle(lang.commands.roleme.role_remove_fail.replace('{0}', message.guild.roles.get(roleid)));
   }
   console.log(err);
-  embed.setDescription(`Please ask the server owner to check my permissions.\n\n\`${err}\``);
+  embed.setDescription(`${lang.commands.roleme.please_ask_owner}\n\n\`${err}\``);
 
   message.channel.send({embed});
 }
