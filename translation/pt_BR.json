@@ -75,8 +75,42 @@
                 "GOLD": "Ouro",
                 "DIAMOND": "Diamante",
                 "MASTER": "Mestre",
-                "CHALLENGER": "Challenger"
+                "CHALLENGER": "Challenger",
+                "PLATINUM": "Platina"
             }
+        },
+        "lmgtfy": {
+            "_description": "Gera um link do Let Me Google That For You",
+            "_usage": "d!lmgtfy <termo a ser pesquisado> [--explain]"
+        },
+        "roleme": {
+            "_description": "Te dá um cargo do servidor.",
+            "_usage": "d!roleme [--add|--remove] <cargo> <ID do cargo>",
+            "add_success": "Adicionei {0} ao `d!roleme`como `{1}`",
+            "id_not_role": "`{0}` não é um ID de cargo válido nesse servidor.",
+            "no_permission": "Você precisa da permissão **\"Gerenciar Servidor\"** pra fazer isso",
+            "insuficcient_args_add": "Você precisa especificar um nome pro cargo e um ID!",
+            "insuficcient_args_remove": "Você precisa especificar um cargo",
+            "add_usage": "**Uso:** `d!roleme --add <nome do cargo> <id do cargo>`\n**Exemplo:** `d!roleme --add lol 358446520334286851`\n\nDica: Você pode pegar o ID do cargo pelo `d!roleids`",
+            "remove_usage": "**Uso:** `d!roleme --remove <nome do cargo>`\n**Exemplo:** `d!roleme --remove lol`",
+            "no_roles": "Esse servidor não tem nenhum cargo no `d!roleme`.",
+            "remove_success": "Eu removi `{0}` dos cargos do `d!roleme`.",
+            "not_roleme": "`{0}` não é um cargo do `d!roleme`.",
+            "no_roleme_roles": "Esse servidor não tem nenhum cargo no `d!roleme`.",
+            "command": "Comando",
+            "role": "Cargo",
+            "heres_a_list": "Aqui está uma lista de cargos disponíveis",
+            "role_give_success": "Te dei o cargo {0}.",
+            "role_remove_success": "Tirei o cargo {0} de você.",
+            "role_give_fail": "Eu não consegui te dar o cargo {0}.",
+            "role_remove_fail": "Eu não consegui tirar o cargo {0} de você.",
+            "please_ask_owner": "Por favor, peça pro dono do servidor verificar minhas permissões."
+        },
+        "roleids": {
+            "_usage": "d!roleids",
+            "_description": "Mostra os IDs dos cargos do servidor.",
+            "role": "Cargo",
+            "id": "ID"
         }
     },
     "usage": "**Uso:**",
