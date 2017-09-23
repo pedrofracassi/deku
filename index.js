@@ -52,7 +52,7 @@ client.on('message', message => {
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed;
   var locale = 'en_US';
-  langdb.get(message.guild.id, function (err, value) {
+  langdb.get(guild.id, function (err, value) {
     if (err) value = 'en_US';
     fs.readFile('./translation/' + value + '.json', 'utf8', function (err, data) {
       if (err) throw err;
