@@ -2,8 +2,6 @@ const utils   = require('../utils.js');
 const config   = require('../config.js');
 const levelup = require('levelup');
 
-var db = levelup('./databases/roleme');
-
 // d!roleme [--add|--remove] <role name> [role id]
 exports.run = function (message, lang, databases) {
   var embed = utils.generateDekuDiv(message);
