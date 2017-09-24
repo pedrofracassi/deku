@@ -110,7 +110,7 @@ exports.run = function (message, lang, databases) {
             }
           } else {
             embed.setColor(config.colors.error);
-            embed.setDescription(lang.command.roleme.not_roleme.replace('{0}', args.join(" ")));
+            embed.setDescription(lang.commands.roleme.not_roleme.replace('{0}', args.join(" ")));
             message.channel.send({embed});
           }
         } else {
