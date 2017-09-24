@@ -1,6 +1,5 @@
 const utils   = require('../utils.js');
 const config   = require('../config.js');
-const levelup = require('levelup');
 
 // d!roleme [--add|--remove] <role name> [role id]
 exports.run = function (message, lang, databases) {
