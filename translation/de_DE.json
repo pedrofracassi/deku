@@ -1,0 +1,118 @@
+{
+    "code": "de_DE",
+    "and": " und ",
+    "server_join": {
+        "hi_im_deku": "Hallo, Ich bin Deku!",
+        "description": "Ich wurde von **pedrofracassi#4623** erschaffen, um dir zu helfen, deine Gilde zu organisieren.\n\nWenn du mehr über mich erfahren möchtest, tippe d!help.\n\n{0} [Füge mich zu deinem Server hinzu]({1}) | [Trete meinem Server bei]({2})"
+    },
+    "commands": {
+        "osu": {
+            "_description": "Zeigt ein osu!-Profil",
+            "_usage": "d!osu <ID oder Nutzername>",
+            "title": "{0}'s profile",
+            "player_doesnt_exist": "Dieser Spieler existiert nicht.",
+            "is_spelled_correctly": "Bitte überprüfe, ob du den Namen des Spielers richtig geschrieben hast.",
+            "specify_player": "Bitte gebe einen Spieler an.",
+            "usage": "**Nutzung:** d!osu <ID oder Nutzername>\n**Beispiel:** d!osu pedrofracassi",
+            "accuracy": "Genauigkeit",
+            "ranked_score": "Geordnete Punktzahl",
+            "total_score": "Gesamtpunktzahl",
+            "level": "Level",
+            "ranks": "Ränge",
+            "performance": "Leistung",
+            "country_ranking": "Länder Ranking",
+            "global_ranking": "Weltweites Ranking",
+            "play_count": "Spielzähler"
+        },
+        "playing": {
+            "_description": "Zeigt, wie viele Menschen ein bestimmtes Spiel im Moment spielen",
+            "_usage": "d!playing <Spiel>",
+            "zero": "Es gibt **niemanden** in dieser gilde, die momentan {0} spielt",
+            "one": "Aktuell spielt in dieser gilde **eine** Person {0}",
+            "more": "Aktuell spielen **{1}** spieler {0}",
+            "error_no_args": "Du musst das spiel angeben!",
+            "usage": "**Nutzung:** `d!playing <Spiel>`\n**Beispiel:** `d!playing Overwatch`"
+        },
+        "setlang": {
+            "_description": "Ändert meine Sprache auf dem Server",
+            "_usage": "d!setlang <Sprache>",
+            "no_args": "Du musst eine Sprache auswählen.",
+            "no_permission": "Du brauchst die **\"Manage Guild\"** Berechtigung, um meine Sprache zu ändern.",
+            "not_supported": "\"{0}\" ist keine unterstützte Sprache.",
+            "usage": "**Nutzung:** `d!setlang <Sprache>`\n**Beispiel:** `d!setlang en_US`\n\n**Unterstützte Sprachen:**\n{0}",
+            "success": "Die Sprache wurde erfolgreich zu `{0}`geändert!"
+        },
+        "botinfo": {
+            "_description": "Zeigt Informationen über mich",
+            "_usage": "d!botinfo",
+            "error_ip": "Es ist ein Fehler beim ermitteln meiner eigenen IP aufgetreten",
+            "error_ip_desc": "Bitte kontaktiere meinen Besitzer, pedrofracassi#4623",
+            "users": "Nutzer",
+            "servers": "Server",
+            "server_location": "Serverstandort",
+            "uptime": "Betriebszeit",
+            "channels": "Kanäle",
+            "ram": "Arbeitsspeicherauslastung",
+            "djs_v": "Discord.js Version"
+        },
+        "lol": {
+            "mastery_points": "Mastery Points",
+            "summoner_level": "Beschwörungslevel",
+            "rankeds": "Eingeordnete",
+            "Region": "Region",
+            "valid_regions": "**Gültige Regionen:**",
+            "summoner_error": "Es ist uns ein Fehler während des Landens von diesem Beschwörerprofil unterlaufen.",
+            "summoner_error_desc": "Bitte kontaktiere meinen Besitzer (pedrofracassi#4623), damit er das Problem beheben kann.",
+            "summoner_region_error": "Du musst einen Beschwörer und eine Region auswählen!",
+            "invalid_region_error": "\"{0}\" ist keine gültige Region!",
+            "error_desc": "**Nutzung:** `d!lol! <Region> <Beschwörer>`\n**Beispiel:** `d!lol br pedrinholuizf`",
+            "error_desc_with_regions": "**Nutzung:** d!lol <Region> <Beschwörer>`\n**Beispiel:** `d!lol br pedrinholuizf`\n\n**Gültige Regionen:**\n{0}.",
+            "no_summoner_error": "Du musst einen Beschwörer auswählen!",
+            "elos": {
+                "UNRANKED": "Nicht eingeordnet",
+                "BRONZE": "Bronze",
+                "SILVER": "Silber",
+                "GOLD": "Gold",
+                "DIAMOND": "Diamant",
+                "MASTER": "Meister",
+                "CHALLENGER": "Herausfordernd",
+                "PLATINUM": "Platin"
+            }
+        },
+        "lmgtfy": {
+            "_description": "Generiert einen \"Let Me Google That For You\" Link",
+            "_usage": "d!lmgtfy <Suchbegriff> [--explain]"
+        },
+        "roleme": {
+            "_description": "Dir wird vom Server eine Rolle zugewiesen.",
+            "_usage": "d!roleme [add|--remove] <Rolle> [Rollen-ID]",
+            "add_success": "{0} wurde zu `d!roleme` als `{1}` hinzugefügt",
+            "id_not_role": "`{0}` ist keine gültige Rolle für diesen Server.",
+            "no_permission": "Du brauchst die **\"Manage Guild\"** Berechtigung, um das zu tun",
+            "insuficcient_args_add": "Du musst einen Rollennamen und eine Rollen-ID spezifizieren.",
+            "insuficcient_args_remove": "Du musst einen Rollennamen spezifizieren!",
+            "add_usage": "**Nutzung:** `d!roleme --add <Rollenname> <Rollen-ID>`\n**Beispiel:** `d!roleme --add lol 358446520334286851`\n\nPro-Tipp: Du kannst die Rollen-IDs mit `d!roleids` abfragen",
+            "remove_usage": "**Nutzung:** `d!romele --remove <Rollenname>`\n**Beispiel:** `d!roleme --remove lol`",
+            "no_roles": "Dieser Server hat keine `d!roleme` Rollen.",
+            "remove_success": "Ich habe `{0}` von den `d!roleme` Rollen entfernt.",
+            "not_roleme": "`{0} ist keine `d!roleme` Rolle.",
+            "no_roleme_roles": "Dieser Server hat keine `d!roleme` Rollen.",
+            "command": "Kommando",
+            "role": "Rolle",
+            "heres_a_list": "Hier ist eine Liste mit den verfügbaren Rollen:",
+            "role_give_success": "Ich habe dir die Rolle {0} gegeben.",
+            "role_remove_success": "Ich habe die Rolle {0} für dich entfernt.",
+            "role_give_fail": "Ich war nicht in der Lage, dir die Rolle {0} zu geben.",
+            "role_remove_fail": "Ich war nicht in der Lage, die Rolle {0} von dir zu entfernen.",
+            "please_ask_owner": "Bitte frag' den Serverbesitzer, um meine Berechtigungen zu überprüfen"
+        },
+        "roleids": {
+            "_usage": "d!roleids",
+            "_description": "Zeigt die IDs von den Rollen des Servers",
+            "role": "Rolle",
+            "id": "ID"
+        }
+    },
+    "usage": "**Nutzung:**",
+    "example": "**Beispiel:**"
+}

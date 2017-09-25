@@ -54,6 +54,65 @@
             "channels": "Kanály",
             "ram": "Využití RAM",
             "djs_v": "Verze Discord.js"
+        },
+        "lol": {
+            "mastery_points": "Body mistrovství",
+            "summoner_level": "Level vyvolávače",
+            "rankeds": "Hodnocené hry",
+            "Region": "Oblast",
+            "valid_regions": "**Platné oblasti:**",
+            "summoner_error": "Nastala chyba při načítání profilu vyvolávače.",
+            "summoner_error_desc": "Prosím, kontaktuj mého majitele (pedrofracassi#4623), aby to opravil",
+            "summoner_region_error": "Musíš specifikovat vyvolávače a oblast!",
+            "invalid_region_error": "\"{0}\" není platná oblast!",
+            "error_desc": "**Použití:** `d!lol <oblast> <vyvolávač>`",
+            "error_desc_with_regions": "**Použití:** `d!lol <oblast> <vyvolávač>`\n**Příklad:** `d!lol eune ShakeThatVulture`\n\n**Platné oblasti:**\n{0}.",
+            "no_summoner_error": "Musíš specifikovat vyvolávače!",
+            "elos": {
+                "UNRANKED": "Nehodnocená hra",
+                "BRONZE": "Bronze",
+                "SILVER": "Silver",
+                "GOLD": "Gold",
+                "DIAMOND": "Diamond",
+                "MASTER": "Master",
+                "CHALLENGER": "Challenger",
+                "PLATINUM": "Platinum"
+            }
+        },
+        "lmgtfy": {
+            "_description": "Generuje \"Let Me Google That For You\" odkaz",
+            "_usage": "d!lmgtfy <hledaný výraz> [--explain]"
+        },
+        "roleme": {
+            "_description": "Dá ti roli ze serveru.",
+            "_usage": "d!roleme [--add|--remove] <role> [ID role]",
+            "add_success": "Přidáno {0} do `d!roleme` jako `{1}`",
+            "id_not_role": "`{0}` není platné ID role na tomto serveru.",
+            "no_permission": "Na tohle potřebuješ právo **Spravovat Server**.",
+            "insuficcient_args_add": "Musíš specifikovat jméno role a ID role!",
+            "insuficcient_args_remove": "Musíš specifikovat jméno role!",
+            "add_usage": "**Použití:** `d!roleme --add <jméno role> <ID role>`\n**Příklad:** `d!roleme --add lol 358446520334286851`\n\nProfesionální tip: ID rolí můžeš získat z d!roleids",
+            "remove_usage": "**Použití:** `d!roleme --remove <jméno role>`\n**Příklad:** `d!roleme --remove lol`",
+            "no_roles": "Tento server nemám `d!roleme` role.",
+            "remove_success": "Vymazal jsem `{0}` z `d!roleme` rolí.",
+            "not_roleme": "`{0}` není `d!roleme` role.",
+            "no_roleme_roles": "Tento server nemá `d!roleme` role.",
+            "command": "Příkaz",
+            "role": "Role",
+            "heres_a_list": "Tady je výpis dostupných rolí:",
+            "role_give_success": "Dal jsem ti roli {0}.",
+            "role_remove_success": "Odebral jsem ti roli {0}:",
+            "role_give_fail": "Nebyl jsem schopen ti dát roli {0}.",
+            "role_remove_fail": "Nebyl jsem schopen ti odebrat roli {0}.",
+            "please_ask_owner": "Prosím, zeptej se majitele serveru aby omrknul moje práva."
+        },
+        "roleids": {
+            "_usage": "d!roleids",
+            "_description": "Ukáže ID všech rolí serveru.",
+            "role": "Role",
+            "id": "ID"
         }
-    }
+    },
+    "usage": "**Použití:**",
+    "example": "**Příklad:**"
 }

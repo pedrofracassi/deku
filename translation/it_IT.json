@@ -54,6 +54,65 @@
             "channels": "Canali",
             "ram": "Utilizzo di RAM",
             "djs_v": "Versione di discord.js"
+        },
+        "lol": {
+            "mastery_points": "Punti maestria",
+            "summoner_level": "Livello evocatore",
+            "rankeds": "Rankeds",
+            "Region": "Regione",
+            "valid_regions": "**Regione valida",
+            "summoner_error": "C'è stato un errore durante l'ottenimento del profilo del giocatore.",
+            "summoner_error_desc": "Per favore contatta il mio creatore(pedrofracassi#4623), in questo modo potrà sistemare l'errore.",
+            "summoner_region_error": "Devi specificare un evocatore ed una regione!",
+            "invalid_region_error": "\"{0}\" non è una regione valida!",
+            "error_desc": "**Utilizzo:** `d!lol <regione> <evocatore>`\n**Esempio:** `d!lol br pedrinholuizf`",
+            "error_desc_with_regions": "**Utilizzo:** `d!lol <regione> <evocatore>`\n**Esempio:** `d!lol br pedrinholuizf`\n\n**Regioni valide:**\n{0}.",
+            "no_summoner_error": "Devi specificare un evocatore!",
+            "elos": {
+                "UNRANKED": "Non classificate",
+                "BRONZE": "Bronzo",
+                "SILVER": "Argento",
+                "GOLD": "Oro",
+                "DIAMOND": "Diamante",
+                "MASTER": "Master",
+                "CHALLENGER": "Challenger",
+                "PLATINUM": "Platino"
+            }
+        },
+        "lmgtfy": {
+            "_description": "Genera un link \"Lasciamelo googlare per te\"",
+            "_usage": "d!lmgtfy <cosa cercare>"
+        },
+        "roleme": {
+            "_description": "Ti dà un ruolo dal server.",
+            "_usage": "d!roleme [--add|--remove] <ruolo> [ID del ruolo]",
+            "add_success": "Ho aggiunto {0} al `d!roleme` di `{1}`",
+            "id_not_role": "`{0}` non è un ruolo valido.",
+            "no_permission": "Ti serve il permesso **\"Manage Guild**\" per farlo.",
+            "insuficcient_args_add": "Devi specificare il nome del ruolo ed il suo ID!",
+            "insuficcient_args_remove": "Devi specificare il nome del ruolo!",
+            "add_usage": "**Utilizzo:** `d!roleme --add <nome del ruolo> <id del ruolo>`\n**Example:** `d!roleme --add lol 358446520334286851`\n\nConsiglio: Puoi ottenere i vari ID tramite d!roleids",
+            "remove_usage": "**Utilizzo:** `d!roleme --remove <nome del ruolo>`\n**Esempio:** `d!roleme --remove lol`",
+            "no_roles": "Questo server non ha ruoli `d!roleme`",
+            "remove_success": "Ho rimosso `{0}` dai ruoli `d!roleme`",
+            "not_roleme": "`{0}` non è un ruolo `d!roleme`.",
+            "no_roleme_roles": "Questo server non ha ruoli `d!roleme`\n",
+            "command": "Comando",
+            "role": "Ruolo",
+            "heres_a_list": "Ecco una lista dei ruoli disponibili:",
+            "role_give_success": "Ti ho dato il ruolo {0}.",
+            "role_remove_success": "Ti ho rimosso dal ruolo {0}.",
+            "role_give_fail": "Non sono riuscito a darti il ruolo {0}.",
+            "role_remove_fail": "Non sono riuscito a rimuoverti il ruolo {0}.",
+            "please_ask_owner": "Per favore chiedi al creatore del server di controllare i miei permessi.\n"
+        },
+        "roleids": {
+            "_usage": "d!roleids",
+            "_description": "Mostra gli ID dei ruoli del server.",
+            "role": "Ruolo",
+            "id": "ID"
         }
-    }
+    },
+    "usage": "**Utilizzo**",
+    "example": "**Esempio**"
 }

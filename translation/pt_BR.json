@@ -54,6 +54,65 @@
             "channels": "Canais",
             "ram": "Uso de RAM",
             "djs_v": "Versão do Discord.js"
+        },
+        "lol": {
+            "mastery_points": "Pontos de Maestria",
+            "summoner_level": "Nível de Invocador",
+            "rankeds": "Ranqueadas",
+            "Region": "Região",
+            "valid_regions": "**Regiões Válidas:**",
+            "summoner_error": "Houve um erro ao baixar o perfil desse invocador.",
+            "summoner_error_desc": "Por favor, entre em contato com o meu dono (pedrofracassi#4623) pra que ele possa arrumar isso.",
+            "summoner_region_error": "Você tem que especificar um invocador e uma região!",
+            "invalid_region_error": "\"{0}\" não é uma região válida!",
+            "error_desc": "**Uso:** `d!lol <região> <invocador>`\n**Exemplo:** `d!lol br pedrinholuizf`",
+            "error_desc_with_regions": "**Uso:** `d!lol <região> <invocador>`\n**Exemplo:** `d!lol br pedrinholuizf`\n\n**Regiões válidas:**\n{0}.",
+            "no_summoner_error": "Você precisa especificar um invocador!",
+            "elos": {
+                "UNRANKED": "Unranked",
+                "BRONZE": "Bronze",
+                "SILVER": "Prata",
+                "GOLD": "Ouro",
+                "DIAMOND": "Diamante",
+                "MASTER": "Mestre",
+                "CHALLENGER": "Challenger",
+                "PLATINUM": "Platina"
+            }
+        },
+        "lmgtfy": {
+            "_description": "Gera um link do Let Me Google That For You",
+            "_usage": "d!lmgtfy <termo a ser pesquisado> [--explain]"
+        },
+        "roleme": {
+            "_description": "Te dá um cargo do servidor.",
+            "_usage": "d!roleme [--add|--remove] <cargo> <ID do cargo>",
+            "add_success": "Adicionei {0} ao `d!roleme`como `{1}`",
+            "id_not_role": "`{0}` não é um ID de cargo válido nesse servidor.",
+            "no_permission": "Você precisa da permissão **\"Gerenciar Servidor\"** pra fazer isso",
+            "insuficcient_args_add": "Você precisa especificar um nome pro cargo e um ID!",
+            "insuficcient_args_remove": "Você precisa especificar um cargo",
+            "add_usage": "**Uso:** `d!roleme --add <nome do cargo> <id do cargo>`\n**Exemplo:** `d!roleme --add lol 358446520334286851`\n\nDica: Você pode pegar o ID do cargo pelo `d!roleids`",
+            "remove_usage": "**Uso:** `d!roleme --remove <nome do cargo>`\n**Exemplo:** `d!roleme --remove lol`",
+            "no_roles": "Esse servidor não tem nenhum cargo no `d!roleme`.",
+            "remove_success": "Eu removi `{0}` dos cargos do `d!roleme`.",
+            "not_roleme": "`{0}` não é um cargo do `d!roleme`.",
+            "no_roleme_roles": "Esse servidor não tem nenhum cargo no `d!roleme`.",
+            "command": "Comando",
+            "role": "Cargo",
+            "heres_a_list": "Aqui está uma lista de cargos disponíveis",
+            "role_give_success": "Te dei o cargo {0}.",
+            "role_remove_success": "Tirei o cargo {0} de você.",
+            "role_give_fail": "Eu não consegui te dar o cargo {0}.",
+            "role_remove_fail": "Eu não consegui tirar o cargo {0} de você.",
+            "please_ask_owner": "Por favor, peça pro dono do servidor verificar minhas permissões."
+        },
+        "roleids": {
+            "_usage": "d!roleids",
+            "_description": "Mostra os IDs dos cargos do servidor.",
+            "role": "Cargo",
+            "id": "ID"
         }
-    }
+    },
+    "usage": "**Uso:**",
+    "example": "**Exemplo:**"
 }

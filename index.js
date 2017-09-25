@@ -6,7 +6,10 @@ const utils   = require('./utils.js');
 const fs      = require('fs');
 const levelup = require('levelup');
 
-var langdb = levelup('./databases/language');
+var databases = {
+  roleme_config: levelup('./databases/roleme'),
+  language_config: levelup('./databases/language')
+}
 
 // Express Server for /docs testing
 //   const website = require('./website.js');
@@ -29,18 +32,17 @@ client.on('message', message => {
     var command = message.content.match(expression)[1];
     var strings;
     if (utils.commandExists(command)) {
-      langdb.get(message.guild.id, function (err, value) {
+      databases.language_config.get(message.guild.id, function (err, value) {
         if (err) value = 'en_US';
         fs.readFile('./translation/' + value + '.json', 'utf8', function (err, data) {
           if (err) throw err;
           strings = JSON.parse(data);
-          console.log(strings);
           if (strings.commands[command]) {
-            utils.runCommand(command, message, strings, langdb);
+            utils.runCommand(command, message, strings, databases);
           } else {
             fs.readFile('./translation/en_US.json', 'utf8', function (err, data) {
               strings = JSON.parse(data);
-              utils.runCommand(command, message, strings, langdb);
+              utils.runCommand(command, message, strings, databases);
             });
           }
         });
@@ -52,7 +54,11 @@ client.on('message', message => {
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed;
   var locale = 'en_US';
+<<<<<<< HEAD
   langdb.get(guild.id, function (err, value) {
+=======
+  databases.language_config.get(message.guild.id, function (err, value) {
+>>>>>>> translate
     if (err) value = 'en_US';
     fs.readFile('./translation/' + value + '.json', 'utf8', function (err, data) {
       if (err) throw err;

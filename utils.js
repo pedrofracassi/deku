@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const config = require('./config.js');
 
 module.exports = {
+  expression: /^\w+\!(\w+) *(.*)/,
   commandExists: function(command) {
     try {
       let commandFile = require('./commands/' + command);
@@ -11,9 +12,9 @@ module.exports = {
       return false;
     }
   },
-  runCommand: function(command, message, lang, langdb) {
+  runCommand: function(command, message, lang, databases) {
     try {
-      require('./commands/' + command).run(message, lang, langdb);
+      require('./commands/' + command).run(message, lang, databases);
     } catch (e) {
       console.log(e);
     }

@@ -54,6 +54,65 @@
             "channels": "Canais",
             "ram": "Utilização de RAM",
             "djs_v": "Versão do Discord.js"
+        },
+        "lol": {
+            "mastery_points": "Pontos de Mastery",
+            "summoner_level": "Nivel de Campeão",
+            "rankeds": "Rankeds",
+            "Region": "Região",
+            "valid_regions": "**Regiões Válidas:**",
+            "summoner_error": "Houve um erro a obter o perfil do campeão.",
+            "summoner_error_desc": "Por favor contacta o meu dono (pedrofracassi#4623) para ele tratar disto.",
+            "summoner_region_error": "Tens de dizer um campeão e uma região!",
+            "invalid_region_error": "\"{0}\" não é uma região válida!",
+            "error_desc": "**Utilização:** `d!lol <região> <campeão>`\n**Exemplo:** `d!lol br pedrinholuizf`",
+            "error_desc_with_regions": "**Utilização:** `d!lol <região> <campeão>`\n**Exemplo:** `d!lol br pedrinholuizf`\n\n**Regiões Válidas:**\n{0}",
+            "no_summoner_error": "Tens de dizer um campeão!",
+            "elos": {
+                "UNRANKED": "Sem rank",
+                "BRONZE": "Bronze",
+                "SILVER": "Prata",
+                "GOLD": "Ouro",
+                "DIAMOND": "Diamante",
+                "MASTER": "Master",
+                "CHALLENGER": "Challenger",
+                "PLATINUM": "PLATINA"
+            }
+        },
+        "lmgtfy": {
+            "_description": "Gera um link \"Let Me Google That For You\"",
+            "_usage": "d!lmgtfy <termo de pesquisa> [--explain]"
+        },
+        "roleme": {
+            "_description": "Dá-te uma role do servidor.",
+            "_usage": "d!roleme [--add|--remove] <role> [ID da role]",
+            "add_success": "Adicionado {0} ao `d!roleme` como `{1}`",
+            "id_not_role": "`{0}` não é um ID de role válido para este servidor.",
+            "no_permission": "Precisas da permissão **\"Manage Guild\"** para fazer isso.",
+            "insuficcient_args_add": "Precisas de dizer um nome de role e uma ID!",
+            "insuficcient_args_remove": "Precisas de dizer um nome de role!",
+            "add_usage": "**Utilização:** `d!roleme --add <nome da role> <id da role>`\n**Exemplo:** `d!roleme --add lol 358446520334286851`\n\nDica: Podes obter ID's das roles com `d!roleids`",
+            "remove_usage": "**Utilização:** `d!roleme --remove <nome da role>`\n**Exemplo:** `d!roleme --remove lol`",
+            "no_roles": "Este servidor não tem roles no `d!roleme`",
+            "remove_success": "Removi `{0}` das roles no `d!roleme`",
+            "not_roleme": "`{0}` não é uma role no `d!roleme`",
+            "no_roleme_roles": "Este servidor não tem roles no `d!roleme`",
+            "command": "Comando",
+            "role": "Role",
+            "heres_a_list": "Aqui está uma lista de roles disponíveis:",
+            "role_give_success": "Dei-te a role {0}.",
+            "role_remove_success": "Removi-te a role {0}.",
+            "role_give_fail": "Não consegui dar-te a role {0}.",
+            "role_remove_fail": "Não consegui tirar-te a role {0}.",
+            "please_ask_owner": "Por favor pede ao dono do servidor para ver as minhas permissões."
+        },
+        "roleids": {
+            "_usage": "d!roleids",
+            "_description": "Mostra os ID's das roles do servidor",
+            "role": "Role",
+            "id": "ID"
         }
-    }
+    },
+    "usage": "**Utilização:**",
+    "example": "**Exemplo:**"
 }
