@@ -20,7 +20,7 @@ module.exports = {
       embed.setDescription(text);
     } else {
       embed.setColor(config.colors.error);
-      embed.addField(lang.playing.error_no_args, lang.playing.usage);
+      embed.addField(lang.commands.playing.error_no_args, lang.commands.playing.usage);
     }
     message.channel.send({embed});
   }
