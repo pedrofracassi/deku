@@ -111,6 +111,13 @@
             "_description": "Shows the IDs of the server's roles",
             "role": "Role",
             "id": "ID"
+        },
+        "npm": {
+          "_usage": "d!npm <package name>",
+          "_example": "d!npm discord.js",
+          "no_args": "You need to specify a package name.",
+          "package_not_found": "I couldn't find a npm package by that name.",
+          "package_not_found_desc": "Please check if you spelled it correctly."
         }
     },
     "usage": "**Usage:**",
