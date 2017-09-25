@@ -75,8 +75,42 @@
                 "GOLD": "Oro",
                 "DIAMOND": "Diamante",
                 "MASTER": "Master",
-                "CHALLENGER": "Challenger"
+                "CHALLENGER": "Challenger",
+                "PLATINUM": "Platino"
             }
+        },
+        "lmgtfy": {
+            "_description": "Genera un link \"Lasciamelo googlare per te\"",
+            "_usage": "d!lmgtfy <cosa cercare>"
+        },
+        "roleme": {
+            "_description": "Ti dà un ruolo dal server.",
+            "_usage": "d!roleme [--add|--remove] <ruolo> [ID del ruolo]",
+            "add_success": "Ho aggiunto {0} al `d!roleme` di `{1}`",
+            "id_not_role": "`{0}` non è un ruolo valido.",
+            "no_permission": "Ti serve il permesso **\"Manage Guild**\" per farlo.",
+            "insuficcient_args_add": "Devi specificare il nome del ruolo ed il suo ID!",
+            "insuficcient_args_remove": "Devi specificare il nome del ruolo!",
+            "add_usage": "**Utilizzo:** `d!roleme --add <nome del ruolo> <id del ruolo>`\n**Example:** `d!roleme --add lol 358446520334286851`\n\nConsiglio: Puoi ottenere i vari ID tramite d!roleids",
+            "remove_usage": "**Utilizzo:** `d!roleme --remove <nome del ruolo>`\n**Esempio:** `d!roleme --remove lol`",
+            "no_roles": "Questo server non ha ruoli `d!roleme`",
+            "remove_success": "Ho rimosso `{0}` dai ruoli `d!roleme`",
+            "not_roleme": "`{0}` non è un ruolo `d!roleme`.",
+            "no_roleme_roles": "Questo server non ha ruoli `d!roleme`\n",
+            "command": "Comando",
+            "role": "Ruolo",
+            "heres_a_list": "Ecco una lista dei ruoli disponibili:",
+            "role_give_success": "Ti ho dato il ruolo {0}.",
+            "role_remove_success": "Ti ho rimosso dal ruolo {0}.",
+            "role_give_fail": "Non sono riuscito a darti il ruolo {0}.",
+            "role_remove_fail": "Non sono riuscito a rimuoverti il ruolo {0}.",
+            "please_ask_owner": "Per favore chiedi al creatore del server di controllare i miei permessi.\n"
+        },
+        "roleids": {
+            "_usage": "d!roleids",
+            "_description": "Mostra gli ID dei ruoli del server.",
+            "role": "Ruolo",
+            "id": "ID"
         }
     },
     "usage": "**Utilizzo**",
