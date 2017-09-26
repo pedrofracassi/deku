@@ -32,7 +32,7 @@ client.on('message', message => {
     var command = message.content.match(expression)[1];
     var strings;
     if (utils.commandExists(command)) {
-      databases.language_config.get(message.guild.id, function (err, value) {
+      databases.language_config.get(guild.id, function (err, value) {
         if (err) value = 'en_US';
         fs.readFile('./translation/' + value + '.json', 'utf8', function (err, data) {
           if (err) throw err;
