@@ -77,7 +77,8 @@
                 "MASTER": "Mestre",
                 "CHALLENGER": "Challenger",
                 "PLATINUM": "Platina"
-            }
+            },
+            "best_champion": "Melhor Campeão"
         },
         "lmgtfy": {
             "_description": "Gera um link do Let Me Google That For You",

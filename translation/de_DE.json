@@ -77,7 +77,8 @@
                 "MASTER": "Meister",
                 "CHALLENGER": "Herausfordernd",
                 "PLATINUM": "Platin"
-            }
+            },
+            "best_champion": "Bester Champion"
         },
         "lmgtfy": {
             "_description": "Generiert einen \"Let Me Google That For You\" Link",
@@ -111,6 +112,13 @@
             "_description": "Zeigt die IDs von den Rollen des Servers",
             "role": "Rolle",
             "id": "ID"
+        },
+        "npm": {
+            "_usage": "d!npm <paketnamen>",
+            "_example": "d!npm discord.js",
+            "no_args": "Du musst einen Paketnamen angeben.",
+            "package_not_found": "Ich konnte kein npm Paket unter diesen Namen finden.",
+            "package_not_found_desc": "Bitte kontrolliere, ob du es korrekt geschrieben hast."
         }
     },
     "usage": "**Nutzung:**",
