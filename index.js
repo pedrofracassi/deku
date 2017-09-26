@@ -32,7 +32,7 @@ client.on('message', message => {
     var command = message.content.match(expression)[1];
     var strings;
     if (utils.commandExists(command)) {
-      databases.language_config.get(guild.id, function (err, value) {
+      databases.language_config.get(message.guild.id, function (err, value) {
         if (err) value = 'en_US';
         fs.readFile('./translation/' + value + '.json', 'utf8', function (err, data) {
           if (err) throw err;
@@ -54,7 +54,7 @@ client.on('message', message => {
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed;
   var locale = 'en_US';
-  databases.language_config.get(message.guild.id, function (err, value) {
+  databases.language_config.get(guild.id, function (err, value) {
     if (err) value = 'en_US';
     fs.readFile('./translation/' + value + '.json', 'utf8', function (err, data) {
       if (err) throw err;
