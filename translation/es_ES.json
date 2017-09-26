@@ -75,8 +75,42 @@
                 "GOLD": "Oro",
                 "DIAMOND": "Diamante",
                 "MASTER": "Dominador",
-                "CHALLENGER": "Desafiador"
+                "CHALLENGER": "Desafiador",
+                "PLATINUM": "Platinio"
             }
+        },
+        "lmgtfy": {
+            "_description": "Genera un vínculo \"Let Me Google That For You\"",
+            "_usage": "d!lmgtfy <término de búsqueda> [--explique]"
+        },
+        "roleme": {
+            "_description": "Te da un rol del servidor.",
+            "_usage": "d!roleme [--add|--remove] <rol> [ID del rol]",
+            "add_success": "Se ha añadido {0} a `d!roleme` como `{1}`",
+            "id_not_role": "`{0}`no es un ID de función válido para este servidor.",
+            "no_permission": "Necesita el permiso **\"Manage Guild**\" para hacer esto",
+            "insuficcient_args_add": "¡Debe especificar un nombre de función y un ID de función!",
+            "insuficcient_args_remove": "¡Debe especificar un nombre de rol!",
+            "add_usage": "**Uso:** `d!roleme --add <nombre del rol> <id del rol>`\n**Ejemplo:** `d!roleme --add lol 358446520334286851`\n\nSugerencia profesional: puede obtener los ID de función de `d!roleids`",
+            "remove_usage": "**Uso:** `d!roleme --remove <nombre del rol>`\n**Ejemplo:** `d!roleme --remove lol`",
+            "no_roles": "Este servidor no tiene `d!roleme` roles.",
+            "remove_success": "Eliminé `{0}` de los roles `d!roleme`.",
+            "not_roleme": "`{0}` no es un `d!roleme` rol.",
+            "no_roleme_roles": "Este servidor no tiene `d!roleme` roles.",
+            "command": "Comando",
+            "role": "Rol",
+            "heres_a_list": "Aquí está la lista de los roles disponibles:",
+            "role_give_success": "Te di el rol {0}.",
+            "role_remove_success": "Quité el rol {0} de ti.",
+            "role_give_fail": "No pude darle el rol {0}.",
+            "role_remove_fail": "No te pude eliminar el rol {0}.",
+            "please_ask_owner": "Solicite al propietario del servidor que verifique mis permisos."
+        },
+        "roleids": {
+            "_usage": "d!roleids",
+            "_description": "Muestra los ID de las funciones del servidor",
+            "role": "Rol",
+            "id": "ID"
         }
     },
     "usage": "**Uso:**",

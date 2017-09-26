@@ -1,6 +1,6 @@
 {
     "code": "de_DE",
-    "and": "␣und ",
+    "and": " und ",
     "server_join": {
         "hi_im_deku": "Hallo, Ich bin Deku!",
         "description": "Ich wurde von **pedrofracassi#4623** erschaffen, um dir zu helfen, deine Gilde zu organisieren.\n\nWenn du mehr über mich erfahren möchtest, tippe d!help.\n\n{0} [Füge mich zu deinem Server hinzu]({1}) | [Trete meinem Server bei]({2})"
@@ -54,6 +54,65 @@
             "channels": "Kanäle",
             "ram": "Arbeitsspeicherauslastung",
             "djs_v": "Discord.js Version"
+        },
+        "lol": {
+            "mastery_points": "Mastery Points",
+            "summoner_level": "Beschwörungslevel",
+            "rankeds": "Eingeordnete",
+            "Region": "Region",
+            "valid_regions": "**Gültige Regionen:**",
+            "summoner_error": "Es ist uns ein Fehler während des Landens von diesem Beschwörerprofil unterlaufen.",
+            "summoner_error_desc": "Bitte kontaktiere meinen Besitzer (pedrofracassi#4623), damit er das Problem beheben kann.",
+            "summoner_region_error": "Du musst einen Beschwörer und eine Region auswählen!",
+            "invalid_region_error": "\"{0}\" ist keine gültige Region!",
+            "error_desc": "**Nutzung:** `d!lol! <Region> <Beschwörer>`\n**Beispiel:** `d!lol br pedrinholuizf`",
+            "error_desc_with_regions": "**Nutzung:** d!lol <Region> <Beschwörer>`\n**Beispiel:** `d!lol br pedrinholuizf`\n\n**Gültige Regionen:**\n{0}.",
+            "no_summoner_error": "Du musst einen Beschwörer auswählen!",
+            "elos": {
+                "UNRANKED": "Nicht eingeordnet",
+                "BRONZE": "Bronze",
+                "SILVER": "Silber",
+                "GOLD": "Gold",
+                "DIAMOND": "Diamant",
+                "MASTER": "Meister",
+                "CHALLENGER": "Herausfordernd",
+                "PLATINUM": "Platin"
+            }
+        },
+        "lmgtfy": {
+            "_description": "Generiert einen \"Let Me Google That For You\" Link",
+            "_usage": "d!lmgtfy <Suchbegriff> [--explain]"
+        },
+        "roleme": {
+            "_description": "Dir wird vom Server eine Rolle zugewiesen.",
+            "_usage": "d!roleme [add|--remove] <Rolle> [Rollen-ID]",
+            "add_success": "{0} wurde zu `d!roleme` als `{1}` hinzugefügt",
+            "id_not_role": "`{0}` ist keine gültige Rolle für diesen Server.",
+            "no_permission": "Du brauchst die **\"Manage Guild\"** Berechtigung, um das zu tun",
+            "insuficcient_args_add": "Du musst einen Rollennamen und eine Rollen-ID spezifizieren.",
+            "insuficcient_args_remove": "Du musst einen Rollennamen spezifizieren!",
+            "add_usage": "**Nutzung:** `d!roleme --add <Rollenname> <Rollen-ID>`\n**Beispiel:** `d!roleme --add lol 358446520334286851`\n\nPro-Tipp: Du kannst die Rollen-IDs mit `d!roleids` abfragen",
+            "remove_usage": "**Nutzung:** `d!romele --remove <Rollenname>`\n**Beispiel:** `d!roleme --remove lol`",
+            "no_roles": "Dieser Server hat keine `d!roleme` Rollen.",
+            "remove_success": "Ich habe `{0}` von den `d!roleme` Rollen entfernt.",
+            "not_roleme": "`{0} ist keine `d!roleme` Rolle.",
+            "no_roleme_roles": "Dieser Server hat keine `d!roleme` Rollen.",
+            "command": "Kommando",
+            "role": "Rolle",
+            "heres_a_list": "Hier ist eine Liste mit den verfügbaren Rollen:",
+            "role_give_success": "Ich habe dir die Rolle {0} gegeben.",
+            "role_remove_success": "Ich habe die Rolle {0} für dich entfernt.",
+            "role_give_fail": "Ich war nicht in der Lage, dir die Rolle {0} zu geben.",
+            "role_remove_fail": "Ich war nicht in der Lage, die Rolle {0} von dir zu entfernen.",
+            "please_ask_owner": "Bitte frag' den Serverbesitzer, um meine Berechtigungen zu überprüfen"
+        },
+        "roleids": {
+            "_usage": "d!roleids",
+            "_description": "Zeigt die IDs von den Rollen des Servers",
+            "role": "Rolle",
+            "id": "ID"
         }
-    }
+    },
+    "usage": "**Nutzung:**",
+    "example": "**Beispiel:**"
 }
