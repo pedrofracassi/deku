@@ -77,7 +77,8 @@
                 "MASTER": "Master",
                 "CHALLENGER": "Challenger",
                 "PLATINUM": "Platinum"
-            }
+            },
+            "best_champion": "Nejlepší šampion"
         },
         "lmgtfy": {
             "_description": "Generuje \"Let Me Google That For You\" odkaz",
@@ -111,6 +112,13 @@
             "_description": "Ukáže ID všech rolí serveru.",
             "role": "Role",
             "id": "ID"
+        },
+        "npm": {
+            "_usage": "d!npm <jméno balíčku>",
+            "_example": "d!npm discord.js",
+            "no_args": "Musíš specifikovat jméno balíčku.",
+            "package_not_found": "Nemohl jsem najít npm balíček s tímto jménem.",
+            "package_not_found_desc": "Prosím, zkontroluj jestli jsi to napsal správně."
         }
     },
     "usage": "**Použití:**",

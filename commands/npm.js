@@ -19,13 +19,14 @@ exports.run = function (message, lang) {
         embed.setTitle(lang.commands.npm.package_not_found);
         embed.setDescription(`${lang.commands.npm.package_not_found_desc}\n\n${lang.usage} \`${lang.commands.npm. _usage}\`\n${lang.example} \`${lang.commands.npm._example}\``);
       }
+      message.channel.stopTyping();
       message.channel.send({embed});
-      message.channel.startTyping();
     });
   } else {
     embed.setColor(config.colors.error);
     embed.setTitle(lang.commands.npm.no_args);
     embed.setDescription(`\u200b\n${lang.usage} \`${lang.commands.npm. _usage}\`\n${lang.example} \`${lang.commands.npm._example}\``);
+    message.channel.stopTyping();
     message.channel.send({embed});
   }
 };
