@@ -13,6 +13,7 @@ module.exports = {
     }
   },
   runCommand: function(command, message, lang, databases) {
+    if (message.channel.type != 'text') return;
     try {
       require('./commands/' + command).run(message, lang, databases);
     } catch (e) {
