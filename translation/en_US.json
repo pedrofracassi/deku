@@ -81,7 +81,9 @@
             "best_champion": "Best Champion"
         },
         "lmgtfy": {
+            "no_question": "You need to specify the question you want me to generate a link for.",
             "_description": "Generates a \"Let Me Google That For You\" link",
+            "_example": "d!lmgtfy How to download Discord Canary --explain",
             "_usage": "d!lmgtfy <search term> [--explain]"
         },
         "roleme": {
