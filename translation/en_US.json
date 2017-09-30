@@ -123,6 +123,15 @@
             "no_args": "You need to specify a package name.",
             "package_not_found": "I couldn't find a npm package by that name.",
             "package_not_found_desc": "Please check if you spelled it correctly."
+        },
+        "suggestion": {
+          "_usage": "d!suggestion <your suggestion>",
+          "_example": "d!suggestion Add a command that shows me waifus",
+          "_description": "Sends a suggestion to my developer",
+          "no_suggestion": "You need to suggest something!",
+          "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
+          "trello_error_desc": "Please contact my owner or try again later.",
+          "card_add_success": "I've added your suggestion to my Trello board."
         }
     },
     "usage": "**Usage:**",
