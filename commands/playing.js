@@ -11,11 +11,11 @@ module.exports = {
       var count = message.guild.members.filter(m => {if(m.user.presence.game){ if(m.user.presence.game.name.toLowerCase() == game.toLowerCase()){return true;}}}).size;
       var text = '';
       if (count == 0) {
-        text = lang.playing.zero.replace('{0}', game);
+        text = lang.commands.playing.zero.replace('{0}', game);
       } else if (count == 1) {
-        text = lang.playing.one.replace('{0}', game);
+        text = lang.commands.playing.one.replace('{0}', game);
       } else {
-        text = lang.playing.more.replace('{0}', game).replace('{1}', count);
+        text = lang.commands.playing.more.replace('{0}', game).replace('{1}', count);
       }
       embed.setDescription(text);
     } else {

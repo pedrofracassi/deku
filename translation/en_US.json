@@ -56,6 +56,9 @@
             "djs_v": "Discord.js Version"
         },
         "lol": {
+            "_description": "Shows information about a League of Legends summoner",
+            "_usage": "d!lol <region> <summoner>",
+            "best_champion": "Best Champion",
             "mastery_points": "Mastery Points",
             "summoner_level": "Summoner Level",
             "rankeds": "Rankeds",
@@ -118,6 +121,7 @@
         "npm": {
             "_usage": "d!npm <package name>",
             "_example": "d!npm discord.js",
+            "_description": "Shows information about a npm package",
             "no_args": "You need to specify a package name.",
             "package_not_found": "I couldn't find a npm package by that name.",
             "package_not_found_desc": "Please check if you spelled it correctly."
@@ -165,6 +169,15 @@
         "avatar": {
           "own_picture": "here's your profile picture:",
           "someones_picture": "here's **{0}**'s profile picture:"
+        },
+        "suggestion": {
+          "_usage": "d!suggestion <your suggestion>",
+          "_example": "d!suggestion Add a command that shows me waifus",
+          "_description": "Sends a suggestion to my developer",
+          "no_suggestion": "You need to suggest something!",
+          "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
+          "trello_error_desc": "Please contact my owner or try again later.",
+
         }
     },
     "usage": "**Usage:**",

@@ -6,6 +6,14 @@ const utils   = require('./utils.js');
 const fs      = require('fs');
 const levelup = require('levelup');
 
+var aaaaa = [
+  'https://68.media.tumblr.com/fd6fe86504873748f4c144165150e92b/tumblr_inline_ot9khjqUeW1qmvdcs_540.jpg',
+  'https://i.redd.it/03uix203ymqy.png',
+  'https://i.imgur.com/rBoud0V.png',
+  'https://i.imgur.com/ZTGX4FW.jpg',
+  'https://i.imgur.com/h7O77r8.jpg'
+]
+
 var databases = {
   roleme_config: levelup('./databases/roleme'),
   language_config: levelup('./databases/language')
@@ -49,12 +57,16 @@ client.on('message', message => {
       })
     }
   }
+
+  if (message.content.toLowerCase().startsWith('aaaaaaaaaaaaaaa')) {
+    message.channel.send(aaaaa[Math.floor(Math.random() * aaaaa.length)]);
+  }
 })
 
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed;
   var locale = 'en_US';
-  databases.language_config.get(message.guild.id, function (err, value) {
+  databases.language_config.get(guild.id, function (err, value) {
     if (err) value = 'en_US';
     fs.readFile('./translation/' + value + '.json', 'utf8', function (err, data) {
       if (err) throw err;
