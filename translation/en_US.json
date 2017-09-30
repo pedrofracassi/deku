@@ -156,6 +156,15 @@
           "emojis": "Emojis",
           "roles": "Roles",
           "id": "ID"
+        },
+        "stoptyping": {
+          "_description": "Use this if I'm typing forever",
+          "_usage": "d!stoptyping",
+          "trying_to_stop": "trying to stop typing..."
+        },
+        "avatar": {
+          "own_picture": "here's your profile picture:",
+          "someones_picture": "here's **{0}**'s profile picture:"
         }
     },
     "usage": "**Usage:**",

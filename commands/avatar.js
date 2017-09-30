@@ -1,9 +1,11 @@
+const cmdName = 'avatar';
+
 module.exports = {
-  run: function(message) {
+  run: function(message, lang) {
     if(message.mentions.members.size >= 1) {
-      message.reply('here\'s **'+message.mentions.members.first().displayName+'\'s** profile picture:\n' + message.mentions.members.first().user.avatarURL);
+      message.reply(lang.commands[cmdName].someones_picture.replace('{0}', message.mentions.members.first().displayName) + '\n' + message.mentions.members.first().user.avatarURL);
     } else {
-      message.reply('here\'s your profile picture:\n' + message.author.avatarURL);
+      message.reply(lang.commands[cmdName].own_picture + '\n' + message.author.avatarURL);
     }
   }
 };
