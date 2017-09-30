@@ -133,6 +133,29 @@
           "most_played": "Most played games",
           "line_singular": "`#{0}` with `{1}` player: **{2}**",
           "line_plural": "`#{0}` with `{1}` players: **{2}**"
+        },
+        "serverinfo": {
+          "regions": {
+            "brazil": ":flag_br: Brazil",
+            "eu-central": ":flag_eu: EU Central",
+            "hongkong": ":flag_hk: Hongkong",
+            "us-central": ":flag_us: US Central",
+            "us-east": ":flag_us: US East",
+            "us-south": ":flag_us: US South",
+            "us-west": ":flag_us: US West",
+            "russia": ":flag_ru: Russia",
+            "sydney": ":flag_au: Sydney",
+            "eu-west": ":flag_eu: Western Europe"
+          },
+          "_description": "Shows information about the server",
+          "_usage": "d!serverinfo",
+          "name": "Name",
+          "members": "Members",
+          "owner": "Owner",
+          "region": "Region",
+          "emojis": "Emojis",
+          "roles": "Roles",
+          "id": "ID"
         }
     },
     "usage": "**Usage:**",
