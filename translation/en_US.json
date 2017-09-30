@@ -176,8 +176,7 @@
           "_description": "Sends a suggestion to my developer",
           "no_suggestion": "You need to suggest something!",
           "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
-          "trello_error_desc": "Please contact my owner or try again later.",
-
+          "trello_error_desc": "Please contact my owner or try again later."
         }
     },
     "usage": "**Usage:**",
