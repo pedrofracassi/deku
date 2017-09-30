@@ -21,7 +21,7 @@ module.exports = {
         if (user) {
           if (user.level == null) {
             embed.setColor(config.colors.error);
-            embed.setTitle(lang.commands.osu.weird_error, lang.commands.osu.not_our_fault.replace('{0}', 'osu.ppy.sh/u/' + encodeURI(username)));
+            embed.addField(lang.commands.osu.weird_error, lang.commands.osu.not_our_fault.replace('{0}', 'osu.ppy.sh/u/' + encodeURI(username)));
             message.channel.send({embed});
             return;
           } else {
