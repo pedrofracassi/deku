@@ -22,7 +22,9 @@
             "performance": "Performance",
             "country_ranking": "Country Ranking",
             "global_ranking": "Global Ranking",
-            "play_count": "Play Count"
+            "play_count": "Play Count",
+            "weird_error": "The osu! API returned null values for this account.",
+            "not_our_fault": "This is not my fault, it's ppy's.\n\n[You can still check the profile on the website if you want to.]({0})"
         },
         "playing": {
             "_description": "Shows how many people are playing a certain game at the moment",
