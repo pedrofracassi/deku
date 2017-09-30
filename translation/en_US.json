@@ -121,6 +121,11 @@
             "no_args": "You need to specify a package name.",
             "package_not_found": "I couldn't find a npm package by that name.",
             "package_not_found_desc": "Please check if you spelled it correctly."
+        },
+        "help": {
+          "check_dm": "Check your private messages, I've sent you my command list there.",
+          "_description": "Sends you a private message with all of my commands",
+          "_usage": "d!help",
         }
     },
     "usage": "**Usage:**",
