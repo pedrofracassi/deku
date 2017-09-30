@@ -56,6 +56,8 @@
             "djs_v": "Discord.js Version"
         },
         "lol": {
+            "_description": "Shows information about a League of Legends summoner",
+            "_usage": "d!lol <region> <summoner>",
             "best_champion": "Best Champion",
             "mastery_points": "Mastery Points",
             "summoner_level": "Summoner Level",
@@ -117,6 +119,7 @@
         "npm": {
             "_usage": "d!npm <package name>",
             "_example": "d!npm discord.js",
+            "_description": "Shows information about a npm package",
             "no_args": "You need to specify a package name.",
             "package_not_found": "I couldn't find a npm package by that name.",
             "package_not_found_desc": "Please check if you spelled it correctly."
