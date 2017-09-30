@@ -3,7 +3,6 @@ const utils = require('../utils.js');
 
 module.exports = {
   run: function(message) {
-    if (message.channel.type != 'text') return;
     var guild = message.guild;
     var embed = utils.generateDekuDiv(message);
     var regions = {
