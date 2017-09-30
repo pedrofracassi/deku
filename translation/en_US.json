@@ -125,7 +125,14 @@
         "help": {
           "check_dm": "Check your private messages, I've sent you my command list there.",
           "_description": "Sends you a private message with all of my commands",
-          "_usage": "d!help",
+          "_usage": "d!help"
+        },
+        "topgames": {
+          "_description": "Shows the most played games in the server.",
+          "_usage": "d!topgames",
+          "most_played": "Most played games",
+          "line_singular": "`#{0}` with `{1}` player: **{2}**",
+          "line_plural": "`#{0}` with `{1}` players: **{2}**"
         }
     },
     "usage": "**Usage:**",
