@@ -16,7 +16,7 @@ module.exports = {
     if (username) {
       embed.setColor(config.colors.osu);
       message.channel.startTyping();
-      api.user.get(args[0]).then(user => {
+      api.user.get(username).then(user => {
         if (user) {
           embed.setAuthor(lang.commands.osu.title.replace('{0}', user.username), logo);
           embed.setThumbnail('https://a.ppy.sh/' + user.user_id);
