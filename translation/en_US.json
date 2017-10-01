@@ -134,6 +134,15 @@
           "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
           "trello_error_desc": "Please contact my owner or try again later.",
           "card_add_success": "I've added your suggestion to my Trello board."
+        },
+        "bugreport": {
+          "_usage": "d!bugreport <explain the bug>",
+          "_example": "d!bugreport Deku can't use 100% of his powers on my server",
+          "_description": "Reports a bug to my developer",
+          "no_text": "You need describe a bug!",
+          "trello_error": "An error ocurred while trying to add your report to Trello.",
+          "trello_error_desc": "Please contact my owner or try again later.",
+          "card_add_success": "I've added your report to my Trello board."
         }
     },
     "usage": "**Usage:**",
