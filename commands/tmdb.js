@@ -71,10 +71,6 @@ exports.run = function (message, lang, databases) {
   }
 };
 
-function title(title, link) {
-  return `[${title}](${link})`;
-}
-
 function flag(country) {
   if (country) {
     return ":flag_" + country.toLowerCase() + ":";
