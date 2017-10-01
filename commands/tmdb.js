@@ -2,6 +2,7 @@ const utils    = require('../utils.js');
 const config   = require('../config.js');
 const tokens   = require('../tokens.js');
 const request  = require('request');
+const cmdName = 'tmdb';
 
 /*
 {0} - API Key
@@ -38,36 +39,47 @@ exports.run = function (message, lang, databases) {
               var moreUrl = more_urlbase.replace('{2}', result.id).replace('{4}', result.media_type);
               var moreApiUrl = more_api.replace('{2}', result.id).replace('{4}', result.media_type).replace('{0}', tokens.tmdb).replace('{1}', language);
               request(moreApiUrl, (err, resp, body) => {
-                var json = JSON.parse(body);
-                console.log(json);
-                if (result.media_type == 'tv') {
-                  embed.setTitle(flag(json.origin_country[0]) + " " + result.name);
-                  if (json.name != json.original_name) embed.setTitle(flag(json.origin_country[0]) + " " + json.name + " (" + json.original_name + ")");
+                if (!err) {
+                  var json = JSON.parse(body);
+                  console.log(json);
+                  if (result.media_type == 'tv') {
+                    embed.setTitle(flag(json.origin_country[0]) + " " + result.name);
+                    if (json.name != json.original_name) embed.setTitle(flag(json.origin_country[0]) + " " + json.name + " (" + json.original_name + ")");
+                  } else {
+                    embed.setTitle(result.title);
+                    if (result.title != result.original_title) embed.setTitle(result.title + " (" + result.original_title + ")");
+                  }
+                  embed.setDescription(json.overview + '\n\n' + moreUrl);
+                  embed.setThumbnail(imagebase + json.poster_path);
+                  message.channel.send({embed});
                 } else {
-                  embed.setTitle(result.title);
-                  if (result.title != result.original_title) embed.setTitle(result.title + " (" + result.original_title + ")");
+                  embed.setColor(config.colors.error);
+                  embed.setDescription(lang.commands[cmdName].tmdb_api_error.replace('{0}', err));
+                  message.channel.send({embed});
                 }
-                embed.setDescription(json.overview + '\n\n' + moreUrl);
-                embed.setThumbnail(imagebase + json.poster_path);
-                message.channel.send({embed});
               });
             } else {
               embed.setColor(config.colors.error);
-              embed.setDescription('I couldn\'t find anything by the name **"{0}"**'.replace('{0}', args.join(' ')));
+              embed.setDescription(lang.commands[cmdName].nothing_found.replace('{0}', args.join(' ')));
               message.channel.send({embed});
             }
           } else {
             embed.setColor(config.colors.error);
-            embed.setDescription('I couldn\'t find anything by the name **"{0}"**'.replace('{0}', args.join(' ')));
+            embed.setDescription(lang.commands[cmdName].nothing_found.replace('{0}', args.join(' ')));
             message.channel.send({embed});
           }
         } else {
-          console.log('API Error');
+          embed.setColor(config.colors.error);
+          embed.setDescription(lang.commands[cmdName].tmdb_api_error.replace('{0}', err));
+          message.channel.send({embed});
         }
       });
     });
   } else {
-    console.log('No args');
+    embed.setColor(config.colors.error);
+    embed.setTitle(lang.commands[cmdName].no_name_specified);
+    embed.setDescription(`\u200b\n${lang.usage} \`${lang.commands[cmdName]. _usage}\`\n${lang.example} \`${lang.commands[cmdName]._example}\``);
+    message.channel.send({embed});
   }
 };
 
@@ -78,19 +90,3 @@ function flag(country) {
     return "";
   }
 }
-/*
-if (result.name != result.original_name) embed.setTitle(result.name + " (" + result.original_name + ")");
-embed.setDescription(result.overview);
-embed.addField('Score', parseFloat(result.vote_average).toFixed(1), true);
-embed.addField('Popularity', parseFloat(result.popularity).toFixed(2) + "%", true);
-if (result.first_air_date) embed.addField('First Air Date', utils.toDate(result.first_air_date).toLocaleString(language, {formatMatcher: "basic"}), true);
-if (result.origin_country[0]) embed.addField('Origin Country', ':flag_' + result.origin_country[0].toLowerCase() + ":", true);
-embed.setThumbnail(imagebase + result.poster_path);
-
-if (result.title != result.original_title) embed.setTitle(result.title + " (" + result.original_title + ")");
-embed.setDescription(result.overview);
-embed.addField('Score', parseFloat(result.vote_average).toFixed(1), true);
-embed.addField('Popularity', parseFloat(result.popularity).toFixed(2) + "%", true);
-if (result.release_date) embed.addField('First Air Date', utils.toDate(result.release_date).toLocaleString(language, {formatMatcher: "basic"}), true);
-embed.setThumbnail(imagebase + result.poster_path);
-*/
