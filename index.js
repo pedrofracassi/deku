@@ -16,7 +16,8 @@ var aaaaa = [
 
 var databases = {
   roleme_config: levelup('./databases/roleme'),
-  language_config: levelup('./databases/language')
+  language_config: levelup('./databases/language'),
+  autorole_config: levelup('./databases/autorole')
 }
 
 // Express Server for /docs testing
