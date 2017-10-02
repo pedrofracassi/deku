@@ -1,17 +1,2 @@
 # Deku, the Discord bot.
-
-For Izuku to work, you have to add a file to it's root folder, called `config.js`. It should look like this:
-```javascript
-module.exports = {
-  tokens: {
-    discord: 'BOT_TOKEN_GOES_HERE',
-    discord_beta: 'BETA_TOKEN_GOES_HERE'
-  }
-}
-```
-
-| Propriety             | Required? | Description                                    |
-|-----------------------|-----------|------------------------------------------------|
-|    `tokens.discord`   |   `yes`   | The bot's token                                |
-| `tokens.discord_beta` |    `no`   | The bot's beta token. Will be used if existent |
-|      `embedColor`     |   `yes`   | Color used on all embeds                       |
+![https://img.shields.io/badge/chat-on%20Telegram-0088cc.svg](https://t.me/dekuthebot) ![https://img.shields.io/badge/chat-on%20Discord-7289da.svg](https://discord.gg/T9uN2yn) ![https://img.shields.io/badge/invite-to%20your%20Discord%20server-7289da.svg](https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot)
