@@ -1,6 +1,7 @@
 const levelup = require('levelup');
 const utils = require('../utils.js');
 const config = require('../config.js');
+const cmdName = 'autorole';
 
 // d!autorole <role> [--bots]
 
@@ -29,7 +30,7 @@ exports.run = function (message, lang, databases) {
       }
     } else {
       embed.setColor(config.colors.error);
-      embed.setDescription('')
+      embed.setDescription(lang.commands[cmdName].no_permission);
     }
   } else {
     message.reply('role doesn\'t exist.');
