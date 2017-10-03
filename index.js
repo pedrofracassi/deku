@@ -83,5 +83,7 @@ client.on('guildCreate', guild => {
     });
   });
 
-  var token = tokens.discord_beta || tokens.discord;
-  client.login(token);
+
+
+var token = tokens.discord_beta || tokens.discord;
+client.login(token);
