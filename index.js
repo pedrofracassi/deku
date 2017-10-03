@@ -64,6 +64,17 @@ client.on('message', message => {
   }
 })
 
+client.on('guildMemberAdd', member => {
+  databases.autorole_config.get(member.guild.id, function (err, value) {
+    if (value) {
+      value = JSON.parse(value);
+      if (value.everyone && (!member.user.bot)) member.addRole(value.everyone);
+      if (value.bots && member.user.bot) member.addRole(value.bots);
+      if (!(value.bots) && member.user.bot) member.addRole(value.everyone);
+    }
+  });
+});
+
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed;
   var locale = 'en_US';
@@ -83,7 +94,5 @@ client.on('guildCreate', guild => {
     });
   });
 
-
-
-var token = tokens.discord_beta || tokens.discord;
-client.login(token);
+  var token = tokens.discord_beta || tokens.discord;
+  client.login(token);
