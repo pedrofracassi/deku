@@ -16,7 +16,8 @@ var aaaaa = [
 
 var databases = {
   roleme_config: levelup('./databases/roleme'),
-  language_config: levelup('./databases/language')
+  language_config: levelup('./databases/language'),
+  autorole_config: levelup('./databases/autorole')
 }
 
 // Express Server for /docs testing
@@ -62,6 +63,17 @@ client.on('message', message => {
     message.channel.send(aaaaa[Math.floor(Math.random() * aaaaa.length)]);
   }
 })
+
+client.on('guildMemberAdd', member => {
+  databases.autorole_config.get(member.guild.id, function (err, value) {
+    if (value) {
+      value = JSON.parse(value);
+      if (value.everyone && (!member.user.bot)) member.addRole(value.everyone);
+      if (value.bots && member.user.bot) member.addRole(value.bots);
+      if (!(value.bots) && member.user.bot) member.addRole(value.everyone);
+    }
+  });
+});
 
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed;

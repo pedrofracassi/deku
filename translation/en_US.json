@@ -127,13 +127,27 @@
             "package_not_found_desc": "Please check if you spelled it correctly."
         },
         "suggestion": {
-          "_usage": "d!suggestion <your suggestion>",
-          "_example": "d!suggestion Add a command that shows me waifus",
-          "_description": "Sends a suggestion to my developer",
-          "no_suggestion": "You need to suggest something!",
-          "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
-          "trello_error_desc": "Please contact my owner or try again later.",
-          "card_add_success": "I've added your suggestion to my Trello board."
+            "_usage": "d!suggestion <your suggestion>",
+            "_example": "d!suggestion Add a command that shows me waifus",
+            "_description": "Sends a suggestion to my developer",
+            "no_suggestion": "You need to suggest something!",
+            "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
+            "trello_error_desc": "Please contact my owner or try again later.",
+            "card_add_success": "I've added your suggestion to my Trello board."
+        },
+        "autorole": {
+            "_usage": "d!autorole <role id [--bots]|--clear>",
+            "_example": "d!autorole 363453489181097984",
+            "_description": "Sets a default role for new members (or bots)",
+            "no_permission": "You need the **\"Manage Guild\"** permission in order to change my language.",
+            "db_put_error": "There was an error while saving that into the database.",
+            "db_put_success": "I saved {0} as the default role for new members.",
+            "db_put_success_bots": "I saved {0} as the default role for new bots.",
+            "pro_tip": "Pro tip: You can get role IDs from the d!roleids command",
+            "no_args": "You need to specify a role ID!",
+            "inexistent_role": "`{0}` isn't a valid role ID for this server.",
+            "clear_success": "I cleared the default roles.",
+            "clear_error": "Something went wrong while clearing the default roles.\n\n`{0}`If you think this is a bug, please report it using `d!bugreport`"
         }
     },
     "usage": "**Usage:**",
