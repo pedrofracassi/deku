@@ -31,7 +31,6 @@ exports.run = function (message, lang, databases) {
             if (!value) value = "{}";
             value = JSON.parse(value);
             value[type] = args[0];
-            console.log(value);
             db.put(message.guild.id, JSON.stringify(value), function (err) {
               if (!err) {
                 embed.setColor(config.colors.success);
