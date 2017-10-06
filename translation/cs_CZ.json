@@ -22,7 +22,9 @@
             "performance": "Výkon",
             "country_ranking": "Státní Hodnocení",
             "global_ranking": "Globalní Hodnocení",
-            "play_count": "Počet her"
+            "play_count": "Počet her",
+            "weird_error": "osu! API vrátilo nulové hodnoty pro tento účet.",
+            "not_our_fault": "Za to já nemůžu, to ppy.\n\n[Pořád se na ten profil můžeš kouknout na stránce, jestli chceš.]({0})"
         },
         "playing": {
             "_description": "Ukáže kolik lidí zrovna hraje danou hru",
@@ -78,11 +80,15 @@
                 "CHALLENGER": "Challenger",
                 "PLATINUM": "Platinum"
             },
-            "best_champion": "Nejlepší šampion"
+            "best_champion": "Nejlepší šampion",
+            "_description": "Ukáže informace o League of Legends vyvolávači",
+            "_usage": "d!lol <oblast> <vyvolávač>"
         },
         "lmgtfy": {
             "_description": "Generuje \"Let Me Google That For You\" odkaz",
-            "_usage": "d!lmgtfy <hledaný výraz> [--explain]"
+            "_usage": "d!lmgtfy <hledaný výraz> [--explain]",
+            "no_question": "Musíš specifikovat otázku pro kterou chceš generovat odkaz.",
+            "_example": "d!lmgtfy"
         },
         "roleme": {
             "_description": "Dá ti roli ze serveru.",
@@ -118,7 +124,92 @@
             "_example": "d!npm discord.js",
             "no_args": "Musíš specifikovat jméno balíčku.",
             "package_not_found": "Nemohl jsem najít npm balíček s tímto jménem.",
-            "package_not_found_desc": "Prosím, zkontroluj jestli jsi to napsal správně."
+            "package_not_found_desc": "Prosím, zkontroluj jestli jsi to napsal správně.",
+            "_description": "Ukáže informace o npm balíčku"
+        },
+        "help": {
+            "check_dm": "Koukni se do soukromých zpráv, poslal jsem ti tam seznam příkazů.",
+            "_description": "Pošle ti soukromou zprávu se všemi mými příkazy",
+            "_usage": "d!help"
+        },
+        "topgames": {
+            "_description": "Ukáže nejvíc hrané hry na tomto serveru.",
+            "_usage": "d!topgames",
+            "most_played": "Nejvíc hrané hry",
+            "line_singular": "`#{0}` s `{1} hráčem: **{2}**",
+            "line_plural": "`#{0}` s `{1} hráči: **{2}**"
+        },
+        "serverinfo": {
+            "regions": {
+                "brazil": ":flag_br: Brazílie",
+                "eu-central": ":flag_eu: Střední Evropa",
+                "hongkong": ":flag_hk: Hongkong",
+                "us-central": ":flag_us: Střední Amerika",
+                "us-east": ":flag_us: Východní Amerika",
+                "us-south": ":flag_us: Jižní Amerika",
+                "us-west": ":flag_us: Západní Amerika",
+                "russia": ":flag_ru: Rusko",
+                "sydney": ":flag_au: Sydney",
+                "eu-west": ":flag_eu: Západní Evropa"
+            },
+            "_description": "Ukáže informace o serveru",
+            "_usage": "d!serverinfo",
+            "name": "Jméno",
+            "members": "Členové",
+            "owner": "Majitel",
+            "region": "Oblast",
+            "emojis": "Emoji",
+            "roles": "Role",
+            "id": "ID"
+        },
+        "stoptyping": {
+            "_description": "Tohle použij pokud nekonečně píšu",
+            "_usage": "d!stoptyping",
+            "trying_to_stop": "pokouším se zastavit psaní..."
+        },
+        "avatar": {
+            "own_picture": "tady je tvoje profilová fotka:",
+            "someones_picture": "tady je profilová fotka **{0}**"
+        },
+        "suggestion": {
+            "_usage": "d!suggestion <tvůj návrh>",
+            "_example": "d!suggestion Přidej příkaz který mi ukáže waifu",
+            "_description": "Pošle návrh mému vývojáři",
+            "no_suggestion": "Musíš něco navrhnout!",
+            "trello_error": "Nastala chyba při pokusu o přidání tvého návrhu na Trello.",
+            "trello_error_desc": "Prosím kontaktuj mého majitele nebo to zkus později.",
+            "card_add_success": "Přidal jsem tvůj návrh na moji Trello nástěnku."
+        },
+        "bugreport": {
+            "_usage": "d!bugreport <popiš bug *v angličtině*>",
+            "_example": "d!bugreport Deku can't use 100% of his features on my server",
+            "_description": "Nahlásí bug mému vývojáři",
+            "no_text": "Musíš specifikovat bug!",
+            "trello_error": "Nastala chyba při pokusu o přidání tvého hlášení do Trello.",
+            "trello_error_desc": "Prosím kontaktuj mého majitele nebo to zkus znovu později.",
+            "card_add_success": "Přidal jsem tvoje hlášení na moji Trello nástěnku."
+        },
+        "autorole": {
+            "_usage": "d!autorole <role id [--bots]|--clear>",
+            "_example": "d!autorole 363453489181097984",
+            "_description": "Nastaví výchozí roli pro nové členy (nebo boty)",
+            "no_permission": "Potřebuješ právo **'Spravovat Server'** aby jsi mohl změnit můj jazyk.",
+            "db_put_error": "Nastala chyba při ukládání do databáze.",
+            "db_put_success": "Uložil jsem {0} jako výchozí roli pro nové členy.",
+            "db_put_success_bots": "Uložil jsem {0} jako výchozí roli pro nové boty.",
+            "pro_tip": "Profesionální tip: ID rolí najdeš v d!roleids",
+            "no_args": "Musíš specifikovat ID role!",
+            "inexistent_role": "`{0}` není platné ID role pro tento server.",
+            "clear_success": "Vyčistil jsem výchozí role.",
+            "clear_error": "Něco se zkazilo při čištění výchozích rolí.\n\n`{0}`Pokud si myslíš že je to bug, prosím nahlaš ho pomocí `d!bugreport`"
+        },
+        "translate": {
+            "_usage": "d!translate [--jazyk] <tvůj text>",
+            "_example": "d!translate --en omae wa mou shindeiru",
+            "_description": "Přeloží tvůj text do daného jazyka pomocí Google překladače.",
+            "no_text": "Musíš mi dát nějakej text, jinak to nepřeložím!",
+            "lang_not_supported": "Jazyk `{0}` není podporován.",
+            "error_ocurred": "Nastala chyba při překládání textu."
         }
     },
     "usage": "**Použití:**",
