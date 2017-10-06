@@ -36,7 +36,6 @@ exports.run = function (message, lang) {
       message.channel.send({embed});
     }).catch(err => {
       embed.setColor(config.colors.error);
-      console.log("\"" + err.message + "\"");
       if (err.message == 'The language \'' + language + '\' is not supported') {
         embed.setDescription(lang.commands[cmdName].lang_not_supported.replace('{0}', language));
       } else {
@@ -60,5 +59,9 @@ function getFlagByLanguage(language) {
   Object.keys(clist.countries).forEach(country => {
     if (clist.countries[country].languages.includes(language)) countries_that_speak_it.push(country);
   });
-  return `:flag_${countries_that_speak_it[0].toLowerCase()}:`;
+  if (countries_that_speak_it[0]) {
+    return `:flag_${countries_that_speak_it[0].toLowerCase()}:`;
+  } else {
+    return `[${language.toUpperCase()}]  `;
+  }
 }
