@@ -22,7 +22,9 @@
             "performance": "Performance",
             "country_ranking": "Country Ranking",
             "global_ranking": "Global Ranking",
-            "play_count": "Play Count"
+            "play_count": "Play Count",
+            "weird_error": "The osu! API returned null values for this account.",
+            "not_our_fault": "This is not my fault, it's ppy's.\n\n[You can still check the profile on the website if you want to.]({0})"
         },
         "playing": {
             "_description": "Shows how many people are playing a certain game at the moment",
@@ -56,9 +58,6 @@
             "djs_v": "Discord.js Version"
         },
         "lol": {
-            "_description": "Shows information about a League of Legends summoner",
-            "_usage": "d!lol <region> <summoner>",
-            "best_champion": "Best Champion",
             "mastery_points": "Mastery Points",
             "summoner_level": "Summoner Level",
             "rankeds": "Rankeds",
@@ -81,13 +80,15 @@
                 "CHALLENGER": "Challenger",
                 "PLATINUM": "Platinum"
             },
-            "best_champion": "Best Champion"
+            "best_champion": "Best Champion",
+            "_description": "Shows information about a League of Legends summoner",
+            "_usage": "d!lol <region> <summoner>"
         },
         "lmgtfy": {
-            "no_question": "You need to specify the question you want me to generate a link for.",
             "_description": "Generates a \"Let Me Google That For You\" link",
-            "_example": "d!lmgtfy How to download Discord Canary --explain",
-            "_usage": "d!lmgtfy <search term> [--explain]"
+            "_usage": "d!lmgtfy <search term> [--explain]",
+            "no_question": "You need to specify the question you want me to generate a link for.",
+            "_example": "d!lmgtfy How to download Discord Canary --explain"
         },
         "roleme": {
             "_description": "Gives you a role from the server.",
@@ -121,63 +122,94 @@
         "npm": {
             "_usage": "d!npm <package name>",
             "_example": "d!npm discord.js",
-            "_description": "Shows information about a npm package",
             "no_args": "You need to specify a package name.",
             "package_not_found": "I couldn't find a npm package by that name.",
-            "package_not_found_desc": "Please check if you spelled it correctly."
+            "package_not_found_desc": "Please check if you spelled it correctly.",
+            "_description": "Shows information about a npm package"
         },
         "help": {
-          "check_dm": "Check your private messages, I've sent you my command list there.",
-          "_description": "Sends you a private message with all of my commands",
-          "_usage": "d!help"
+            "check_dm": "Check your private messages, I've sent you my command list there.",
+            "_description": "Sends you a private message with all of my commands",
+            "_usage": "d!help"
         },
         "topgames": {
-          "_description": "Shows the most played games in the server.",
-          "_usage": "d!topgames",
-          "most_played": "Most played games",
-          "line_singular": "`#{0}` with `{1}` player: **{2}**",
-          "line_plural": "`#{0}` with `{1}` players: **{2}**"
+            "_description": "Shows the most played games in the server.",
+            "_usage": "d!topgames",
+            "most_played": "Most played games",
+            "line_singular": "`#{0}` with `{1}` player: **{2}**",
+            "line_plural": "`#{0}` with `{1}` players: **{2}**"
         },
         "serverinfo": {
-          "regions": {
-            "brazil": ":flag_br: Brazil",
-            "eu-central": ":flag_eu: EU Central",
-            "hongkong": ":flag_hk: Hongkong",
-            "us-central": ":flag_us: US Central",
-            "us-east": ":flag_us: US East",
-            "us-south": ":flag_us: US South",
-            "us-west": ":flag_us: US West",
-            "russia": ":flag_ru: Russia",
-            "sydney": ":flag_au: Sydney",
-            "eu-west": ":flag_eu: Western Europe"
-          },
-          "_description": "Shows information about the server",
-          "_usage": "d!serverinfo",
-          "name": "Name",
-          "members": "Members",
-          "owner": "Owner",
-          "region": "Region",
-          "emojis": "Emojis",
-          "roles": "Roles",
-          "id": "ID"
+            "regions": {
+                "brazil": ":flag_br: Brazil",
+                "eu-central": ":flag_eu: EU Central",
+                "hongkong": ":flag_hk: Hongkong",
+                "us-central": ":flag_us: US Central",
+                "us-east": ":flag_us: US East",
+                "us-south": ":flag_us: US South",
+                "us-west": ":flag_us: US West",
+                "russia": ":flag_ru: Russia",
+                "sydney": ":flag_au: Sydney",
+                "eu-west": ":flag_eu: Western Europe"
+            },
+            "_description": "Shows information about the server",
+            "_usage": "d!serverinfo",
+            "name": "Name",
+            "members": "Members",
+            "owner": "Owner",
+            "region": "Region",
+            "emojis": "Emojis",
+            "roles": "Roles",
+            "id": "ID"
         },
         "stoptyping": {
-          "_description": "Use this if I'm typing forever",
-          "_usage": "d!stoptyping",
-          "trying_to_stop": "trying to stop typing..."
+            "_description": "Use this if I'm typing forever",
+            "_usage": "d!stoptyping",
+            "trying_to_stop": "trying to stop typing..."
         },
         "avatar": {
-          "own_picture": "here's your profile picture:",
-          "someones_picture": "here's **{0}**'s profile picture:"
+            "own_picture": "here's your profile picture:",
+            "someones_picture": "here's **{0}**'s profile picture:"
         },
         "suggestion": {
-          "_usage": "d!suggestion <your suggestion>",
-          "_example": "d!suggestion Add a command that shows me waifus",
-          "_description": "Sends a suggestion to my developer",
-          "no_suggestion": "You need to suggest something!",
-          "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
-          "trello_error_desc": "Please contact my owner or try again later.",
-          "card_add_success": "I've added your suggestion to my Trello board."
+            "_usage": "d!suggestion <your suggestion>",
+            "_example": "d!suggestion Add a command that shows me waifus",
+            "_description": "Sends a suggestion to my developer",
+            "no_suggestion": "You need to suggest something!",
+            "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
+            "trello_error_desc": "Please contact my owner or try again later.",
+            "card_add_success": "I've added your suggestion to my Trello board."
+        },
+        "bugreport": {
+            "_usage": "d!bugreport <explain the bug>",
+            "_example": "d!bugreport Deku can't use 100% of his powers on my server",
+            "_description": "Reports a bug to my developer",
+            "no_text": "You need describe a bug!",
+            "trello_error": "An error ocurred while trying to add your report to Trello.",
+            "trello_error_desc": "Please contact my owner or try again later.",
+            "card_add_success": "I've added your report to my Trello board."
+        },
+        "autorole": {
+            "_usage": "d!autorole <role id [--bots]|--clear>",
+            "_example": "d!autorole 363453489181097984",
+            "_description": "Sets a default role for new members (or bots)",
+            "no_permission": "You need the **\"Manage Guild\"** permission in order to change my language.",
+            "db_put_error": "There was an error while saving that into the database.",
+            "db_put_success": "I saved {0} as the default role for new members.",
+            "db_put_success_bots": "I saved {0} as the default role for new bots.",
+            "pro_tip": "Pro tip: You can get role IDs from the d!roleids command",
+            "no_args": "You need to specify a role ID!",
+            "inexistent_role": "`{0}` isn't a valid role ID for this server.",
+            "clear_success": "I cleared the default roles.",
+            "clear_error": "Something went wrong while clearing the default roles.\n\n`{0}`If you think this is a bug, please report it using `d!bugreport`"
+        },
+        "translate": {
+            "_usage": "d!translate [--desiredlanguage] <your text>",
+            "_example": "d!translate --en omae wa mou shindeiru",
+            "_description": "Translates your text into the desired language using Google Translate.",
+            "no_text": "You need to give me some text to translate!",
+            "lang_not_supported": "The language `{0}` is not supported.",
+            "error_ocurred": "An error ocurred while translating your text."
         }
     },
     "usage": "**Usage:**",
