@@ -148,6 +148,14 @@
             "inexistent_role": "`{0}` isn't a valid role ID for this server.",
             "clear_success": "I cleared the default roles.",
             "clear_error": "Something went wrong while clearing the default roles.\n\n`{0}`If you think this is a bug, please report it using `d!bugreport`"
+        },
+        "translate": {
+          "_usage": "d!translate [--desiredlanguage] <your text>",
+          "_example": "d!translate --en omae wa mou shindeiru",
+          "_description": "Translates your text into the desired language using Google Translate.",
+          "no_text": "You need to give me some text to translate!",
+          "lang_not_supported": "The language `{0}` is not supported.",
+          "error_ocurred": "An error ocurred while translating your text."
         }
     },
     "usage": "**Usage:**",
