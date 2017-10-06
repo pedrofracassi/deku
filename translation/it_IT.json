@@ -22,7 +22,9 @@
             "performance": "Prestazione.",
             "country_ranking": "Rank nazionale.",
             "global_ranking": "Rank globale.",
-            "play_count": "Numero di partite."
+            "play_count": "Numero di partite.",
+            "weird_error": "Le API di osu! non hanno prodotto risultati per questo account.",
+            "not_our_fault": "Non è colpa mia, è di ppy.\n\n[Puoi comunque controllare il profilo sul sito web se lo desideri.]({0})"
         },
         "playing": {
             "_description": "Mostra quante persone stanno giocando ad un determinato gioco in questo momento.",
@@ -48,9 +50,9 @@
             "error_ip": "C'è stato un errore durante l'ottenimento del mio ip.",
             "error_ip_desc": "Per favore, contatta il mio creatore, pedrofracassi#4623",
             "users": "Utenti",
-            "servers": "Servers",
-            "server_location": "Locazione del Server",
-            "uptime": "Uptime",
+            "servers": "Server",
+            "server_location": "Regione del server",
+            "uptime": "Tempo di attività",
             "channels": "Canali",
             "ram": "Utilizzo di RAM",
             "djs_v": "Versione di discord.js"
@@ -61,8 +63,8 @@
             "rankeds": "Rankeds",
             "Region": "Regione",
             "valid_regions": "**Regione valida",
-            "summoner_error": "C'è stato un errore durante l'ottenimento del profilo del giocatore.",
-            "summoner_error_desc": "Per favore contatta il mio creatore(pedrofracassi#4623), in questo modo potrà sistemare l'errore.",
+            "summoner_error": "Impossibile visualizzare il profilo dell'evocatore.",
+            "summoner_error_desc": "Per favore, contatta il mio creatore (pedrofracassi#4623), così che possa sistemare l'errore.",
             "summoner_region_error": "Devi specificare un evocatore ed una regione!",
             "invalid_region_error": "\"{0}\" non è una regione valida!",
             "error_desc": "**Utilizzo:** `d!lol <regione> <evocatore>`\n**Esempio:** `d!lol br pedrinholuizf`",
@@ -78,11 +80,15 @@
                 "CHALLENGER": "Challenger",
                 "PLATINUM": "Platino"
             },
-            "best_champion": "Miglior campione"
+            "best_champion": "Miglior campione",
+            "_description": "Mostra informazioni su un giocatore di League of legends",
+            "_usage": "d!lol <regione> <nome giocatore>"
         },
         "lmgtfy": {
-            "_description": "Genera un link \"Lasciamelo googlare per te\"",
-            "_usage": "d!lmgtfy <cosa cercare>"
+            "_description": "Genera un link \"Let Me Google That For You\"",
+            "_usage": "d!lmgtfy <cosa cercare>",
+            "no_question": "Devi specificare cosa cercare su imgtfy.",
+            "_example": "!dimgitfy Come scaricare Discord Canary <--esempio"
         },
         "roleme": {
             "_description": "Ti dà un ruolo dal server.",
@@ -118,7 +124,92 @@
             "_example": "d!npm discord.js",
             "no_args": "Devi specificare il nome del pacchetto.",
             "package_not_found": "Non riesco a trovare un pacchetto npm che corrisponda alla tua ricerca.",
-            "package_not_found_desc": "Per favore controlla di averlo scritto correttamente."
+            "package_not_found_desc": "Per favore controlla di averlo scritto correttamente.",
+            "_description": "Mostra informazioni su un pacchetto npm"
+        },
+        "help": {
+            "check_dm": "Controlla i tuoi messaggi privati, ti ho inviato i miei comandi.",
+            "_description": "Ti invia un messaggio privato con tutti i miei comandi",
+            "_usage": "d!help"
+        },
+        "topgames": {
+            "_description": "Mostra i titoli più giocati del server.",
+            "_usage": "d!topgames",
+            "most_played": "Titoli più giocati",
+            "line_singular": "#{0}` con `{1}` giocatore: **{2}**",
+            "line_plural": "#{0}` con `{1}` giocatori: **{2}**"
+        },
+        "serverinfo": {
+            "regions": {
+                "brazil": ":flag_br: Brasile",
+                "eu-central": ":flag_eu: Europa centrale",
+                "hongkong": ":flag_hk: Hong Kong",
+                "us-central": ":flag_us: Stati Uniti centrali",
+                "us-east": ":flag_us: Stati Uniti est",
+                "us-south": ":flag_us: Stati Uniti sud",
+                "us-west": ":flag_us: Stati uniti ovest",
+                "russia": ":flag_ru: Russia",
+                "sydney": ":flag_au: Sydney",
+                "eu-west": ":flag_eu: Europa ovest"
+            },
+            "_description": "Mostra le informazioni sul server",
+            "_usage": "d!serverinfo",
+            "name": "Nome",
+            "members": "Membri",
+            "owner": "Creatore",
+            "region": "Regione",
+            "emojis": "Emoji",
+            "roles": "Ruoli",
+            "id": "ID"
+        },
+        "stoptyping": {
+            "_description": "Usalo se sto scrivendo da molto tempo",
+            "_usage": "d!stoptyping",
+            "trying_to_stop": "sto provando a smettere di scrivere.."
+        },
+        "avatar": {
+            "own_picture": "ecco la tua immagine di profilo:",
+            "someones_picture": "Ci sono **{0}** immagini di profilo:"
+        },
+        "suggestion": {
+            "_usage": "d!suggestion <tuo suggerimento>",
+            "_example": "d!suggestion Aggiungi un comando che mi mostri delle waifu",
+            "_description": "Invia un suggerimento al mio sviluppatore",
+            "no_suggestion": "Devi suggerire qualcosa!",
+            "trello_error": "Impossibile aggiungere il tuo suggerimento sulla bacheca di Trello.",
+            "trello_error_desc": "Per favore contatta il mio creatore o prova più tardi.",
+            "card_add_success": "Ho aggiunto il tuo suggerimento alla mia bacheca di Trello."
+        },
+        "bugreport": {
+            "_usage": "d!bugreport <spiega il bug>\n",
+            "_example": "d!bugreport Deku non può usare i suoi poteri al 100% nel mio server",
+            "_description": "Segnala un bug al mio sviluppatore",
+            "no_text": "Devi descrivere un bug!",
+            "trello_error": "Impossibile aggiungere la tua segnalazione sulla bacheca di Trello.",
+            "trello_error_desc": "Per favore contatta il mio creatore o prova più tardi.",
+            "card_add_success": "Ho aggiunto la tua segnalazione alla mia bacheca di Trello."
+        },
+        "autorole": {
+            "_usage": "d!autorole <role id [--bots]|--clear>",
+            "_example": "d!autorole 363453489181097984",
+            "_description": "Imposta un ruolo predefinito per i nuovi membri (o bot)",
+            "no_permission": "Ti serve il permesso **\"Manage Guild\"** per cambiare la mia lingua.",
+            "db_put_error": "Impossibile salvarlo nel database",
+            "db_put_success": "Ho salvato {0} come ruolo predefinito per i nuovi membri",
+            "db_put_success_bots": "\nHo salvato {0} come ruolo predefinito per i nuovi bot.",
+            "pro_tip": "Consiglio da esperti: Puoi recuperare l'ID del ruolo con il comando d!roleids",
+            "no_args": "Devi specificare un ID del ruolo!",
+            "inexistent_role": "`{0}` non è un ruolo valido su questo server.",
+            "clear_success": "Ho eliminato i ruoli predefiniti.",
+            "clear_error": "Qualcosa è andato storto con l'eliminazione dei ruoli predefiniti.\n\n`{0}`Se pensi che sia un bug, segnalalo utilizzando il comando \"d!bugreport\""
+        },
+        "translate": {
+            "_usage": "d!translate [--desiredlanguage] <il tuo testo>",
+            "_example": "d!translate --en omae wa mou shindeiru",
+            "_description": "Traduce il tuo testo nella lingua desiderata con Google Translate.",
+            "no_text": "Devi darmi del testo da tradurre!",
+            "lang_not_supported": "La lingua `{0}` non è supportata",
+            "error_ocurred": "Impossibile tradurre il tuo testo."
         }
     },
     "usage": "**Utilizzo**",
