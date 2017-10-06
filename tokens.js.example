@@ -1,0 +1,6 @@
+module.exports = {
+  discord: 'DISCORD_KEY',
+  osu: 'OSU_API_KEY',
+  trello_key: 'TRELLO_API_KEY',
+  trello_token: 'TRELLO_USER_TOKEN'
+}
