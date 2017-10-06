@@ -1,9 +1,10 @@
 const Discord = require('discord.js');
 const config = require('../config.js');
 const utils = require('../utils.js');
+const cmdName = 'topgames';
 
 module.exports = {
-  run: function(message) {
+  run: function(message, lang) {
     if (message.channel.type != 'text') return;
     var embed = utils.generateDekuDiv(message);
     var games = {};
@@ -34,10 +35,17 @@ module.exports = {
       if (only10 == 10) return;
       only10++;
       var place = i + 1;
-      text = text + '`#' + place +  '` with `' + s[1] + '` players: **' + s[0] + '**\n';
+      var line = "";
+      if (s[1] == 1) {
+        line = lang.commands[cmdName].line_singular;
+      } else {
+        line = lang.commands[cmdName].line_plural;
+      }
+      line = line.replace('{0}', place).replace('{1}', s[1]).replace('{2}', s[0]);
+      text = text + line + '\n';
     })
 
-    embed.addField('Most played games:', text);
+    embed.addField(lang.commands[cmdName].most_played + ':', text);
     message.channel.send(embed);
   }
 };
