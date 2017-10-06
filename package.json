@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/pedrofracassi/izuku-bot#readme",
   "dependencies": {
+    "countries-list": "^2.1.0",
     "discord.js": "^11.2.1",
     "geoip-lite": "^1.2.1",
     "google-translate-api": "^2.3.0",
