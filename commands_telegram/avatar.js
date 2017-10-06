@@ -1,0 +1,3 @@
+exports.run = function (bot, msg, databases) {
+  // body...
+};

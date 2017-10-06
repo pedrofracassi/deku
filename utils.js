@@ -3,6 +3,7 @@ const config = require('./config.js');
 
 module.exports = {
   expression: /^\w+\!(\w+) *(.*)/,
+  telegram_expression: /^\/(\w+) *(.*)/,
   commandExists: function(command) {
     try {
       let commandFile = require('./commands/' + command);
@@ -10,6 +11,22 @@ module.exports = {
     } catch (e) {
       if (e != 'Error: Cannot find module \'./commands/' + command + '\'') console.log(e);
       return false;
+    }
+  },
+  telegramCommandExists: function(command) {
+    try {
+      let commandFile = require('./commands_telegram/' + command);
+      return commandFile;
+    } catch (e) {
+      if (e != 'Error: Cannot find module \'./commands_telegram/' + command + '\'') console.log(e);
+      return false;
+    }
+  },
+  runTelegramCommand: function(command, bot, message, databases) {
+    try {
+      require('./commands_telegram/' + command).run(bot, message, databases);
+    } catch (e) {
+      console.log(e);
     }
   },
   runCommand: function(command, message, lang, databases) {

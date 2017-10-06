@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client  = new Discord.Client();
 const tokens  = require('./tokens.js');
+const TelegramBot = require('node-telegram-bot-api');
 const config  = require('./config.js');
 const utils   = require('./utils.js');
 const fs      = require('fs');
@@ -19,6 +20,20 @@ var databases = {
   language_config: levelup('./databases/language'),
   autorole_config: levelup('./databases/autorole')
 }
+
+// TELEGRAM STUFF
+const bot = new TelegramBot(tokens.telegram_bot, {polling: true});
+
+bot.on('message', (msg) => {
+  console.log(msg);
+  const chatId = msg.chat.id;
+  var expression = utils.telegram_expression;
+  if (msg.text.match(expression)) {
+    if (utils.telegramCommandExists(msg.text.match(expression)[1])) {
+      utils.runTelegramCommand(msg.text.match(expression)[1], bot, msg, databases);
+    }
+  }
+});
 
 // Express Server for /docs testing
 //   const website = require('./website.js');
