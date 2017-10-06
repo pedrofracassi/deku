@@ -15,6 +15,7 @@ Want to help me with Deku? Great! There are many ways to do so.
 You can ask to join Deku's [POEditor project](https://poeditor.com/join/project/jSOWIdtOLZ) to help us translate him.
 ### Suggest features and report bugs
 ![Suggestion command](https://i.imgur.com/QlCbJ2I.png)
+
 Use `d!suggestion` to add suggestions to the [Trello board](https://trello.com/b/zNj0m3rO/deku), or `d!bugreport` to report bugs.
 ### Contribute with code
 Yes, please! Fork the repo, code something really cool (don't forget to make it translatable by using the json files inside `./translate`) and submit a pull request. I will take a look at your cool code and if it is reeeally cool, I'll merge it.
