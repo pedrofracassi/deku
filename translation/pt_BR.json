@@ -190,7 +190,7 @@
             "card_add_success": "Eu adicionei seu relatório ao meu quadro no Trello."
         },
         "autorole": {
-            "_usage": "d!autorole <rid do cargo [--bots]|--clear>",
+            "_usage": "d!autorole <id do cargo [--bots]|--clear>",
             "_example": "d!autorole 363453489181097984",
             "_description": "Salva um cargo padrão para novos membros (ou bots)",
             "no_permission": "Você precisa da permissão **\"Manage Guild\"** pra salvar autoroles.",
