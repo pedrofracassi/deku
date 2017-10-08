@@ -27,6 +27,7 @@
     "google-translate-api": "^2.3.0",
     "level": "^1.7.0",
     "nodesu": "^0.6.2",
+    "pokedex-promise-v2": "^3.0.3",
     "request": "^2.81.0",
     "teemojs": "^1.0.4"
   }

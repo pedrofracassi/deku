@@ -204,12 +204,24 @@
             "clear_error": "Something went wrong while clearing the default roles.\n\n`{0}`If you think this is a bug, please report it using `d!bugreport`"
         },
         "translate": {
-          "_usage": "d!translate [--desiredlanguage] <your text>",
-          "_example": "d!translate --en omae wa mou shindeiru",
-          "_description": "Translates your text into the desired language using Google Translate.",
-          "no_text": "You need to give me some text to translate!",
-          "lang_not_supported": "The language `{0}` is not supported.",
-          "error_ocurred": "An error ocurred while translating your text."
+            "_usage": "d!translate [--desiredlanguage] <your text>",
+            "_example": "d!translate --en omae wa mou shindeiru",
+            "_description": "Translates your text into the desired language using Google Translate.",
+            "no_text": "You need to give me some text to translate!",
+            "lang_not_supported": "The language `{0}` is not supported.",
+            "error_ocurred": "An error ocurred while translating your text."
+        },
+        "pokedex": {
+            "_usage": "d!pokedex <pokémon name>",
+            "_example": "d!pokedex bulbasaur",
+            "_description": "Shows pokedex's information about a pokémon.",
+            "error_ocurred": "An error ocurred while getting your pokémon info.",
+            "not_found": "I couldn't find this pokémon!",
+            "no_args": "You need to specify a pokémon name!",
+            "fields": {
+                "weight": "Weight",
+                "height": "Height"
+            }
         }
     },
     "usage": "**Usage:**",
