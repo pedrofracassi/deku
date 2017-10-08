@@ -8,7 +8,8 @@ const cmdName = 'translate';
 
 const flag_overrides = {
   "en": "gb",
-  "pt": "br"
+  "pt": "br",
+  "it": "it"
 }
 
 const easter_eggs = {
