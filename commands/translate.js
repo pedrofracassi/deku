@@ -11,7 +11,8 @@ module.exports = class Translate extends Command {
     this.name = "translate";
     this.flag_overrides = {
       "en": "gb",
-      "pt": "br"
+      "pt": "br",
+      "it": "it"
     }
 
     this.easter_eggs = {
