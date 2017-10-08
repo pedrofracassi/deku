@@ -2,8 +2,4 @@ language: node_js
 node_js:
  - "stable"
 notifications:
-<<<<<<< HEAD
   webhooks: https://dekuwebhook.herokuapp.com/webhook
-=======
-  webhooks: https://dekuwebhook.herokuapp.com/webhook
->>>>>>> 34dafc71e0e84f3bcb6f070565c712fc7da5898e
