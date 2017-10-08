@@ -3,6 +3,7 @@
     "osu": "OSU_API_KEY",
     "trello_key": "TRELLO_API_KEY",
     "trello_token": "TRELLO_USER_TOKEN",
+    "tmdb": "THE_MOVIE_DATABASE_TOKEN",
 
     "prefix": "d!",
     "ownerId": "169213934094647298",
