@@ -13,7 +13,7 @@ module.exports = class Ping extends Command {
     var startTime = Date.now();
     message.channel.send({embed}).then((newMessage) => {
         var endTime = Date.now();
-        embed.setDescription(`:ping_pong: \`${(newMsg.createdAt - message.createdAt)}ms\``)
+        embed.setDescription(`:ping_pong: \`${(newMessage.createdAt - message.createdAt)}ms\``)
         message.edit({embed});
     });
   }
