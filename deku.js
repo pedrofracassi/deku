@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const fs      = require('fs');
+const colors  = require('colors');
 
 // Apis
 const Trello  = require("node-trello");
@@ -14,7 +15,7 @@ const aaaaa = [
 ];
 
 module.exports = class Deku extends Discord.Client {
-  
+
   constructor(options = {}) {
     super(options);
 
@@ -28,13 +29,25 @@ module.exports = class Deku extends Discord.Client {
     this.nodesu      = new Nodesu.Client(this.config.osu);
 
     const self = this;
+    var failed = 0;
     fs.readdirSync("./commands").forEach(file => {
       if (file.endsWith(".js")) {
-        let Command = require("./commands/"+file);
-        this.commands.push(new Command(self));
+        try {
+          let Command = require("./commands/"+file);
+          this.commands.push(new Command(self));
+        } catch (e) {
+          console.log('[BOT] [Commands] ' + (file + ' failed to load.').red);
+          failed++;
+        }
       }
     });
-    console.log('[BOT] ' + this.commands.length + ' commands loaded.');
+    if (failed == 0) {
+      console.log('[BOT] [Commands] ' + ('All ' + this.commands.length + ' commands loaded succesfully').green);
+    } else if (this.commands.length == 0){
+      console.log('[BOT] [Commands] ' + ('No commands were loaded succesfully.').yellow);
+    } else {
+      console.log('[BOT] [Commands] ' + (this.commands.length + ' commands loaded succesfully, ' + failed + ' failed.').yellow);
+    }
 
     fs.readdirSync("./translation").forEach(file => {
       if (file.endsWith(".json")) {
@@ -59,13 +72,14 @@ module.exports = class Deku extends Discord.Client {
   }
 
   start(token) {
+    console.log("[BOT] [Discord] Authenticating...");
     if (!token && this.config) token = this.config.discord;
     this.login(token);
   }
 
   /*
-   *  EVENTS
-   */
+  *  EVENTS
+  */
 
   onReady() {
     if(this.devMode) {
@@ -75,7 +89,7 @@ module.exports = class Deku extends Discord.Client {
     } else {
       this.user.setGame(this.config.customGame || `${this.config.prefix}help`);
     }
-    console.log("[BOT] Ready, authenticated as " + this.user.tag);
+    console.log("[BOT] [Discord] " + ("Ready, authenticated as " + this.user.tag).green);
   }
 
   onMessage(message) {
@@ -85,7 +99,7 @@ module.exports = class Deku extends Discord.Client {
       let args = fullCmd.splice(1);
       let cmd = fullCmd[0].substring(this.config.prefix.length).toLowerCase();
       let command = this.commands.find(c => c.name.toLowerCase() == cmd || c.aliases.includes(cmd));
-      
+
       if (command && command.canRun(message, args)) {
         this.getGuildLanguage(message.guild).then(language => {
           command.run(message, args, language.commands[command.name], this.databases, language);
@@ -111,14 +125,14 @@ module.exports = class Deku extends Discord.Client {
   onGuildCreate(guild) {
     this.getGuildLanguage(guild).then(language => {
       let embed = new Discord.RichEmbed()
-          .addField(
-            language.server_join.hi_im_deku, language.server_join.description
-              .replace('{0}', '<:izuku:358407294100439040>')
-              .replace('{1}', 'https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot')
-              .replace('{2}', 'https://discord.gg/9W7yyBA')
-          )
-          .setColor(config.colors.embed)
-          .setThumbnail('https://i.imgur.com/lUVxkAK.png');
+      .addField(
+        language.server_join.hi_im_deku, language.server_join.description
+        .replace('{0}', '<:izuku:358407294100439040>')
+        .replace('{1}', 'https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot')
+        .replace('{2}', 'https://discord.gg/9W7yyBA')
+      )
+      .setColor(config.colors.embed)
+      .setThumbnail('https://i.imgur.com/lUVxkAK.png');
 
       guild.channels.filter(c => c.type == 'text')[0].send({embed});
     });
