@@ -34,6 +34,7 @@ module.exports = class Deku extends Discord.Client {
         this.commands.push(new Command(self));
       }
     });
+    console.log('[BOT] ' + this.commands.length + ' commands loaded.');
 
     fs.readdirSync("./translation").forEach(file => {
       if (file.endsWith(".json")) {
