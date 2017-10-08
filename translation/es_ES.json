@@ -193,7 +193,7 @@
             "_usage": "d!autorole <id del rol [--bots]|--clear>",
             "_example": "d!autorole 363453489181097984",
             "_description": "Establece un rol predeterminado para los nuevos miembros (o bots)",
-            "no_permission": "Necesita el permiso **\"Manange Guild\"** para hacer esto.",
+            "no_permission": "Necesitas el permiso **\"Administrar Servidor\"** para cambiar mi idioma.",
             "db_put_error": "Se ha producido un error al guardarlo en la base de datos.",
             "db_put_success": "Guardé {0} como rol predeterminado para los nuevos miembros.",
             "db_put_success_bots": "Guardé {0} como rol predeterminado para los nuevos bots.",
@@ -201,7 +201,7 @@
             "no_args": "¡Debe especificar un la ID de un rol!",
             "inexistent_role": "`{0}` no es una ID de rol válida para este servidor.",
             "clear_success": "Quité los roles predeterminados.",
-            "clear_error": "Algo salió mal al borrar los roles predeterminados.\n\n`{0}`\nSi cree que se trata de un error, infórmelo utilizando `d!bugreport`"
+            "clear_error": "Algo salió mal al borrar los roles predeterminados.\n\n`{0}`Si crees que se trata de un error, reportalo usando `d!bugreport`"
         },
         "translate": {
             "_usage": "d!translate [--lenguaje] <texto>",
@@ -210,6 +210,18 @@
             "no_text": "¡Necesitas darme algún texto para traducir!",
             "lang_not_supported": "El idioma `{0}` no es compatible.",
             "error_ocurred": "Se ha producido un error al traducir el texto."
+        },
+        "pokedex": {
+            "_usage": "d!pokedex <nombre del pokémon>",
+            "_example": "d!pokedex bulbasaur",
+            "_description": "Muestra la información sobre un pokémon en la pokedex.",
+            "error_ocurred": "Ha ocurrido un error al obtener la información de tu pokémon.",
+            "not_found": "¡No pude encontrar este pokémon!",
+            "no_args": "¡Necesitas especificar el nombre de un pokémon!",
+            "fields": {
+                "weight": "Peso",
+                "height": "Altura"
+            }
         }
     },
     "usage": "**Uso:**",
