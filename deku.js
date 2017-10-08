@@ -50,6 +50,12 @@ module.exports = class Deku extends Discord.Client {
     });
   }
 
+  getDekuEmbed(message) {
+    return new Discord.RichEmbed()
+              .setColor(this.config.colors.embed)
+              .setFooter(message.author.tag, message.author.avatarURL);
+  }
+
 
   /*
    *    HELPERS

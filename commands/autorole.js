@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils   = require('../utils.js');
 
 module.exports = class Autorole extends Command {
 
@@ -11,7 +10,7 @@ module.exports = class Autorole extends Command {
   }
 
   run(message, args, commandLang, databases, lang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     let db = databases.autorole_config;
     if (args[0]) {
       if (message.member.hasPermission('MANAGE_GUILD')) {

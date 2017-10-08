@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils   = require('../utils.js');
 
 module.exports = class RoleIds extends Command {
 
@@ -11,7 +10,7 @@ module.exports = class RoleIds extends Command {
   }
 
   run(message, args, commandLang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
  	  let roles = message.guild.roles.map(r => r.toString());
   	let ids   = message.guild.roles.map(r => r.id);
   	embed.addField(commandLang.role, roles.join("\n"), true);

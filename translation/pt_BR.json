@@ -210,6 +210,18 @@
             "no_text": "Você precisa me dar um texto pra traduzir!",
             "lang_not_supported": "O idioma `{0}` não é suportado.",
             "error_ocurred": "Um erro ocorreu ao traduzir o seu texto."
+        },
+        "pokedex": {
+            "_usage": "d!pokedex <nome ou número do pokémon>",
+            "_example": "d!pokedex bulbasaur",
+            "_description": "Mostra a informação da pokédex de um pokémon",
+            "error_ocurred": "Um erro ocorreu ao encontrar a informação desse pokémon.",
+            "not_found": "Eu não consegui encontrar esse pokémon!",
+            "no_args": "Você tem que especificar o nome de um pokémon",
+            "fields": {
+                "weight": "Peso",
+                "height": "Altura"
+            }
         }
     },
     "usage": "**Uso:**",

@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils   = require('../utils.js');
 const Nodesu  = require('nodesu');
 
 const logo = 'https://vignette2.wikia.nocookie.net/fantendo/images/1/12/Osu%21_logo.png';
@@ -14,7 +13,7 @@ module.exports = class Osu extends Command {
   }
 
   run(message, args, commandLang, databases, lang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     let nf = new Intl.NumberFormat(lang.code.replace('_', '-'));
     if(args.length > 0) {
       let username = args.join(" ");

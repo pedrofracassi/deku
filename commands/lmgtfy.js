@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils   = require('../utils.js');
 
 module.exports = class LMGTFY extends Command {
 
@@ -10,7 +9,7 @@ module.exports = class LMGTFY extends Command {
   }
 
   run(message, args, commandLang, databases, lang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     if (args[0]) {
       let text = args.join(" ");
       if(text.includes('--explain')) {
