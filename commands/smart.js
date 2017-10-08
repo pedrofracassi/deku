@@ -1,8 +1,8 @@
-const Command = require('./structures/command.js');
+const Command = require('../structures/command.js');
 const utils = require('../utils.js');
 
 module.exports = class Smart extends Command {
-  
+
   constructor(client) {
     super(client);
 
@@ -14,5 +14,5 @@ module.exports = class Smart extends Command {
     embed.setImage('https://i.imgur.com/MzwiZg8.png');
     message.channel.send({embed});
   }
-  
+
 }

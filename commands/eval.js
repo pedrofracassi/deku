@@ -1,7 +1,7 @@
-const Command = require('./structures/command.js');
+const Command = require('../structures/command.js');
 
 module.exports = class Eval extends Command {
-  
+
   constructor(client) {
     super(client);
 

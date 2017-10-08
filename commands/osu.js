@@ -1,11 +1,11 @@
-const Command = require('./structures/command.js');
+const Command = require('../structures/command.js');
 const utils   = require('../utils.js');
 const Nodesu  = require('nodesu');
 
 const logo = 'https://vignette2.wikia.nocookie.net/fantendo/images/1/12/Osu%21_logo.png';
 
 module.exports = class Osu extends Command {
-  
+
   constructor(client) {
     super(client);
 
@@ -21,7 +21,7 @@ module.exports = class Osu extends Command {
       embed.setColor(this.client.config.colors.osu);
       if (username.endsWith('--osusig') || username.startsWith('--osusig')) {
         username = username.replace('--osusig', '').trim();
-        
+
         let url = 'https://lemmmy.pw/osusig/sig.php?uname=' + encodeURI(username);
         embed.setDescription(url);
         embed.setImage(url);

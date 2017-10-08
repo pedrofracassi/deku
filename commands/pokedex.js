@@ -1,10 +1,10 @@
-const Command   = require('./structures/command.js');
+const Command = require('../structures/command.js');
 const PokedexAPI   = require('pokedex-promise-v2');
 const translate = require("google-translate-api");
 const utils     = require('../utils.js');
 
 module.exports = class Pokedex extends Command {
-  
+
   constructor(client) {
     super(client);
 
