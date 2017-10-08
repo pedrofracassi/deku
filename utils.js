@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const config = require('./config.js');
+const config = require('./config.json');
 
 module.exports = {
   expression: /^\w+\!(\w+) *(.*)/,

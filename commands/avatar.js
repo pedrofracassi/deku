@@ -1,11 +1,18 @@
-const cmdName = 'avatar';
+const Command = require('./structures/command.js');
 
-module.exports = {
-  run: function(message, lang) {
-    if(message.mentions.members.size >= 1) {
-      message.reply(lang.commands[cmdName].someones_picture.replace('{0}', message.mentions.members.first().displayName) + '\n' + message.mentions.members.first().user.avatarURL);
-    } else {
-      message.reply(lang.commands[cmdName].own_picture + '\n' + message.author.avatarURL);
-    }
+module.exports = class Avatar extends Command {
+  
+  constructor(client) {
+    super(client);
+
+    this.name = "avatar";
   }
-};
+
+  run(message, args, commandLang) {
+    let member = message.mentions.members.first() || message.member;
+    let user   = member ? member.user : message.author;
+    let msg = user == message.author ? commandLang.own_picture : commandLang.someones_picture.replace('{0}', member ? member.displayName : user.name);
+    message.reply(`${msg}\n${user.avatarURL}`);
+  }
+
+}

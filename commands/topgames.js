@@ -1,51 +1,42 @@
-const Discord = require('discord.js');
-const config = require('../config.js');
+const Command = require('./structures/command.js');
 const utils = require('../utils.js');
-const cmdName = 'topgames';
 
-module.exports = {
-  run: function(message, lang) {
-    if (message.channel.type != 'text') return;
-    var embed = utils.generateDekuDiv(message);
-    var games = {};
-    var text = '';
+module.exports = class TopGames extends Command {
+  
+  constructor(client) {
+    super(client);
 
-    message.guild.members.map(member => {
-      if (member.user.presence.game && !member.user.bot) {
-        if (games[member.user.presence.game.name]) {
-          games[member.user.presence.game.name]++;
-        } else {
-          games[member.user.presence.game.name] = 1;
-        }
-      }
+    this.name     = "topgames";
+    this.aliases  = ["tg"];
+  }
+
+  run(message, args, commandLang) {
+    let embed = utils.generateDekuDiv(message);
+    let games = {};
+    message.guild.members.filter(m => !m.user.bot && m.user.presence.game).forEach(member => {
+      games[member.user.presence.game.name] = games[member.user.presence.game.name] ? games[member.user.presence.game.name]++ : 1;
     });
 
     var sortable = [];
-
-    for (var game in games) {
-      sortable.push([game, games[game]]);
-    }
-
-    sortable.sort(function(a, b) {
-      return b[1] - a[1];
+    Object.keys(games).forEach(name => {
+      sortable.push({name: name, value: games[name]});
     });
 
-    var only10 = 0;
-    sortable.map((s, i)=> {
-      if (only10 == 10) return;
-      only10++;
-      var place = i + 1;
-      var line = "";
-      if (s[1] == 1) {
-        line = lang.commands[cmdName].line_singular;
-      } else {
-        line = lang.commands[cmdName].line_plural;
-      }
-      line = line.replace('{0}', place).replace('{1}', s[1]).replace('{2}', s[0]);
-      text = text + line + '\n';
-    })
+    sortable.sort((a, b) => b.value - a.value);
 
-    embed.addField(lang.commands[cmdName].most_played + ':', text);
+    let text = sortable.map(function(g, i) {
+      let line = g.value > 1 ? lang.commands[cmdName].line_plural : commandLang.line_singular;
+      return line.replace('{0}', i+1).replace('{1}', g.value).replace('{2}', g.name);
+    });
+
+    if(text.length > 10) text = text.slice(0, 10);
+
+    embed.addField(commandLang.most_played + ':', text.join("\n"));
     message.channel.send(embed);
   }
-};
+
+  canRun(message) {
+    return message.guild ? true : false;
+  }
+
+}

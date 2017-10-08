@@ -59,6 +59,7 @@ typings/
 
 # Private stuff
 tokens.js
+config.json
 
 # Databases
 databases
