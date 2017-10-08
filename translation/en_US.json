@@ -173,13 +173,23 @@
             "someones_picture": "here's **{0}**'s profile picture:"
         },
         "suggestion": {
-            "_usage": "d!suggestion <your suggestion>",
-            "_example": "d!suggestion Add a command that shows me waifus",
-            "_description": "Sends a suggestion to my developer",
-            "no_suggestion": "You need to suggest something!",
-            "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
-            "trello_error_desc": "Please contact my owner or try again later.",
-            "card_add_success": "I've added your suggestion to my Trello board."
+          "_usage": "d!suggestion <your suggestion>",
+          "_example": "d!suggestion Add a command that shows me waifus",
+          "_description": "Sends a suggestion to my developer",
+          "no_suggestion": "You need to suggest something!",
+          "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
+          "trello_error_desc": "Please contact my owner or try again later.",
+          "card_add_success": "I've added your suggestion to my Trello board."
+        },
+        "tmdb": {
+          "_usage": "d!tmdb <film/tv show name>",
+          "_example": "d!tmdb Boku No Hero",
+          "_description": "Displays the overview of a film/tv show",
+          "nothing_found": "I couldn't find anything by the name **\"{0}\"**",
+          "tmdb_api_error": "An error ocurred while contacting the TMDB API.\n`{0}`\n\nPlease use `d!bugreport` to report this.",
+          "no_name_specified": "You need to specify a movie/tv show name!",
+          "no_overview_tv": "This TV Show doesn't have an overview avaliable.",
+          "no_overview_movie": "This movie doesn't have an overview avaliable."
         },
         "bugreport": {
             "_usage": "d!bugreport <explain the bug>",
