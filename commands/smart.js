@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils = require('../utils.js');
 
 module.exports = class Smart extends Command {
 
@@ -10,7 +9,7 @@ module.exports = class Smart extends Command {
   }
 
   run(message, args, commandLang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     embed.setImage('https://i.imgur.com/MzwiZg8.png');
     message.channel.send({embed});
   }

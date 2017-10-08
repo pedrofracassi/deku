@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils   = require('../utils.js');
 const npmapi = require('api-npm');
 
 module.exports = class NPM extends Command {
@@ -11,7 +10,7 @@ module.exports = class NPM extends Command {
   }
 
   run(message, args, commandLang, databases, lang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     if (args[0]) {
       message.channel.startTyping();
       npmapi.getdetails(args.join('-'), data => {

@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils   = require('../utils.js');
 
 module.exports = class Suggestion extends Command {
 
@@ -10,7 +9,7 @@ module.exports = class Suggestion extends Command {
   }
 
   run(message, args, commandLang, databases, lang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
  	  if (args[0]) {
       this.client.trello.post("/1/cards/", {
         name: args.join(' '),

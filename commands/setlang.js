@@ -11,7 +11,7 @@ module.exports = class SetLang extends Command {
   }
 
   run(message, args, commandLang, databases, lang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     if (message.member.hasPermission('MANAGE_GUILD')) {
       if (args[0]) {
         if (this.client.languages[args[0]]) {

@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils = require('../utils.js');
 
 module.exports = class TopGames extends Command {
 
@@ -11,7 +10,7 @@ module.exports = class TopGames extends Command {
   }
 
   run(message, args, commandLang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     let games = {};
     message.guild.members.filter(m => !m.user.bot && m.user.presence.game).forEach(member => {
       games[member.user.presence.game.name] = games[member.user.presence.game.name] ? games[member.user.presence.game.name]++ : 1;
