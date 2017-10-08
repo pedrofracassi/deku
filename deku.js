@@ -29,31 +29,32 @@ module.exports = class Deku extends Discord.Client {
     this.nodesu      = new Nodesu.Client(this.config.osu);
 
     const self = this;
-    var failed = 0;
+    let failed = 0;
     fs.readdirSync("./commands").forEach(file => {
       if (file.endsWith(".js")) {
         try {
           let Command = require("./commands/"+file);
           this.commands.push(new Command(self));
         } catch (e) {
-          console.log('[BOT] [Commands] ' + (file + ' failed to load.').red);
+          this.log(['BOT', 'Commands'], `${file} failed to load.`.red);
           failed++;
         }
       }
     });
-    if (failed == 0) {
-      console.log('[BOT] [Commands] ' + ('All ' + this.commands.length + ' commands loaded succesfully').green);
-    } else if (this.commands.length == 0){
-      console.log('[BOT] [Commands] ' + ('No commands were loaded succesfully.').yellow);
-    } else {
-      console.log('[BOT] [Commands] ' + (this.commands.length + ' commands loaded succesfully, ' + failed + ' failed.').yellow);
-    }
+    if (failed) this.log(['BOT', 'Commands'], `${this.commands.length} commands loaded succesfully, ${failed} failed.`.yellow);
+    else this.log(['BOT', 'Commands'], `${this.commands.length} commands loaded succesfully`.green);
 
     fs.readdirSync("./translation").forEach(file => {
       if (file.endsWith(".json")) {
-        this.languages[file.replace('.json', '')] = require("./translation/"+file);
+        try {
+          this.languages[file.replace('.json', '')] = require("./translation/"+file);
+        } catch (e) {
+          this.log(['BOT', 'Languages'], `${file} failed to load. Exiting...`.red);
+          process.exit(0);
+        }
       }
     });
+    this.log(['BOT', 'Languages'], `${Object.keys(this.languages).length} languages loaded succesfully`.green);
 
     this.on('ready', this.onReady);
     this.on('message', this.onMessage);
@@ -71,8 +72,14 @@ module.exports = class Deku extends Discord.Client {
     });
   }
 
+  log(tags, message) {
+    tags = tags.map(t => `[${t}]`);
+    tags.push(message);
+    console.log(tags.join(' '));
+  }
+
   start(token) {
-    console.log("[BOT] [Discord] Authenticating...");
+    this.log(['BOT', 'Discord'], "Authenticating...".yellow);
     if (!token && this.config) token = this.config.discord;
     this.login(token);
   }
@@ -89,7 +96,7 @@ module.exports = class Deku extends Discord.Client {
     } else {
       this.user.setGame(this.config.customGame || `${this.config.prefix}help`);
     }
-    console.log("[BOT] [Discord] " + ("Ready, authenticated as " + this.user.tag).green);
+    this.log(['BOT', 'Discord'], `Ready! Authenticated as ${this.user.tag}`.green);
   }
 
   onMessage(message) {
@@ -131,7 +138,7 @@ module.exports = class Deku extends Discord.Client {
         .replace('{1}', 'https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot')
         .replace('{2}', 'https://discord.gg/9W7yyBA')
       )
-      .setColor(config.colors.embed)
+      .setColor(this.config.colors.embed)
       .setThumbnail('https://i.imgur.com/lUVxkAK.png');
 
       guild.channels.filter(c => c.type == 'text')[0].send({embed});
