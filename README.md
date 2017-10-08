@@ -7,7 +7,7 @@ git clone https://github.com/pedrofracassi/deku.git
 cd deku
 npm install
 ```
-After installing the modules, you'll need to create the `tokens.js` file. A layout can be found [here](https://github.com/pedrofracassi/deku/blob/master/tokens.js.example). Then, you can run him with `node index.js`.
+After installing the modules, you'll need to create the `config.json` file. A layout can be found [here](https://github.com/pedrofracassi/deku/blob/master/config.json.example). Then, you can run the bot with `node index.js`.
 
 ## How can I contribute?
 Want to help me with Deku? Great! There are many ways to do so.
