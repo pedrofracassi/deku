@@ -22,7 +22,9 @@
             "performance": "Performance",
             "country_ranking": "Ranking Nacional",
             "global_ranking": "Ranking Global",
-            "play_count": "Contagem de Jogos"
+            "play_count": "Contagem de Jogos",
+            "weird_error": "A API do osu! deu valores nulos para esta conta.",
+            "not_our_fault": "Não é minha culpa, é do ppy.\n[Podes ver o teu perfil no osu.ppy.sh se quiseres.]({0})"
         },
         "playing": {
             "_description": "Mostra quantas pessoas estão a jogar um certo jogo no momento",
@@ -78,11 +80,15 @@
                 "CHALLENGER": "Challenger",
                 "PLATINUM": "PLATINA"
             },
-            "best_champion": "Melhor Campeão"
+            "best_champion": "Melhor Campeão",
+            "_description": "Mostra informações sobre um jogador no League of Legends",
+            "_usage": "d!lol <região> <jogador>"
         },
         "lmgtfy": {
             "_description": "Gera um link \"Let Me Google That For You\"",
-            "_usage": "d!lmgtfy <termo de pesquisa> [--explain]"
+            "_usage": "d!lmgtfy <termo de pesquisa> [--explain]",
+            "no_question": "Precisas de me dizer o que pesquisar.",
+            "_example": "d!lmgtfy Como instalar o Discord Canary --explain"
         },
         "roleme": {
             "_description": "Dá-te uma role do servidor.",
@@ -118,7 +124,92 @@
             "_example": "d!npm discord.js",
             "no_args": "Precisas de dizer um pacote do NPM.",
             "package_not_found": "Não encotrei um pacote por esse nome.",
-            "package_not_found_desc": "Por favor vê se escreveste bem o pacote."
+            "package_not_found_desc": "Por favor vê se escreveste bem o pacote.",
+            "_description": "Mostra informações sobre um pacote npm"
+        },
+        "help": {
+            "check_dm": "Vê as tuas DM's, mandei a lista dos meus comandos lá.",
+            "_description": "Manda-te uma DM com a lista dos meus comandos",
+            "_usage": "d!help"
+        },
+        "topgames": {
+            "_description": "Mostra os jogos mais jogados no servidor.",
+            "_usage": "d!topgames",
+            "most_played": "Jogos mais jogados",
+            "line_singular": "`#{0}` com `{1}` jogador: **{2}**",
+            "line_plural": "`#{0}` com `{1}` jogadores: **{2}**"
+        },
+        "serverinfo": {
+            "regions": {
+                "brazil": ":flag_br: Brasil",
+                "eu-central": ":flag_eu: Europa Central",
+                "hongkong": ":flag_hk: Hong Kong",
+                "us-central": ":flag_us: EUA Central",
+                "us-east": ":flag_us: EUA Este",
+                "us-south": ":flag_us: EUA Sul",
+                "us-west": ":flag_us: EUA Oeste",
+                "russia": ":flag_ru: Rússia",
+                "sydney": ":flag_au: Sydney",
+                "eu-west": ":flag_eu: Europa Ocidental"
+            },
+            "_description": "Mostra informações sobre o servidor",
+            "_usage": "d!serverinfo",
+            "name": "Nome",
+            "members": "Membros",
+            "owner": "Dono",
+            "region": "Região",
+            "emojis": "Emojis",
+            "roles": "Roles",
+            "id": "ID"
+        },
+        "stoptyping": {
+            "_description": "Usa isto se eu estou a escrever para sempre",
+            "_usage": "d!stoptyping",
+            "trying_to_stop": "parando de escrever..."
+        },
+        "avatar": {
+            "own_picture": "aqui está a tua foto de perfil:",
+            "someones_picture": "aqui está a foto de perfil de **{0}**:"
+        },
+        "suggestion": {
+            "_usage": "d!suggestion <a tua sugestão>",
+            "_example": "d!suggestion Adiciona um comando que me mostra waifus",
+            "_description": "Manda uma sugestão ao meu desenvolvedor",
+            "no_suggestion": "Precisas de sugerir algo!",
+            "trello_error": "Um erro ocorreu ao adicionar a tua sugestão ",
+            "trello_error_desc": "Por favor contata o meu desenvolvedor ou tenta depois.",
+            "card_add_success": "Adicionei a tua sugestão ao meu quadro do Trello"
+        },
+        "bugreport": {
+            "_usage": "d!bugreport <explicar o bug>",
+            "_example": "d!bugreport Deku não consegue usar 100% dos poderes no meu servidor",
+            "_description": "Reporta um bug ao meu desenvolvedor",
+            "no_text": "Precisas de descrever o bug!",
+            "trello_error": "Um erro ocorreu a adicionar o teu report no Trello",
+            "trello_error_desc": "Por favor contata o meu desenvolvedor ou tenta depois.",
+            "card_add_success": "Adicionei o teu report no meu quadro do Trello"
+        },
+        "autorole": {
+            "_usage": "d!autorole <id da role [--bots]|--clear>",
+            "_example": "d!autorole 363453489181097984",
+            "_description": "Define uma role para membros novos (ou bots)",
+            "no_permission": "Precisas da permissão **\"Gerenciar Servidor\"** para fazer isto.",
+            "db_put_error": "Houve um erro a salvar isso na base de dados.",
+            "db_put_success": "Salvei a role {0} como a role para membros novos.",
+            "db_put_success_bots": "Salvei a role {0} como a role para bots novos.",
+            "pro_tip": "Dica: Podes obter IDs de roles pelo d!roleids",
+            "no_args": "Precisas de especificar um ID de role!",
+            "inexistent_role": "`{0}` não é um ID de role válido para este servidor.",
+            "clear_success": "Limpei as roles definidas.",
+            "clear_error": "Algo de mau aconteceu a limpar as roles definidas.\n\n`{0}`\nSe tu achas que é um bug, reporta-o pelo `d!bugreport`"
+        },
+        "translate": {
+            "_usage": "d!translate [--línguadesejada] <o teu texto>",
+            "_example": "d!translate --en omae wa mou shindeiru",
+            "_description": "Traduz o teu texto na linguagem selecionada pelo Google Translate",
+            "no_text": "Precisas de me dar algum texto para traduzir!",
+            "lang_not_supported": "A língua `{0}` não é suportada.",
+            "error_ocurred": "Um erro ocorreu a traduzir o teu texto."
         }
     },
     "usage": "**Utilização:**",

@@ -1,15 +1,26 @@
+const Command = require('../structures/command.js');
 const utils   = require('../utils.js');
 
-exports.run = function (message, lang) {
-  var embed = utils.generateDekuDiv(message);
-  var roles = "";
-  var ids   = "";
-  var members = "";
-  message.guild.roles.map(role => {
-    roles = roles + role + "\n";
-    ids = ids + role.id + "\n";
-  });
-  embed.addField(lang.commands.roleids.role, roles, true);
-  embed.addField(lang.commands.roleids.id, ids, true);
-  message.channel.send({embed});
-};
+module.exports = class RoleIds extends Command {
+
+  constructor(client) {
+    super(client);
+
+    this.name    = "roleids"
+    this.aliases = ["rids"];
+  }
+
+  run(message, args, commandLang) {
+    let embed = utils.generateDekuDiv(message);
+ 	  let roles = message.guild.roles.map(r => r.toString());
+  	let ids   = message.guild.roles.map(r => r.id);
+  	embed.addField(commandLang.role, roles.join("\n"), true);
+  	embed.addField(commandLang.id, ids.join("\n"), true);
+  	message.channel.send({embed});
+  }
+
+  canRun(message) {
+  	return message.guild ? true : false;
+  }
+
+}

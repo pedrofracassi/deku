@@ -11,58 +11,60 @@
             "_usage": "d!osu <id o nombre de usuario>",
             "title": "Perfil de {0}",
             "player_doesnt_exist": "Ese jugador no existe.",
-            "is_spelled_correctly": "Comprueba si escribiste el nombre de usuario del reproductor correctamente",
-            "specify_player": "Especifica un jugador",
+            "is_spelled_correctly": "Por favor, comprueba que escribiste correctamente el nombre de usuario.",
+            "specify_player": "Por favor, especifica un jugador",
             "usage": "**Uso:** `d!osu <id o nombre de usuario>`\n**Ejemplo:** `d!osu pedrofracassi`",
-            "accuracy": "Exactitud",
-            "ranked_score": "Puntaje Ranqueada",
+            "accuracy": "Precisión",
+            "ranked_score": "Puntaje Competitivo",
             "total_score": "Puntaje Total",
             "level": "Nivel",
             "ranks": "Rangos",
-            "performance": "Actuación",
-            "country_ranking": "Ranking del país",
+            "performance": "Desempeño",
+            "country_ranking": "Ranking en el país",
             "global_ranking": "Ranking Global",
-            "play_count": "Número de partidas"
+            "play_count": "Partidas Jugadas",
+            "weird_error": "El osu! El API devolvió valores nulos para esta cuenta.",
+            "not_our_fault": "Esto no es mi culpa, es ppy.\n\n[Usted puede todavía comprobar el perfil en el Web site si usted quiere a.]({0})"
         },
         "playing": {
-            "_description": "Muestra cuánta gente juega un determinado juego en este momento",
+            "_description": "Muestra cuánta gente esta en un determinado juego en este momento",
             "_usage": "d!playing <juego>",
-            "zero": "No hay **nadie más** en este servidor jugando `{0} 'en este momento",
-            "one": "Hay **una persona** en este servidor jugando `{0}` en este momento",
+            "zero": "No hay **nadie** en este momento jugando a `{0} ' en este servidor",
+            "one": "Hay **una persona** en este momento jugando a `{0} ' en este servidor",
             "more": "Hay **{1}** personas jugando `{0}` en este momento",
-            "error_no_args": "Tienes que especificar un juego!",
+            "error_no_args": "¡Tienes que especificar un juego!",
             "usage": "**Uso:** `d!playing <juego>`\n**Ejemplo:** `d!playing Overwatch`"
         },
         "setlang": {
             "_description": "Cambia mi idioma en el servidor",
             "_usage": "d!setlang <idioma>",
             "no_args": "Debe especificar un idioma.",
-            "no_permission": "Necesitas el permiso **Manage Guild** para cambiar mi idioma.",
-            "not_supported": "\"{0}\" no es un idioma compatible.",
-            "usage": "**Uso:** `d!setlang <idioma>`\n**Ejemplo:** `d!setlang en_US`\n\n**Idiomas admitidos:**\n{0}.",
-            "success": "El idioma cambió a `{0}` con éxito!"
+            "no_permission": "Necesitas el permiso **Administrar Servidor** para cambiar mi idioma.",
+            "not_supported": "\"{0}\" no es un idioma disponible.",
+            "usage": "**Uso:** `d!setlang <idioma>`\n**Ejemplo:** `d!setlang es_ES`\n\n**Idiomas disponibles:**\n{0}.",
+            "success": "El idioma fue cambiado a `{0}` satisfactoriamente!"
         },
         "botinfo": {
             "_description": "Muestra información sobre mí",
             "_usage": "d!botinfo",
-            "error_ip": "Se produjo un error al obtener mi propio IP",
-            "error_ip_desc": "Favor contactar con mi propietario, pedrofracassi#4623",
+            "error_ip": "Se produjo un error al obtener mi propia IP",
+            "error_ip_desc": "Por favor contacta a mi propietario, pedrofracassi#4623",
             "users": "Usuarios",
             "servers": "Servidores",
-            "server_location": "Ubicación del servidor",
-            "uptime": "Tiempo de actividad",
+            "server_location": "Ubicación del Servidor",
+            "uptime": "Tiempo en Linea",
             "channels": "Canales",
             "ram": "Uso de RAM",
-            "djs_v": " Versión de Discord.js"
+            "djs_v": "Versión de Discord.js"
         },
         "lol": {
             "mastery_points": "Puntos de maestría",
             "summoner_level": "Nivel Invocador",
-            "rankeds": "Clasificados",
+            "rankeds": "Competitivas",
             "Region": "Región",
-            "valid_regions": "**Regiones validas:**",
+            "valid_regions": "**Regiones Validas:**",
             "summoner_error": "Se ha producido un error al obtener este perfil de invocador.",
-            "summoner_error_desc": "Póngase en contacto con mi propietario (pedrofracassi#4623) para que pueda arreglar esto.",
+            "summoner_error_desc": "Por favor contacta a mi dueño (pedrofracassi#4623) así el puede arreglar esto.",
             "summoner_region_error": "¡Tienes que especificar un summoner y una región!",
             "invalid_region_error": "\"{0}\" no es una región valida!",
             "error_desc": "**Uso:** `d!lol <región> <invocador>`\n**Ejemplo:** `d!lol br pedrinholuizf`",
@@ -78,20 +80,24 @@
                 "CHALLENGER": "Desafiador",
                 "PLATINUM": "Platinio"
             },
-            "best_champion": "Mejor Campeón"
+            "best_champion": "Mejor Campeón",
+            "_description": "Muestra información sobre una League of Legends summoner",
+            "_usage": "d!lol <región> <summoner>"
         },
         "lmgtfy": {
             "_description": "Genera un vínculo \"Let Me Google That For You\"",
-            "_usage": "d!lmgtfy <término de búsqueda> [--explique]"
+            "_usage": "d!lmgtfy <término de búsqueda> [--explique]",
+            "no_question": "Debe especificar la pregunta para la que desea generar un enlace.",
+            "_example": "d!lmgtfy Como descargar Discord Canary --explain"
         },
         "roleme": {
             "_description": "Te da un rol del servidor.",
             "_usage": "d!roleme [--add|--remove] <rol> [ID del rol]",
             "add_success": "Se ha añadido {0} a `d!roleme` como `{1}`",
             "id_not_role": "`{0}`no es un ID de función válido para este servidor.",
-            "no_permission": "Necesita el permiso **\"Manage Guild**\" para hacer esto",
-            "insuficcient_args_add": "¡Debe especificar un nombre de función y un ID de función!",
-            "insuficcient_args_remove": "¡Debe especificar un nombre de rol!",
+            "no_permission": "Necesita el permiso **\"Administrar Servidor**\" para hacer esto",
+            "insuficcient_args_add": "¡Debe especificar un Nombre e ID de función!",
+            "insuficcient_args_remove": "¡Debe especificar el nombre de un rol!",
             "add_usage": "**Uso:** `d!roleme --add <nombre del rol> <id del rol>`\n**Ejemplo:** `d!roleme --add lol 358446520334286851`\n\nSugerencia profesional: puede obtener los ID de función de `d!roleids`",
             "remove_usage": "**Uso:** `d!roleme --remove <nombre del rol>`\n**Ejemplo:** `d!roleme --remove lol`",
             "no_roles": "Este servidor no tiene `d!roleme` roles.",
@@ -118,7 +124,92 @@
             "_example": "d!npm discord.js",
             "no_args": "Necesitas decirme el nombre de un paquete.",
             "package_not_found": "No puedo entrar el paquete npm por este nombre.",
-            "package_not_found_desc": "Verifica si lo que dices es correcto."
+            "package_not_found_desc": "Verifica si lo que dices es correcto.",
+            "_description": "Muestra información sobre un paquete npm"
+        },
+        "help": {
+            "check_dm": "Comprueba tus mensajes privados, te he enviado mi lista de comandos.",
+            "_description": "Te envía un mensaje privado con todos mis comandos",
+            "_usage": "d!help"
+        },
+        "topgames": {
+            "_description": "Muestra los juegos más jugados en el servidor.",
+            "_usage": "d!topgames",
+            "most_played": "Juegos más jugados",
+            "line_singular": "`#{0}` con `{1}` jugadorr: **{2}**",
+            "line_plural": "`#{0}` con `{1}` jugadores: **{2}**"
+        },
+        "serverinfo": {
+            "regions": {
+                "brazil": ":flag_br: Brasil",
+                "eu-central": ":flag_eu: EU Central",
+                "hongkong": ":flag_hk: Hongkong",
+                "us-central": ":flag_us: US Central",
+                "us-east": ":flag_us: US Este",
+                "us-south": ":flag_us: US Sur",
+                "us-west": ":flag_us: US Oeste",
+                "russia": ":flag_ru: Russia",
+                "sydney": ":flag_au: Sydney",
+                "eu-west": ":flag_eu: Western Europe"
+            },
+            "_description": "Muestra información sobre el servidor",
+            "_usage": "d!serverinfo",
+            "name": "Nombre",
+            "members": "Miembros",
+            "owner": "Dueño",
+            "region": "Región",
+            "emojis": "Emojis",
+            "roles": "Roles",
+            "id": "ID"
+        },
+        "stoptyping": {
+            "_description": "Usa esto si estoy escribiendo para siempre",
+            "_usage": "d!stoptyping",
+            "trying_to_stop": "tratando de dejar de escribir ..."
+        },
+        "avatar": {
+            "own_picture": "he aquí tu foto de perfil:",
+            "someones_picture": "aquí está la foto de perfil de **{0}**:"
+        },
+        "suggestion": {
+            "_usage": "d!suggestion <tu sugerencia>",
+            "_example": "d!suggestion Añadir un comando que me muestre waifus",
+            "_description": "Envía una sugerencia a mi desarrollador",
+            "no_suggestion": "¡Tienes que sugerir algo!",
+            "trello_error": "Se ha producido un error al intentar agregar tu sugerencia a Trello.",
+            "trello_error_desc": "Póngase en contacto con mi propietario o vuelva a intentarlo más tarde.",
+            "card_add_success": "He añadido tu sugerencia a mi tablero de Trello."
+        },
+        "bugreport": {
+            "_usage": "d!bugreport <explica el bug>",
+            "_example": "d!bugreport Deku no puede usar el 100% de sus poderes en mi servidor",
+            "_description": "Notificar un error a mi desarrollador",
+            "no_text": "¡Necesitas describir un error!",
+            "trello_error": "Se ha producido un error al intentar agregar el informe a Trello.",
+            "trello_error_desc": "Póngase en contacto con mi propietario o vuelva a intentarlo más tarde.",
+            "card_add_success": "He añadido tu informe a mi directorio de Trello."
+        },
+        "autorole": {
+            "_usage": "d!autorole <id del rol [--bots]|--clear>",
+            "_example": "d!autorole 363453489181097984",
+            "_description": "Establece un rol predeterminado para los nuevos miembros (o bots)",
+            "no_permission": "Necesita el permiso **\"Manange Guild\"** para hacer esto.",
+            "db_put_error": "Se ha producido un error al guardarlo en la base de datos.",
+            "db_put_success": "Guardé {0} como rol predeterminado para los nuevos miembros.",
+            "db_put_success_bots": "Guardé {0} como rol predeterminado para los nuevos bots.",
+            "pro_tip": "Sugerencia Pro: Puede obtener los ID de rol del comando d!roleids",
+            "no_args": "¡Debe especificar un la ID de un rol!",
+            "inexistent_role": "`{0}` no es una ID de rol válida para este servidor.",
+            "clear_success": "Quité los roles predeterminados.",
+            "clear_error": "Algo salió mal al borrar los roles predeterminados.\n\n`{0}`\nSi cree que se trata de un error, infórmelo utilizando `d!bugreport`"
+        },
+        "translate": {
+            "_usage": "d!translate [--lenguaje] <texto>",
+            "_example": "d!translate --es omae wa mou shindeiru",
+            "_description": "Traduce su texto al idioma deseado mediante Google Translate.",
+            "no_text": "¡Necesitas darme algún texto para traducir!",
+            "lang_not_supported": "El idioma `{0}` no es compatible.",
+            "error_ocurred": "Se ha producido un error al traducir el texto."
         }
     },
     "usage": "**Uso:**",

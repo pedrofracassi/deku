@@ -1,5 +1,6 @@
+const Command = require('../structures/command.js');
+
 const Discord = require('discord.js');
-const config = require('../config.js');
 const utils = require('../utils.js');
 const request = require('request');
 const geoip = require('geoip-lite');
@@ -18,46 +19,51 @@ String.prototype.toHHMMSS = function () {
   return time;
 }
 
-function bytesToSize(bytes) {
-   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-   if (bytes == 0) return '0 Byte';
-   var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
-   return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
-};
+module.exports = class BotInfo extends Command {
 
-module.exports = {
-  run: function(message, lang) {
-    if (message.channel.type != 'text') return;
-    var embed = utils.generateDekuDiv(message);
-    request('http://api.ipify.org/?format=json', function (error, response, body) {
-      if (error) {
-        embed.setColor(config.colors.error);
-        embed.setTitle(lang.commands.botinfo.error_ip);
-        embed.setDescription(lang.commands.botinfo.error_ip_desc);
+  constructor(client) {
+    super(client);
+
+    this.name     = "botinfo";
+    this.aliases  = ["bi"];
+  }
+
+  run(message, args, commandLang) {
+    let embed = utils.generateDekuDiv(message);
+    request('http://api.ipify.org/?format=json', (err, res, body) => {
+      if (err) {
+        embed.setColor(this.client.config.colors.error);
+        embed.setTitle(commandLang.error_ip);
+        embed.setDescription(commandLang.error_ip_desc);
       } else {
-        var ip = JSON.parse(body).ip;
-        var geo = geoip.lookup(ip);
-        embed.addField(lang.commands.botinfo.server_location, `:flag_${geo.country.toLowerCase()}: ${geo.city}`, true);
+        let ip = JSON.parse(body).ip;
+        let geo = geoip.lookup(ip);
+        embed.addField(commandLang.server_location, `:flag_${geo.country.toLowerCase()}: ${geo.city}`, true);
         embed.setThumbnail(message.client.user.displayAvatarURL);
-        embed.addField(lang.commands.botinfo.servers, message.client.guilds.size, true);
-        var users = 0;
-        message.client.guilds.map(guild => {
-          users = users + guild.members.size;
-        });
-        embed.addField(lang.commands.botinfo.users, users, true);
-        var time = process.uptime();
-        var uptime = (time + "").toHHMMSS();
-        embed.addField(lang.commands.botinfo.uptime, uptime, true);
-        var channels = 0;
-        message.client.guilds.map(guild => {
-          channels = channels + guild.channels.size;
-        });
-        embed.addField(lang.commands.botinfo.channels, channels, true);
-        embed.addField(lang.commands.botinfo.djs_v, Discord.version, true);
+        embed.addField(commandLang.servers, message.client.guilds.size, true);
+
+        let members = this.client.guilds.map(g => g.members).reduce((a, b) => a.concat(b)).array().length;
+        embed.addField(commandLang.users, members, true);
+
+        let uptime = process.uptime().toString().toHHMMSS();
+        embed.addField(commandLang.uptime, uptime, true);
+
+        let channels = this.client.guilds.map(g => g.channels).reduce((a, b) => a.concat(b)).array().length
+        embed.addField(commandLang.channels, channels, true);
+        embed.addField(commandLang.djs_v, Discord.version, true);
+
         var usedram = os.totalmem() - os.freemem();
-        embed.addField(lang.commands.botinfo.ram, bytesToSize(usedram) + '/' + bytesToSize(os.totalmem()), true);
+        embed.addField(commandLang.ram, `${this.bytesToSize(usedram)}/${this.bytesToSize(os.totalmem())}`, true);
       }
       message.channel.send({embed});
     });
   }
+
+  bytesToSize(bytes) {
+    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    if (bytes == 0) return '0 Byte';
+    var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+    return `${Math.round(bytes / Math.pow(1024, i), 2)} ${sizes[i]}`;
+  }
+
 }

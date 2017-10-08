@@ -22,7 +22,9 @@
             "performance": "Desempenho",
             "country_ranking": "Colocação Nacional",
             "global_ranking": "Colocação Global",
-            "play_count": "Partidas Jogadas"
+            "play_count": "Partidas Jogadas",
+            "weird_error": "A API do osu! retornou um valor nulo pra esse perfil.",
+            "not_our_fault": "Isso não é minha culpa, é da ppy.\n\n[Você ainda pode ver o perfil no site se quiser.]({0})"
         },
         "playing": {
             "_description": "Mostra quantas pessoas estão jogando certo jogo no momento",
@@ -78,18 +80,22 @@
                 "CHALLENGER": "Challenger",
                 "PLATINUM": "Platina"
             },
-            "best_champion": "Melhor Campeão"
+            "best_champion": "Melhor Campeão",
+            "_description": "Mostra informação sobre um invocador do League of Legends",
+            "_usage": "d!lol <região> <invocador>"
         },
         "lmgtfy": {
             "_description": "Gera um link do Let Me Google That For You",
-            "_usage": "d!lmgtfy <termo a ser pesquisado> [--explain]"
+            "_usage": "d!lmgtfy <termo a ser pesquisado> [--explain]",
+            "no_question": "Você tem que especificar uma pergunta pra eu gerar um link.",
+            "_example": "d!lmgtfy Como instalar o Discord Canary --explain"
         },
         "roleme": {
             "_description": "Te dá um cargo do servidor.",
             "_usage": "d!roleme [--add|--remove] <cargo> <ID do cargo>",
             "add_success": "Adicionei {0} ao `d!roleme`como `{1}`",
             "id_not_role": "`{0}` não é um ID de cargo válido nesse servidor.",
-            "no_permission": "Você precisa da permissão **\"Gerenciar Servidor\"** pra fazer isso",
+            "no_permission": "Você precisa da permissão **\"Manage Guild\"** pra fazer isso",
             "insuficcient_args_add": "Você precisa especificar um nome pro cargo e um ID!",
             "insuficcient_args_remove": "Você precisa especificar um cargo",
             "add_usage": "**Uso:** `d!roleme --add <nome do cargo> <id do cargo>`\n**Exemplo:** `d!roleme --add lol 358446520334286851`\n\nDica: Você pode pegar o ID do cargo pelo `d!roleids`",
@@ -118,7 +124,92 @@
             "_example": "d!npm discord.js",
             "no_args": "Você precisa especificar o nome de um pacote.",
             "package_not_found": "Eu não consegui encontrar um pacote com esse nome.",
-            "package_not_found_desc": "Por favor, verifique se você escreveu certo."
+            "package_not_found_desc": "Por favor, verifique se você escreveu certo.",
+            "_description": "Mostra informação sobre um pacote npm"
+        },
+        "help": {
+            "check_dm": "Cheque suas mensagens privadas, te mandei minha lista de comandos lá.",
+            "_description": "Te manda uma mensagem privada com uma lista dos meus comandos",
+            "_usage": "d!help"
+        },
+        "topgames": {
+            "_description": "Mostra os jogos mais jogados no servidor.",
+            "_usage": "d!topgames",
+            "most_played": "Jogos mais jogados",
+            "line_singular": "`#{0}` com `{1}` jogador: **{2}**",
+            "line_plural": "`#{0}` com `{1}` jogadores: **{2}**"
+        },
+        "serverinfo": {
+            "regions": {
+                "brazil": ":flag_br: Brasil",
+                "eu-central": ":flag_eu: Europa Central",
+                "hongkong": "flag_hk: Hongkong",
+                "us-central": ":flag_us: EUA Central",
+                "us-east": ":flag_us: EUA Leste",
+                "us-south": ":flag_us: EUA Sul",
+                "us-west": ":flag_us: EUA Oeste",
+                "russia": ":flag_ru: Russia",
+                "sydney": ":flag_au: Sydney",
+                "eu-west": ":flag_eu: Europa Ocidental"
+            },
+            "_description": "Mostra informação sobre o servidor",
+            "_usage": "d!serverinfo",
+            "name": "Nome",
+            "members": "Membros",
+            "owner": "Dono",
+            "region": "Região",
+            "emojis": "Emojis",
+            "roles": "Cargos",
+            "id": "ID"
+        },
+        "stoptyping": {
+            "_description": "Use isso se eu estiver digitando pra sempre",
+            "_usage": "d!stoptyping",
+            "trying_to_stop": "tentando parar de digitar..."
+        },
+        "avatar": {
+            "own_picture": "aqui está sua foto de perfil:",
+            "someones_picture": "aqui está a foto de perfil de **{0}**:"
+        },
+        "suggestion": {
+            "_usage": "d!suggestion <sua sugestão>",
+            "_example": "d!suggestion Adiciona um comando que me mostre waifus",
+            "_description": "Envia uma sugestão para o meu desenvolvedor",
+            "no_suggestion": "Você precisa sugerir alguma coisa!",
+            "trello_error": "Um erro ocorreu ao adicionar sua sugestão ao Trello.",
+            "trello_error_desc": "Por favor, contate meu desenvolvedor ou tente novamente mais tarde.",
+            "card_add_success": "Eu adicionei sua sugestão ao meu quadro no Trello."
+        },
+        "bugreport": {
+            "_usage": "d!bugreport <explique o bug>",
+            "_example": "d!bugreport O deku não consegue usar 100% dos seus poderes no meu servidor",
+            "_description": "Reporta um bug ao meu desenvolvedor",
+            "no_text": "Você precisa descrever um bug!",
+            "trello_error": "Um erro ocorreu ao adicionar seu relatório ao Trello.",
+            "trello_error_desc": "Por favor, contate meu desenvolvedor ou tente novamente mais tarde.",
+            "card_add_success": "Eu adicionei seu relatório ao meu quadro no Trello."
+        },
+        "autorole": {
+            "_usage": "d!autorole <id do cargo [--bots]|--clear>",
+            "_example": "d!autorole 363453489181097984",
+            "_description": "Salva um cargo padrão para novos membros (ou bots)",
+            "no_permission": "Você precisa da permissão **\"Manage Guild\"** pra salvar autoroles.",
+            "db_put_error": "Houve um erro ao salvar isso no banco de dados.",
+            "db_put_success": "Eu salvei {0} como o cargo padrão para novos membros.",
+            "db_put_success_bots": "Eu salvei {0} como o cargo padrão para novos bots.",
+            "pro_tip": "Dica: Você pode pegar os IDs dos cargos usando o comando d!roleids",
+            "no_args": "Você precisa especificar um ID de cargo!",
+            "inexistent_role": "`{0}` não é um ID de cargo válido nesse servidor.",
+            "clear_success": "E limpei os cargos padrão.",
+            "clear_error": "Algo deu errado ao limpar os cargos padrão.\n\n`{0}`\nSe você acha que isso é um bug, por favor reporte com `d!bugreport`"
+        },
+        "translate": {
+            "_usage": "d!translate [--idiomadesejado] <seu texto>",
+            "_example": "d!translate --pt the book is on the table",
+            "_description": "Traduz o texto para o idioma desejado usando o Google Tradutor.",
+            "no_text": "Você precisa me dar um texto pra traduzir!",
+            "lang_not_supported": "O idioma `{0}` não é suportado.",
+            "error_ocurred": "Um erro ocorreu ao traduzir o seu texto."
         }
     },
     "usage": "**Uso:**",

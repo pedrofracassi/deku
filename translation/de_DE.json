@@ -22,7 +22,9 @@
             "performance": "Leistung",
             "country_ranking": "Länder Ranking",
             "global_ranking": "Weltweites Ranking",
-            "play_count": "Spielzähler"
+            "play_count": "Spielzähler",
+            "weird_error": "Die osu! API gibt keine Variablen für diesen Account zurück.",
+            "not_our_fault": "Das ist nicht meine Schuld, es ist die Schuld von ppy.\n\n[Du kannst das Profil auf der Website überprüfen, wenn du willst]({0})"
         },
         "playing": {
             "_description": "Zeigt, wie viele Menschen ein bestimmtes Spiel im Moment spielen",
@@ -78,11 +80,15 @@
                 "CHALLENGER": "Herausfordernd",
                 "PLATINUM": "Platin"
             },
-            "best_champion": "Bester Champion"
+            "best_champion": "Bester Champion",
+            "_description": "Zeigt Informationen über eine League of Legends Beschwörer",
+            "_usage": "d! lol <region> <summoner>"
         },
         "lmgtfy": {
             "_description": "Generiert einen \"Let Me Google That For You\" Link",
-            "_usage": "d!lmgtfy <Suchbegriff> [--explain]"
+            "_usage": "d!lmgtfy <Suchbegriff> [--explain]",
+            "no_question": "Du musst die Frage angeben, zu der Ich einen Link generieren soll.",
+            "_example": "d!lmgtfy Wie lädt man Discord Canary herunter --explain"
         },
         "roleme": {
             "_description": "Dir wird vom Server eine Rolle zugewiesen.",
@@ -118,7 +124,92 @@
             "_example": "d!npm discord.js",
             "no_args": "Du musst einen Paketnamen angeben.",
             "package_not_found": "Ich konnte kein npm Paket unter diesen Namen finden.",
-            "package_not_found_desc": "Bitte kontrolliere, ob du es korrekt geschrieben hast."
+            "package_not_found_desc": "Bitte kontrolliere, ob du es korrekt geschrieben hast.",
+            "_description": "Zeigt Informationen über ein npm Paket an"
+        },
+        "help": {
+            "check_dm": "Bitte schaue in deine privaten Nachrichten. Ich habe dir dort meine verfügbaren Kommandos geschickt.",
+            "_description": "Sendet dir eine private Nachricht mit all' meinen Kommandos.",
+            "_usage": "d!help"
+        },
+        "topgames": {
+            "_description": "Zeigt die am meisten gespielten Spiele auf dem Server.",
+            "_usage": "d!topgames",
+            "most_played": "Am meisten gespielte Spiele",
+            "line_singular": "`#{0}` mit `{1}` Spieler: **{2}**",
+            "line_plural": "`#{0}` mit `{1}` Spielern: **{2}**"
+        },
+        "serverinfo": {
+            "regions": {
+                "brazil": ":flag_br: Brasilien",
+                "eu-central": ":flag_eu: Zentraleuropa",
+                "hongkong": ":flag_hk: Hongkong ",
+                "us-central": ":flag_us: Zentralamerika",
+                "us-east": ":flag_us: Ostamerika",
+                "us-south": ":flag_us: Südamerika",
+                "us-west": ":flag_us: Westamerika",
+                "russia": ":flag_ru: Russland",
+                "sydney": ":flag_au: Sydney",
+                "eu-west": ":flag_eu: Westeuropa"
+            },
+            "_description": "Zeigt Informationen über den Server",
+            "_usage": "d!serverinfo",
+            "name": "Name",
+            "members": "Mitglieder",
+            "owner": "Besitzer",
+            "region": "Region",
+            "emojis": "Emojis",
+            "roles": "Rollen",
+            "id": "ID"
+        },
+        "stoptyping": {
+            "_description": "Nutze das, wenn ich für immer tippe",
+            "_usage": "d!stoptyping",
+            "trying_to_stop": "probiere, mit dem Tippen aufzuhören..."
+        },
+        "avatar": {
+            "own_picture": "hier ist dein Profilbild",
+            "someones_picture": "hier ist **{0}**'s Profilbild:"
+        },
+        "suggestion": {
+            "_usage": "d! Vorschlag <Ihr Vorschlag>",
+            "_example": "d! suggestion Füge einen Befehl hinzu, der mir den Winkel zeigt",
+            "_description": "Schickt einen Vorschlag an meinen Entwickler",
+            "no_suggestion": "Du musst etwas vorschlagen!",
+            "trello_error": "Ein Fehler entstand beim Versuch, Treda zu deinem Vorschlag hinzuzufügen.",
+            "trello_error_desc": "Bitte kontaktieren Sie meinen Besitzer oder versuchen Sie es später noch einmal.",
+            "card_add_success": "Ich habe meinen Vorschlag meinem Trello Board hinzugefügt."
+        },
+        "bugreport": {
+            "_usage": "d!bugreport <Erläutere den bug>",
+            "_example": "d!bugreport Deku kann nicht 100% seiner Kraft auf meinem Server verwenden.",
+            "_description": "Übermittelt Bugs zu meinem Entwickler.",
+            "no_text": "Du musst einen Bug beschreiben!",
+            "trello_error": "Es ist ein Fehler beim Übermitteln deines Reports an Trello aufgetreten.",
+            "trello_error_desc": "Bitte kontaktiere meinen Entwickler oder versuche es später erneut.",
+            "card_add_success": "Ich habe deinen Report zu meinen Trello Brett hinzugefügt."
+        },
+        "autorole": {
+            "_usage": "d!autorole  <Rollen ID [--bots]|--clear>",
+            "_example": "d!autorole 363453489181097984",
+            "_description": "Setzt eine Autorolle für neue Mitglieder (oder Bots).",
+            "no_permission": "Du brauchst die **\"Manage Guild\"** Berechtigung um meine Sprache zu ändern.",
+            "db_put_error": "Es gab einen Fehler während des Speicherns in meiner Datenbank.",
+            "db_put_success": "Ich habe {0} als Default Rolle für neue Mitglieder gespeichert.",
+            "db_put_success_bots": "Ich habe {0} als Default Rolle für neue Bots gespeichert.",
+            "pro_tip": "Geheimtipp: Du kannst Rollen ID´s von dem d!roleids Befehl bekommen.",
+            "no_args": "Du musste eine Rollen ID angeben.",
+            "inexistent_role": "´{0}´ ist keine gültige Rollen ID auf diesem Server",
+            "clear_success": "Ich habe die Default Rollen gereinigt.",
+            "clear_error": "Irgendetwas lief beim Bereinigen der Default Rollen falsch.\n\n´{0}´ Wenn du denkst, dass dies ein Bug ist, dann melde ihn bitte mit ´d!bugreport`"
+        },
+        "translate": {
+            "_usage": "d!translate [--gewollte Sprache] <Dein Text>",
+            "_example": "d!translate -en omae wa mou shindeiru",
+            "_description": "Übersetzt deinen Text in die angegebene Sprache mithilfe von Google Übersetzer",
+            "no_text": "Du musst mir Text zum übersetzen geben.",
+            "lang_not_supported": "Die Sprache ´{0}´ wird nicht unterstützt.",
+            "error_ocurred": "Es ist ein Fehler während des Übersetzens aufgetreten."
         }
     },
     "usage": "**Nutzung:**",

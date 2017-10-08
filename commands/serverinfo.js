@@ -1,34 +1,34 @@
-const config = require('../config.js');
+const Command = require('../structures/command.js');
 const utils = require('../utils.js');
 
-module.exports = {
-  run: function(message) {
-    var guild = message.guild;
-    var embed = utils.generateDekuDiv(message);
-    var regions = {
-      'brazil': ':flag_br: Brazil',
-      'eu-central': ':flag_eu: EU Central',
-      'hongkong': ':flag_hk: Hongkong',
-      'us-central': ':flag_us: US Central',
-      'us-east': ':flag_us: US East',
-      'us-south': ':flag_us: US South',
-      'us-west': ':flag_us: US West',
-      'russia': ':flag_ru: Russia',
-      'sydney': ':flag_au: Sydney',
-      'eu-west': ':flag_eu: Western Europe'
-    };
-    var region = regions[guild.region] || guild.region;
-    var offline = guild.members.filter(m=>m.presence.status=="offline").size;
-    var online = guild.members.size - offline;
-    embed.addField('Name', guild.name, true);
-    embed.addField('Members', online + '/' + guild.members.size + ' online', true);
-    embed.addField('Owner', guild.owner.user.tag, true);
-    embed.addField('Region', region, true);
-    embed.addField('Emojis', guild.emojis.size, true);
-    embed.addField('Roles', guild.roles.size, true);
-    embed.addField('ID', guild.id, true);
+module.exports = class ServerInfo extends Command {
+
+  constructor(client) {
+    super(client);
+
+    this.name    = "serverinfo";
+    this.aliases = ["si"];
+  }
+
+  run(message, args, commandLang) {
+    let guild = message.guild;
+    let embed = utils.generateDekuDiv(message);
+    let region = commandLang.regions[guild.region] || guild.region;
+    let online = guild.members.filter(m => m.presence.status != "offline").size;
+
+    embed.addField(commandLang.name, guild.name, true);
+    embed.addField(commandLang.members, online + '/' + guild.members.size + ' online', true);
+    embed.addField(commandLang.owner, guild.owner.user.tag, true);
+    embed.addField(commandLang.region, region, true);
+    embed.addField(commandLang.emojis, guild.emojis.size, true);
+    embed.addField(commandLang.roles, guild.roles.size, true);
+    embed.addField(commandLang.id, guild.id, true);
     embed.setThumbnail(guild.iconURL);
 
     message.channel.send({embed});
+  }
+
+  canRun(message) {
+    return message.guild ? true : false;
   }
 }

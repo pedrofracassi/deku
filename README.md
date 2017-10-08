@@ -1,17 +1,21 @@
-# Deku, the Discord bot.
+# ![](https://i.imgur.com/LNJ9Htx.png) Deku, the Discord bot.
+[![Telegram](https://img.shields.io/badge/chat-on%20Telegram-0088cc.svg)](https://t.me/dekuthebot) [![Discord](https://img.shields.io/badge/chat-on%20Discord-7289da.svg)](https://discord.gg/T9uN2yn) [![Invite the bot](https://img.shields.io/badge/invite-to%20your%20Discord%20server-7289da.svg)](https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot) [![Travis](https://img.shields.io/travis/pedrofracassi/deku.svg)]()
 
-For Izuku to work, you have to add a file to it's root folder, called `config.js`. It should look like this:
-```javascript
-module.exports = {
-  tokens: {
-    discord: 'BOT_TOKEN_GOES_HERE',
-    discord_beta: 'BETA_TOKEN_GOES_HERE'
-  }
-}
+## Host it yourself
+```bash
+git clone https://github.com/pedrofracassi/deku.git
+cd deku
+npm install
 ```
+After installing the modules, you'll need to create the `config.json` file. A layout can be found [here](https://github.com/pedrofracassi/deku/blob/master/config.json.example). Then, you can run the bot with `node index.js`.
 
-| Propriety             | Required? | Description                                    |
-|-----------------------|-----------|------------------------------------------------|
-|    `tokens.discord`   |   `yes`   | The bot's token                                |
-| `tokens.discord_beta` |    `no`   | The bot's beta token. Will be used if existent |
-|      `embedColor`     |   `yes`   | Color used on all embeds                       |
+## How can I contribute?
+Want to help me with Deku? Great! There are many ways to do so.
+### Translate deku to your language
+You can ask to join Deku's [POEditor project](https://poeditor.com/join/project/jSOWIdtOLZ) to help us translate him.
+### Suggest features and report bugs
+![Suggestion command](https://i.imgur.com/QlCbJ2I.png)
+
+Use `d!suggestion` to add suggestions to the [Trello board](https://trello.com/b/zNj0m3rO/deku), or `d!bugreport` to report bugs.
+### Contribute with code
+Yes, please! Fork the repo, code something really cool (don't forget to follow the [standard](https://github.com/pedrofracassi/deku/wiki/How-to-create-a-command)) and create a Pull Request! I'll review and merge it if I like it.)

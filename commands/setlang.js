@@ -1,49 +1,46 @@
-const levelup = require('levelup');
-const utils = require('../utils.js');
-const config = require('../config.js');
-const fs = require('fs');
+const Command = require('../structures/command.js');
+const utils   = require('../utils.js');
 
-module.exports = {
-  run: function(message, lang, databases) {
-    var expression = /^\w+\!(\w+) *(.*)/;
-    var args = message.content.match(expression)[2].split(' ');
-    var embed = utils.generateDekuDiv(message);
+module.exports = class SetLang extends Command {
+
+  constructor(client) {
+    super(client);
+
+    this.name    = "setlang"
+    this.aliases = ["sl"];
+  }
+
+  run(message, args, commandLang, databases, lang) {
+    let embed = utils.generateDekuDiv(message);
     if (message.member.hasPermission('MANAGE_GUILD')) {
       if (args[0]) {
-        fs.readdir('./translation/', (err, files) => {
-          if (files.includes(args[0] + '.json')) {
-            databases.language_config.put(message.guild.id, args[0], function (err) {
-              fs.readFile('./translation/' + args[0] + '.json', 'utf8', function (error, data) {
-                if (err) throw err;
-                var newLang = JSON.parse(data);
-                embed.setColor(config.colors.success);
-                embed.setDescription(newLang.commands.setlang.success.replace('{0}', args[0]));
-                message.channel.send({embed});
-              });
-            });
-          } else {
-            embed.setColor(config.colors.error);
-            embed.setTitle(lang.commands.setlang.not_supported.replace('{0}', args[0]));
-            var languageCodes = [];
-            files.map(file => languageCodes.push(file.replace('.json', '')));
-            embed.setDescription(lang.commands.setlang.usage.replace('{0}', utils.arrayToStringWithCommas(languageCodes, lang.and)));
+        if (this.client.languages[args[0]]) {
+          databases.language_config.put(message.guild.id, args[0], (err) => {
+            embed.setColor(this.client.config.colors.success);
+            embed.setDescription(commandLang.success.replace('{0}', args[0]));
             message.channel.send({embed});
-          }
-        })
-      } else {
-        fs.readdir('./translation/', (err, files) => {
-          embed.setColor(config.colors.error);
-          embed.setTitle(lang.commands.setlang.no_args);
-          var languageCodes = [];
-          files.map(file => languageCodes.push(file.replace('.json', '')));
-          embed.setDescription(lang.commands.setlang.usage.replace('{0}', utils.arrayToStringWithCommas(languageCodes, lang.and)));
+          });
+        } else {
+          embed.setColor(this.client.config.colors.error);
+          embed.setTitle(commandLang.not_supported.replace('{0}', args[0]));
+          embed.setDescription(commandLang.usage.replace('{0}', utils.arrayToStringWithCommas(Object.keys(this.client.languages), lang.and)));
           message.channel.send({embed});
-        })
+        }
+      } else {
+        embed.setColor(this.client.config.colors.error);
+        embed.setTitle(commandLang.no_args);
+        embed.setDescription(commandLang.usage.replace('{0}', utils.arrayToStringWithCommas(Object.keys(this.client.languages), lang.and)));
+        message.channel.send({embed});
       }
     } else {
-      embed.setColor(config.colors.error);
-      embed.setDescription(lang.commands.setlang.no_permission);
+      embed.setColor(this.client.config.colors.error);
+      embed.setDescription(commandLang.no_permission);
       message.channel.send({embed});
     }
   }
+
+  canRun(message, args) {
+    return message.guild ? true : false;
+  }
+
 }
