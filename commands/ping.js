@@ -14,7 +14,7 @@ module.exports = class Ping extends Command {
     message.channel.send({embed}).then((newMessage) => {
         var endTime = Date.now();
         embed.setDescription(`:ping_pong: \`${(newMessage.createdAt - message.createdAt)}ms\``)
-        message.edit({embed});
+        newMessage.edit({embed});
     });
   }
 
