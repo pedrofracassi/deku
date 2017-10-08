@@ -1,10 +1,10 @@
-const Command   = require('./structures/command.js');
+const Command = require('../structures/command.js');
 const translate = require("google-translate-api");
 const clist     = require("countries-list");
 const utils     = require('../utils.js');
 
 module.exports = class Translate extends Command {
-  
+
   constructor(client) {
     super(client);
 

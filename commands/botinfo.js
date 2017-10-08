@@ -1,4 +1,4 @@
-const Command = require('./structures/command.js');
+const Command = require('../structures/command.js');
 
 const Discord = require('discord.js');
 const utils = require('../utils.js');
@@ -20,7 +20,7 @@ String.prototype.toHHMMSS = function () {
 }
 
 module.exports = class BotInfo extends Command {
-  
+
   constructor(client) {
     super(client);
 

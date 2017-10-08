@@ -1,8 +1,8 @@
-const Command = require('./structures/command.js');
+const Command = require('../structures/command.js');
 const utils = require('../utils.js');
 
 module.exports = class TopGames extends Command {
-  
+
   constructor(client) {
     super(client);
 

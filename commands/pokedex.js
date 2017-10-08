@@ -1,10 +1,10 @@
-const Command   = require('./structures/command.js');
+const Command = require('../structures/command.js');
 const PokedexAPI   = require('pokedex-promise-v2');
 const translate = require("google-translate-api");
 const utils     = require('../utils.js');
 
 module.exports = class Pokedex extends Command {
-  
+
   constructor(client) {
     super(client);
 
@@ -54,7 +54,7 @@ module.exports = class Pokedex extends Command {
   }
 
   pokemonEmbed(embed, data, description, lang) {
-    embed.setTitle(`${data.pokemon.id} - ${this.capitalize(data.pokemon.name)}`);
+    embed.setTitle(`${data.pokemon.id} - ${data.pokemon.name.capitalize()}`);
     embed.setDescription(description);
     embed.addField(lang.fields.height, this.parseNumber(data.pokemon.height, "m"), true);
     embed.addField(lang.fields.weight, this.parseNumber(data.pokemon.weight, "kg"), true);
@@ -64,10 +64,6 @@ module.exports = class Pokedex extends Command {
   parseNumber(height, type) {
     let numbers = height.toString().split('');
     return numbers.length > 1 ? `${numbers.slice(0, numbers.length-1).join('')}.${numbers[numbers.length-1]}${type}` : `0.${height}${type}`;
-  }
-
-  capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   getFullPokemonInfo(query) {

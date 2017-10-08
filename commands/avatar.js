@@ -1,7 +1,7 @@
-const Command = require('./structures/command.js');
+const Command = require('../structures/command.js');
 
 module.exports = class Avatar extends Command {
-  
+
   constructor(client) {
     super(client);
 

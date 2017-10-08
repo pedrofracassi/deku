@@ -1,9 +1,9 @@
-const Command = require('./structures/command.js');
+const Command = require('../structures/command.js');
 const utils   = require('../utils.js');
 const npmapi = require('api-npm');
 
 module.exports = class NPM extends Command {
-  
+
   constructor(client) {
     super(client);
 
