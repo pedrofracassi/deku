@@ -37,7 +37,6 @@ module.exports = class TheMovieDatabase extends Command {
               request(moreApiUrl, (err, resp, body) => {
                 if (!err) {
                   var json = JSON.parse(body);
-                  console.log(json);
                   if (result.media_type == 'tv') {
                     embed.setTitle(flag(json.origin_country[0]) + " " + result.name);
                     if (json.name != json.original_name) embed.setTitle(flag(json.origin_country[0]) + " " + json.name + " (" + json.original_name + ")");
