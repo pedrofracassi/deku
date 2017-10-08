@@ -8,7 +8,7 @@ describe('Commands', function() {
       if (file.endsWith(".js")) {
         let Command = require("../commands/"+file);
         let client = new Discord.Client();
-        new Command(client);
+        new Command(client); // Should work
       }
     });
   });
