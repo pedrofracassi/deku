@@ -28,6 +28,7 @@
     "geoip-lite": "^1.2.1",
     "google-translate-api": "^2.3.0",
     "level": "^1.7.0",
+    "mocha": "^4.0.1",
     "node-trello": "^1.3.0",
     "nodesu": "^0.6.2",
     "pokedex-promise-v2": "^3.0.3",
