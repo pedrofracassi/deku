@@ -4,7 +4,7 @@
   "description": "Your friendly Discord Bot",
   "main": "index.js",
   "scripts": {
-    "test": "exit 0",
+    "test": "node ./node_modules/mocha/bin/mocha",
     "start": "node ."
   },
   "repository": {
