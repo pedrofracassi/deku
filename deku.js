@@ -49,11 +49,19 @@ module.exports = class Deku extends Discord.Client {
       console.log('[BOT] [Commands] ' + (this.commands.length + ' commands loaded succesfully, ' + failed + ' failed.').yellow);
     }
 
+    failed = 0;
     fs.readdirSync("./translation").forEach(file => {
       if (file.endsWith(".json")) {
-        this.languages[file.replace('.json', '')] = require("./translation/"+file);
+        try {
+          this.languages[file.replace('.json', '')] = require("./translation/"+file);
+        } catch (e) {
+          failed++;
+          console.log('[BOT] [Languages] ' + (file + ' failed to load. Exiting...').red);
+          process.exit(0);
+        }
       }
     });
+    console.log('[BOT] [Languages] ' + ('All ' + this.commands.length + ' languages loaded succesfully').green);
 
     this.on('ready', this.onReady);
     this.on('message', this.onMessage);
