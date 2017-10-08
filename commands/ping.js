@@ -11,9 +11,9 @@ module.exports = class Ping extends Command {
   run(message) {
     var embed = this.client.getDekuEmbed(message).setDescription(':ping_pong: `...`');
     var startTime = Date.now();
-    message.channel.send({embed}).then((message) => {
+    message.channel.send({embed}).then((newMessage) => {
         var endTime = Date.now();
-        embed.setDescription(`:ping_pong: \`${Math.round(endTime - startTime)}ms\``)
+        embed.setDescription(`:ping_pong: \`${(newMsg.createdAt - message.createdAt)}ms\``)
         message.edit({embed});
     });
   }
