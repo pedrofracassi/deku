@@ -13,3 +13,13 @@ describe('Commands', function() {
     });
   });
 });
+
+describe('Language Files', function() {
+  it('should load succesfully', function() {
+    fs.readdirSync("./translation").forEach(file => {
+      if (file.endsWith(".json")) {
+        require("../translation/"+file);
+      }
+    });
+  });
+});
