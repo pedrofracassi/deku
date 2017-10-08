@@ -187,7 +187,9 @@
           "_description": "Displays the overview of a film/tv show",
           "nothing_found": "I couldn't find anything by the name **\"{0}\"**",
           "tmdb_api_error": "An error ocurred while contacting the TMDB API.\n`{0}`\n\nPlease use `d!bugreport` to report this.",
-          "no_name_specified": "You need to specify a movie/tv show name!"
+          "no_name_specified": "You need to specify a movie/tv show name!",
+          "no_overview_tv": "This TV Show doesn't have an overview avaliable.",
+          "no_overview_movie": "This movie doesn't have an overview avaliable."
         },
         "bugreport": {
             "_usage": "d!bugreport <explain the bug>",

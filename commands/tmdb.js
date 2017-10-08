@@ -44,7 +44,15 @@ module.exports = class TheMovieDatabase extends Command {
                     embed.setTitle(result.title);
                     if (result.title != result.original_title) embed.setTitle(result.title + " (" + result.original_title + ")");
                   }
-                  embed.setDescription(json.overview + '\n\n' + moreUrl);
+                  if (json.overview != null) {
+                    embed.setDescription(json.overview + '\n\n' + moreUrl);
+                  } else {
+                    if (result.media_type == 'tv') {
+                      embed.setDescription(commandLang.no_overview_tv + '\n\n' + moreUrl);
+                    } else {
+                      embed.setDescription(commandLang.no_overview_movie + '\n\n' + moreUrl);
+                    }
+                  }
                   embed.setThumbnail(imagebase + json.poster_path);
                   message.channel.send({embed});
                 } else {
