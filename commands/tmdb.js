@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils   = require('../utils.js');
 const request = require('request');
 
 const search_urlbase = 'https://api.themoviedb.org/3/search/multi?api_key={0}&language={1}&query={2}&page=1&include_adult={3}';
@@ -87,9 +86,5 @@ module.exports = class TheMovieDatabase extends Command {
 }
 
 function flag(country) {
-  if (country) {
-    return ":flag_" + country.toLowerCase() + ":";
-  } else {
-    return "";
-  }
+  return country ? `:flag_${country.toLowerCase()}:` : '';
 }
