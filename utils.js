@@ -1,31 +1,6 @@
 const Discord = require('discord.js');
-const config = require('./config.json');
 
 module.exports = {
-  expression: /^\w+\!(\w+) *(.*)/,
-  commandExists: function(command) {
-    try {
-      let commandFile = require('./commands/' + command);
-      return commandFile;
-    } catch (e) {
-      if (e != 'Error: Cannot find module \'./commands/' + command + '\'') console.log(e);
-      return false;
-    }
-  },
-  runCommand: function(command, message, lang, databases) {
-    if (message.channel.type != 'text') return;
-    try {
-      require('./commands/' + command).run(message, lang, databases);
-    } catch (e) {
-      console.log(e);
-    }
-  },
-  generateDekuDiv: function(message) {
-    var embed = new Discord.RichEmbed;
-    embed.setColor(config.colors.embed);
-    embed.setFooter(message.author.tag, message.author.avatarURL);
-    return embed;
-  },
   arrayToStringWithCommas: function(array, last) {
     var string = "";
     for (i = 0; i < array.length; i++) {

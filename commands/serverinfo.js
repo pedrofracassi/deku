@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils = require('../utils.js');
 
 module.exports = class ServerInfo extends Command {
 
@@ -12,7 +11,7 @@ module.exports = class ServerInfo extends Command {
 
   run(message, args, commandLang) {
     let guild = message.guild;
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     let region = commandLang.regions[guild.region] || guild.region;
     let online = guild.members.filter(m => m.presence.status != "offline").size;
 

@@ -1,7 +1,6 @@
-const Command = require('../structures/command.js');
+const Command   = require('../structures/command.js');
 const translate = require("google-translate-api");
 const clist     = require("countries-list");
-const utils     = require('../utils.js');
 
 module.exports = class Translate extends Command {
 
@@ -21,7 +20,7 @@ module.exports = class Translate extends Command {
   }
 
   run(message, args, commandLang, databases, lang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     if (args.length > 0) {
       message.channel.startTyping();
       let input = args.join(" ");

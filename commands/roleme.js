@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils   = require('../utils.js');
 
 module.exports = class RoleMe extends Command {
 
@@ -11,7 +10,7 @@ module.exports = class RoleMe extends Command {
   }
 
   run(message, args, commandLang, databases, lang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     if (args[0] == '--add') { // --add was passed, check if user has permission and add the role
       if (message.member.hasPermission('MANAGE_GUILD')) {
         if (args[1] && args[2]) {

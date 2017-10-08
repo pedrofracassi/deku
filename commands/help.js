@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const utils   = require('../utils.js');
 
 module.exports = class Help extends Command {
 
@@ -11,7 +10,7 @@ module.exports = class Help extends Command {
   }
 
   run(message, args, commandLang, databases, lang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     embed.setDescription(`**${commandLang.check_dm}**`);
     message.channel.send({embed});
 

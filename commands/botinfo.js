@@ -1,7 +1,6 @@
 const Command = require('../structures/command.js');
 
 const Discord = require('discord.js');
-const utils = require('../utils.js');
 const request = require('request');
 const geoip = require('geoip-lite');
 const os = require('os');
@@ -29,7 +28,7 @@ module.exports = class BotInfo extends Command {
   }
 
   run(message, args, commandLang) {
-    let embed = utils.generateDekuDiv(message);
+    let embed = this.client.getDekuEmbed(message);
     request('http://api.ipify.org/?format=json', (err, res, body) => {
       if (err) {
         embed.setColor(this.client.config.colors.error);

@@ -1,7 +1,6 @@
 const Command = require('../structures/command.js');
 const PokedexAPI   = require('pokedex-promise-v2');
 const translate = require("google-translate-api");
-const utils     = require('../utils.js');
 
 module.exports = class Pokedex extends Command {
 
@@ -15,8 +14,8 @@ module.exports = class Pokedex extends Command {
   }
 
   run(message, args, commandLang, databases, lang) {
-    let embed = utils.generateDekuDiv(message);
-    if (message.content.match(utils.expression)[2]) {
+    let embed = this.client.getDekuEmbed(message);
+    if (args[0]) {
       message.channel.startTyping();
       this.getFullPokemonInfo(args.join('%20'))
         .then(data => {
