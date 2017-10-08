@@ -23,3 +23,13 @@ describe('Language Files', function() {
     });
   });
 });
+
+describe('Event Listener Files', function() {
+  it('should load succesfully', function() {
+    fs.readdirSync("./listeners").forEach(file => {
+      if (file.endsWith(".json")) {
+        require("../listeners/"+file);
+      }
+    });
+  });
+});
