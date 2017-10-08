@@ -1,8 +1,8 @@
-const levelup   = require('levelup');
+const level     = require('level');
 const databases = {
-  roleme_config: levelup('./databases/roleme'),
-  language_config: levelup('./databases/language'),
-  autorole_config: levelup('./databases/autorole')
+  roleme_config: level('./databases/roleme'),
+  language_config: level('./databases/language'),
+  autorole_config: level('./databases/autorole')
 }
 
 const config    = require('./config.json');
