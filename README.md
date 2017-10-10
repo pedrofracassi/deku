@@ -1,6 +1,6 @@
 # ![](https://i.imgur.com/LNJ9Htx.png) [Deku, the Discord bot.](http://deku.pedrofracassi.me/)
-[![Telegram](https://img.shields.io/badge/chat-on%20Telegram-0088cc.svg)](https://t.me/dekuthebot) [![Discord](https://img.shields.io/badge/chat-on%20Discord-7289da.svg)](https://discord.gg/T9uN2yn) [![Invite the bot](https://img.shields.io/badge/invite-to%20your%20Discord%20server-7289da.svg)](https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot) [![Travis](https://img.shields.io/travis/pedrofracassi/deku.svg)]()
- [![CodeFactor](https://www.codefactor.io/Content/badges/BMinus.svg)]()
+[![Telegram](https://img.shields.io/badge/chat-on%20Telegram-0088cc.svg)](https://t.me/dekuthebot) [![Discord](https://img.shields.io/badge/chat-on%20Discord-7289da.svg)](https://discord.gg/T9uN2yn) [![Invite the bot](https://img.shields.io/badge/invite-to%20your%20Discord%20server-7289da.svg)](https://discordapp.com/oauth2/authorize?client_id=358398001233920001&scope=bot) [![Travis](https://img.shields.io/travis/pedrofracassi/deku.svg)](https://travis-ci.org/pedrofracassi/deku)
+ [![CodeFactor](https://www.codefactor.io/Content/badges/BMinus.svg)](https://www.codefactor.io/repository/github/pedrofracassi/deku)
 ## Host it yourself
 ```bash
 git clone https://github.com/pedrofracassi/deku.git
