@@ -12,7 +12,7 @@ module.exports = class TogetherTube extends Command {
   run(message, args, commandLang) {
     let embed = this.client.getDekuEmbed(message);
     message.channel.startTyping();
-    request('https://togethertube.com/room/create', (error, response, body) => {
+    request('https://togethertube.com/room/create', (error, response) => {
       if (error) {
         embed.setColor(this.client.config.colors.error);
         embed.setTitle(commandLang.error_title);
