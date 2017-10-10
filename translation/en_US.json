@@ -233,6 +233,12 @@
                 "weight": "Weight",
                 "height": "Height"
             }
+        },
+        "togethertube": {
+          "_usage": "d!togethertube",
+          "_description": "Creates a TogetherTube room.",
+          "error_title": "An error ocurred while creating the room.",
+          "error_description": "Please report this using `d!bugreport`"
         }
     },
     "usage": "**Usage:**",
