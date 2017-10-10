@@ -233,6 +233,15 @@
                 "weight": "Weight",
                 "height": "Height"
             }
+        },
+        "xkcd": {
+          "_usage": "d!xkcd [id|\"latest\"]",
+          "_example": "d!xkcd 149",
+          "_description": "Shows a XKCD. If no argument is provided, will show a random XKCD.",
+          "error_latest": "I wasn't able to fetch the latest XKCD.",
+          "error_specific": "I wasn't able to fetch XKCD #{0}",
+          "not_integer": "The XKCD number should be an integer.",
+          "error_random": "I wasn't able to fetch the a random XKCD."
         }
     },
     "usage": "**Usage:**",
