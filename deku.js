@@ -78,7 +78,7 @@ module.exports = class Deku extends Discord.Client {
           let Command = require("./commands/"+file);
           this.commands.push(new Command(this));
         } catch (e) {
-          if (this.config.devMove) console.error(e);
+          if (this.devMode) console.error(e);
           this.log(['BOT', 'Commands'], `${file} failed to load.`.red);
           failed++;
         }
@@ -94,7 +94,7 @@ module.exports = class Deku extends Discord.Client {
         try {
           this.languages[file.replace('.json', '')] = require("./translation/"+file);
         } catch (e) {
-          if (this.config.devMove) console.error(e);
+          if (this.devMode) console.error(e);
           this.log(['BOT', 'Languages'], `${file} failed to load. Exiting...`.red);
           process.exit(0);
         }
@@ -111,7 +111,7 @@ module.exports = class Deku extends Discord.Client {
           let EventListener = require("./listeners/"+file);
           this.listeners.push(new EventListener(this));
         } catch (e) {
-          if (this.config.devMove) console.error(e);
+          if (this.devMode) console.error(e);
           this.log(['BOT', 'EventListeners'], `${file} failed to load.`.red);
           failed++;
         }
