@@ -34,6 +34,7 @@
     "nodesu": "^0.6.2",
     "pokedex-promise-v2": "^3.0.3",
     "request": "^2.81.0",
-    "teemojs": "^1.0.4"
+    "teemojs": "^1.0.4",
+    "xkcd-node": "^1.0.0"
   }
 }
