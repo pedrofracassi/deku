@@ -17,7 +17,7 @@ module.exports = class MessageListener extends EventListener {
   onMessage(message) {
   	if (message.author.bot) return;
     if (message.content.startsWith(this.config.prefix)) {
-      let fullCmd = message.content.split(" ");
+      let fullCmd = message.content.split(" ").filter(a => a).map(s => s.trim());
       let args = fullCmd.splice(1);
       let cmd = fullCmd[0].substring(this.config.prefix.length).toLowerCase();
       let command = this.commands.find(c => c.name.toLowerCase() == cmd || c.aliases.includes(cmd));

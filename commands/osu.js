@@ -9,7 +9,7 @@ module.exports = class Osu extends Command {
     super(client);
 
     this.name    = "osu";
-    this.aliases = "osu!";
+    this.aliases = ["osu!"];
   }
 
   run(message, args, commandLang, databases, lang) {

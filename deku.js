@@ -1,12 +1,12 @@
-const Discord = require('discord.js');
-const fs      = require('fs');
+const Discord    = require('discord.js');
+const fs         = require('fs');
 
-const colors  = require('colors');
+const colors     = require('colors');
 const prototypes = require('./helpers/prototypes.js')
 
 // Apis
-const Trello  = require("node-trello");
-const Nodesu = require('nodesu');
+const Trello     = require("node-trello");
+const Nodesu     = require('nodesu');
 
 module.exports = class Deku extends Discord.Client {
 
