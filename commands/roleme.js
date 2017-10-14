@@ -2,8 +2,6 @@ const Command    = require('../structures/command.js');
 const SubCommand = require('../structures/subcommand.js');
 const util       = require('util');
 
-const rolename_blacklist = ['add', '--add', ]
-
 module.exports = class RoleMe extends Command {
 
   constructor(client) {
