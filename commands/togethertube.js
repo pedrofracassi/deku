@@ -5,8 +5,8 @@ module.exports = class TogetherTube extends Command {
 
   constructor(client) {
     super(client);
-    this.name = "togethertube";
-    this.aliases ["ttube", "ttb"];
+    this.name    = "togethertube";
+    this.aliases = ["ttube", "ttb"];
   }
 
   run(message, args, commandLang) {
@@ -20,9 +20,9 @@ module.exports = class TogetherTube extends Command {
       } else {
         embed.setDescription(response.request.uri.href);
         embed.setAuthor('TogetherTube', 'https://togethertube.com/assets/img/favicons/favicon-32x32.png', 'https://togethertube.com/');
-        message.channel.stopTyping();
-        message.channel.send({embed});
       }
+      message.channel.stopTyping();
+        message.channel.send({embed});
     });
   }
 
