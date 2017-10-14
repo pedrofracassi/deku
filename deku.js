@@ -1,11 +1,10 @@
 const Discord    = require('discord.js');
 const fs         = require('fs');
-const util       = require('util');
 const level      = require('level');
 
 const colors     = require('colors');
 const prototypes = require('./helpers/prototypes.js');
-const utils       = require('./utils.js');
+const utils      = require('./utils.js');
 
 // Apis
 const Trello     = require("node-trello");
