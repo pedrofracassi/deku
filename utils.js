@@ -26,6 +26,7 @@ module.exports = {
             reject(err);
           } else {
             try { res = JSON.parse(res) }
+            catch(e) {}
             resolve(res);
           }
         });
