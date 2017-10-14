@@ -112,7 +112,8 @@
             "role_remove_success": "I removed the role {0} from you.",
             "role_give_fail": "I wasn't able to give you the role {0}.",
             "role_remove_fail": "I wasn't able to remove the role {0} from you.",
-            "please_ask_owner": "Please ask the server owner to check my permissions."
+            "please_ask_owner": "Please ask the server owner to check my permissions.",
+            "invalid_rolename": "You can't use this role name!"
         },
         "roleids": {
             "_usage": "d!roleids",

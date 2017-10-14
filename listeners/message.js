@@ -14,18 +14,18 @@ module.exports = class MessageListener extends EventListener {
     super(client);
   }
 
-  onMessage(message) {
+  async onMessage(message) {
   	if (message.author.bot) return;
     if (message.content.startsWith(this.config.prefix)) {
       let fullCmd = message.content.split(" ").filter(a => a).map(s => s.trim());
-      let args = fullCmd.splice(1);
+      let args = fullCmd.slice(1);
       let cmd = fullCmd[0].substring(this.config.prefix.length).toLowerCase();
       let command = this.commands.find(c => c.name.toLowerCase() == cmd || c.aliases.includes(cmd));
 
       if (command && command.canRun(message, args)) {
-        this.getGuildLanguage(message.guild).then(language => {
-          command.run(message, args, language.commands[command.name], this.databases, language);
-        });
+        let language = await this.getGuildLanguage(message.guild);
+        let commandLanguage = language.commands[command.name] || this.languages['en_US'].commands[command.name];
+        command._run(message, args, commandLanguage, this.databases, language);
       }
     }
 

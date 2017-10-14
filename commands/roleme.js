@@ -1,166 +1,175 @@
-const Command = require('../structures/command.js');
+const Command    = require('../structures/command.js');
+const SubCommand = require('../structures/subcommand.js');
+const util       = require('util');
+
+const rolename_blacklist = ['add', '--add', ]
 
 module.exports = class RoleMe extends Command {
 
   constructor(client) {
     super(client);
 
-    this.name    = "roleme";
-    this.aliases = ["role"];
+    this.name           = "roleme";
+    this.aliases        = ["role"];
+    this.subcommands    = [new RoleMeAdd(client, this), new RoleMeRemove(client, this)];
+    
+    this.blacklistNames = this.subcommands
+      .map(c => [c.name].concat(c.aliases))
+      .reduce((a, b) => a.concat(b));
   }
 
-  run(message, args, commandLang, databases, lang) {
-    let embed = this.client.getDekuEmbed(message);
-    if (args[0] == '--add') { // --add was passed, check if user has permission and add the role
-      if (message.member.hasPermission('MANAGE_GUILD')) {
-        if (args[1] && args[2]) {
-          if (message.guild.roles.has(args[1])) {
-            let role_id = args[1];
-            args.splice(0, 2);
-            let role_key = args.join(" ").toLowerCase();
-            databases.roleme_config.get(message.guild.id, (err, result) => {
-              if (result) {
-                if (err) console.log(err);
-                let json = JSON.parse(result);
-                json[role_key] = role_id;
-                databases.roleme_config.put(message.guild.id, JSON.stringify(json), err => {
-                  if (err) console.log(err);
-                  embed.setColor(this.client.config.colors.success);
-                  embed.setDescription(commandLang.add_success
-                    .replace('{0}', message.guild.roles.get(role_id))
-                    .replace('{1}', role_key));
-                  message.channel.send({embed});
-                });
-              } else {
-                let object = {};
-                object[role_key] = role_id;
-                databases.roleme_config.put(message.guild.id, JSON.stringify(object), err => {
-                  if (err) console.log(err);
-                  embed.setColor(this.client.config.colors.success);
-                  embed.setDescription(commandLang.add_success
-                    .replace('{0}', message.guild.roles.get(role_id))
-                    .replace('{1}', role_key));
-                  message.channel.send({embed});
-                })
-              }
-            });
-          } else {
-            embed.setColor(this.client.config.colors.error);
-            embed.setDescription(commandLang.id_not_role
-              .replace('{0}', args[1]));
-            message.channel.send({embed});
-          }
+  async run(message, args, commandLang, databases, lang) {
+    let embed    = this.client.getDekuEmbed(message);
+    let rolemeDB = databases.roleme_config;
+    let roles    = await rolemeDB.getPromise(message.guild.id);
+    if(roles && Object.keys(roles).length > 0) {
+      if (args.length > 0) {
+        let roleName = args.join(' ').toLowerCase();
+        let roleId   = roles[roleName];
+        if (roleId) {
+          let add  = !message.member.roles.has(roleId);
+          let cb   = this.feedbackRun(message, commandLang, roleId, add);
+          if (add) message.member.addRole(roleId).then(() => cb()).catch(e => cb(true, e));
+          else     message.member.removeRole(roleId).then(() => cb()).catch(e => cb(true, e));
         } else {
           embed.setColor(this.client.config.colors.error);
-          embed.setTitle(commandLang.insuficcient_args_add);
-          embed.setDescription(commandLang.add_usage);
+          embed.setDescription(commandLang.not_roleme.replace('{0}', roleName));
           message.channel.send({embed});
         }
       } else {
-        embed.setColor(this.client.config.colors.error);
-        embed.setDescription(commandLang.no_permission);
-        message.channel.send({embed});
-      }
-    } else if (args[0] == '--remove') {
-      if (message.member.hasPermission('MANAGE_GUILD')) {
-        if (args[1]) {
-          databases.roleme_config.get(message.guild.id, (err, result) => {
-            if (result) {
-              args.splice(0, 1);
-              let role_key = args.join(" ").toLowerCase();
-              let json = JSON.parse(result);
-              if (json[role_key]) {
-                delete json[role_key];
-                databases.roleme_config.put(message.guild.id, JSON.stringify(json), err => {
-                  if (err) console.log(err);
-                  embed.setColor(this.client.config.colors.success)
-                  embed.setDescription(commandLang.remove_success.replace('{0}', role_key));
-                  message.channel.send({embed});
-                });
-              } else {
-                embed.setColor(this.client.config.colors.error)
-                embed.setDescription(commandLang.not_roleme.replace('{0}', role_key));
-                message.channel.send({embed});
-              }
-            } else {
-              embed.setColor(this.client.config.colors.error);
-              embed.setDescription(commandLang.no_roleme_roles);
-              message.channel.send({embed});
-            }
-          });
-        } else {
-          embed.setColor(this.client.config.colors.error);
-          embed.setTitle(commandLang.insuficcient_args_remove);
-          embed.setDescription(commandLang.remove_usage);
-          message.channel.send({embed});
-        }
-      } else {
-        embed.setColor(this.client.config.colors.error);
-        embed.setDescription(commandLang.no_permission);
-        message.channel.send({embed});
+        let commands = Object.keys(roles).map(k => {
+          return `d!roleme ${k}`;
+        }).join('\n');
+        
+        let roleList = Object.keys(roles).map(k => {
+          return message.guild.roles.get(roles[k]).toString();
+        }).join('\n');
+          
+        embed.addField(commandLang.command, commands, true);
+        embed.addField(commandLang.role, roleList, true);
+        
+        message.channel.send(`<:izuku:358407294100439040> **${commandLang.heres_a_list}**`, {embed});
       }
     } else {
-      // No flags were passed, proceed to check if role is avaliable and give it
-      databases.roleme_config.get(message.guild.id, (err, result) => {
-        if (result) {
-          if (err) console.log(err);
-          let json = JSON.parse(result);
-          if (args[0]) {
-            if (json[args.join(" ").toLowerCase()]) {
-              let roleid = json[args.join(" ").toLowerCase()];
-              if (!message.member.roles.has(roleid)) {
-                message.member.addRole(roleid).then(() => this.success(embed, commandLang, message, roleid, true)).catch((err) => this.fail(embed, lang, message, roleid, true, err));
-              } else {
-                message.member.removeRole(roleid).then(() => this.success(embed, commandLang, message, roleid, false)).catch((err) => this.fail(embed, lang, message, roleid, false, err));
-              }
-            } else {
-              embed.setColor(this.client.config.colors.error);
-              embed.setDescription(commandLang.not_roleme.replace('{0}', args.join(" ")));
-              message.channel.send({embed});
-            }
-          } else {
-            let commands = "";
-            let roles = "";
-            Object.keys(json).forEach(key => {
-              commands = commands + "`d!roleme " + key + "`\n";
-              roles = roles + message.guild.roles.get(json[key]) + '\n';
-            });
-            embed.addField(commandLang.command, commands, true);
-            embed.addField(commandLang.role, roles, true);
-            message.channel.send(`<:izuku:358407294100439040> **${commandLang.heres_a_list}**`, {embed: embed});
-          }
-        } else {
-          embed.setColor(this.client.config.colors.error);
-          embed.setDescription(commandLang.no_roles);
-          message.channel.send({embed});
-        }
-      });
+      embed.setColor(this.client.config.colors.error);
+      embed.setDescription(commandLang.no_roles);
+      message.channel.send({embed});
     }
   }
 
   canRun(message, args) {
     return message.guild ? true : false;
   }
+  
+  feedbackRun(message, lang, roleId, add) {
+    return (hasError, err) => {
+      let embed = this.client.getDekuEmbed(message);
+      let role  = message.guild.roles.get(roleId);
+      
+      if(hasError) {
+        embed.setColor(this.client.config.colors.error);
+        let title = add ? lang.role_give_fail : lang.role_remove_fail;
+        embed.setTitle(title.replace('{0}', role));
+        embed.setDescription(`${lang.please_ask_owner}\n\n\`${err}\``);
+      } else {
+        embed.setColor(this.client.config.colors.success);
+        let description = add ? lang.role_give_success : lang.role_remove_success;
+        embed.setDescription(description.replace('{0}', role));
+      }
+      
+      message.channel.send({embed});
+    };
+  }
 
-  success(embed, lang, message, roleid, add) {
-    embed.setColor(config.colors.success)
-    if (add) {
-      embed.setDescription(lang.role_give_success.replace('{0}', message.guild.roles.get(roleid)));
+}
+
+// d!roleme --add ID NAME
+class RoleMeAdd extends SubCommand {
+
+  constructor(client, parentCommand) {
+    super(client, parentCommand);
+
+    this.name    = "add";
+    this.aliases = ["--add"];
+  }
+
+  async run(message, args, commandLang, databases, lang) {
+    let embed    = this.client.getDekuEmbed(message).setColor(this.client.config.colors.error);
+    let rolemeDB = databases.roleme_config;
+    if (message.member.hasPermission('MANAGE_GUILD')) {
+      if (args.length > 1) {
+        let roleId   = args[0];
+        let roleName = args.slice(1).join(' ').toLowerCase();
+        if (message.guild.roles.has(roleId)) {
+          //if(!this.parentCommand.blacklistNames.includes(roleName)) {
+          if(true) {
+            let roles = await rolemeDB.getPromise(message.guild.id);
+            if(!roles || Object.keys(roles).length < 1) roles = {};
+
+            roles[roleName] = roleId;
+            await rolemeDB.putPromise(message.guild.id, roles);
+            embed.setColor(this.client.config.colors.success);
+            embed.setDescription(commandLang.add_success
+              .replace('{0}', message.guild.roles.get(roleId))
+              .replace('{1}', roleName));
+          } else {
+            embed.setDescription(commandLang.invalid_rolename);
+          }
+        } else {
+          embed.setDescription(commandLang.id_not_role
+            .replace('{0}', roleId));
+        }
+      } else {
+        embed.setTitle(commandLang.insuficcient_args_add);
+        embed.setDescription(commandLang.add_usage);
+      }
     } else {
-      embed.setDescription(lang.role_remove_success.replace('{0}', message.guild.roles.get(roleid)));
+      embed.setDescription(commandLang.no_permission);
     }
+    
     message.channel.send({embed});
   }
 
-  fail(embed, lang, message, roleid, add, err) {
-    embed.setColor(config.colors.error)
-    if (add) {
-      embed.setTitle(lang.role_give_fail.replace('{0}', message.guild.roles.get(roleid)));
-    } else {
-      embed.setTitle(lang.role_remove_fail.replace('{0}', message.guild.roles.get(roleid)));
-    }
+}
 
-    embed.setDescription(`${lang.please_ask_owner}\n\n\`${err}\``);
+// d!roleme --remove NAME
+class RoleMeRemove extends SubCommand {
+
+  constructor(client, parentCommand) {
+    super(client, parentCommand);
+
+    this.name    = "remove";
+    this.aliases = ["rem", "--remove", "--rem"];
+  }
+
+  async run(message, args, commandLang, databases, lang) {
+    let embed    = this.client.getDekuEmbed(message).setColor(this.client.config.colors.error);
+    let rolemeDB = databases.roleme_config;
+    if (message.member.hasPermission('MANAGE_GUILD')) {
+      if (args.length > 0) {
+        let roles = await rolemeDB.getPromise(message.guild.id);
+        if(roles && Object.keys(roles).length > 0) {
+          let roleName = args.join(" ").toLowerCase();
+          if(roles[roleName]) {
+            delete roles[roleName];
+            await rolemeDB.putPromise(message.guild.id, roles);
+            embed.setColor(this.client.config.colors.success)
+            embed.setDescription(commandLang.remove_success.replace('{0}', roleName));
+            
+          } else {
+            embed.setDescription(commandLang.not_roleme.replace('{0}', roleName));
+          }
+        } else {
+          embed.setDescription(commandLang.no_roleme_roles);
+        }
+      } else {
+        embed.setTitle(commandLang.insuficcient_args_remove);
+        embed.setDescription(commandLang.remove_usage);
+      }
+    } else {
+      embed.setDescription(commandLang.no_permission);
+    }
+    
     message.channel.send({embed});
   }
 
