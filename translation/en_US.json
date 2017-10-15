@@ -251,8 +251,16 @@
           "_description": "Creates a TogetherTube room.",
           "error_title": "An error ocurred while creating the room.",
           "error_description": "Please report this using `d!bugreport`"
+        },
+        "say": {
+          "_usage": "d!say <text|--embed <json>>",
+          "_description": "Forces the bot to say something.",
+          "_example": "d!say Hello World",
+          "json_error_title": "An error ocurred while parsing your JSON.",
+          "json_error_desc": "You can use leovel's [embed visualizer](https://leovoel.github.io/embed-visualizer/) to check what's wrong."
         }
     },
+    "missing_manageguild_permission": "You need the **\"Manage Guild**\" permission in order to do this",
     "usage": "**Usage:**",
     "example": "**Example:**"
 }
