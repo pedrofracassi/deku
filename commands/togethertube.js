@@ -22,7 +22,7 @@ module.exports = class TogetherTube extends Command {
         embed.setAuthor('TogetherTube', 'https://togethertube.com/assets/img/favicons/favicon-32x32.png', 'https://togethertube.com/');
       }
       message.channel.stopTyping();
-        message.channel.send({embed});
+      message.channel.send({embed});
     });
   }
 
