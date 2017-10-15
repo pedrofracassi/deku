@@ -242,6 +242,12 @@
           "error_specific": "I wasn't able to fetch XKCD #{0}",
           "not_integer": "The XKCD number should be an integer.",
           "error_random": "I wasn't able to fetch the a random XKCD."
+        },
+        "togethertube": {
+          "_usage": "d!togethertube",
+          "_description": "Creates a TogetherTube room.",
+          "error_title": "An error ocurred while creating the room.",
+          "error_description": "Please report this using `d!bugreport`"
         }
     },
     "usage": "**Usage:**",
