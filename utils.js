@@ -1,7 +1,8 @@
-const Discord = require('discord.js');
+const level = require('level');
 
 module.exports = {
-  arrayToStringWithCommas: function(array, last) {
+  
+  arrayToStringWithCommas: (array, last) => {
     var string = "";
     for (i = 0; i < array.length; i++) {
       if (i == (array.length - 1)) {
@@ -13,5 +14,35 @@ module.exports = {
       }
     }
     return string;
+  },
+  
+  initializeDatabase: (path) => {
+    let db = level(path);
+    
+    db.getPromise = (key) => {
+      return new Promise((resolve, reject) => {
+        db.get(key, (err, res) => {
+          if(err) {
+            reject(err);
+          } else {
+            try { res = JSON.parse(res) }
+            catch(e) {}
+            resolve(res);
+          }
+        });
+      });
+    }
+    
+    db.putPromise = (key, value) => {
+      if(typeof value !== 'string') value = JSON.stringify(value);
+      return new Promise((resolve, reject) => {
+        db.put(key, value, (err) => {
+          if(err) reject(err);
+          else    resolve();
+        });
+      });
+    }
+    
+    return db;
   }
 }

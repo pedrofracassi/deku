@@ -2,30 +2,34 @@ const Discord    = require('discord.js');
 const fs         = require('fs');
 
 const colors     = require('colors');
-const prototypes = require('./helpers/prototypes.js')
+const utils      = require('./utils.js');
 
 // Apis
 const Trello     = require("node-trello");
 const Nodesu     = require('nodesu');
 
-module.exports = class Deku extends Discord.Client {
+// Self initializers
+require('./helpers/prototypes.js');
 
+module.exports = class Deku extends Discord.Client {
 
   constructor(options = {}) {
     super(options);
 
     this.config      = options.config;
-    this.databases   = options.databases;
     this.devMode     = this.config.devMode;
 
     this.commands    = [];
+    this.databases   = {};
     this.languages   = {};
     this.listeners   = [];
 
+    // APIs
     this.trello      = new Trello(this.config.trello_key, this.config.trello_token);
     this.nodesu      = new Nodesu.Client(this.config.osu);
 
     this.initializeCommands();
+    this.initializeDatabases();
     this.initializeLanguages();
     this.initializeListeners();
   }
@@ -44,7 +48,7 @@ module.exports = class Deku extends Discord.Client {
     let self = this;
     return new Promise((resolve, reject) => {
       self.databases.language_config.get(guild.id, (err, value) => {
-        if (err) value = 'en_US';
+        if (err || !value) value = 'en_US';
         resolve(self.languages[value] || self.languages['en_US']);
       })
     });
@@ -86,6 +90,12 @@ module.exports = class Deku extends Discord.Client {
     });
     if (failed) this.log(['BOT', 'Commands'], `${this.commands.length} commands loaded succesfully, ${failed} failed.`.yellow);
     else this.log(['BOT', 'Commands'], `${this.commands.length} commands loaded succesfully`.green);
+  }
+  
+  initializeDatabases() {
+    this.databases['autorole_config'] = utils.initializeDatabase('./databases/autorole');
+    this.databases['language_config'] = utils.initializeDatabase('./databases/language');
+    this.databases['roleme_config']   = utils.initializeDatabase('./databases/roleme');
   }
 
   initializeLanguages() {
