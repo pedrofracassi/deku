@@ -101,10 +101,9 @@
             "insuficcient_args_remove": "You need to specify a role name!",
             "add_usage": "**Usage:** `d!roleme --add <role name> <role id>`\n**Example:** `d!roleme --add lol 358446520334286851`\n\nPro tip: You can get the role IDs from d!roleids",
             "remove_usage": "**Usage:** `d!roleme --remove <role name>`\n**Example:** `d!roleme --remove lol`",
-            "no_roles": "This server doesen't have `d!roleme` roles.",
+            "no_roles": "This server doesn't have `d!roleme` roles.",
             "remove_success": "I removed `{0}` from the `d!roleme` roles.",
             "not_roleme": "`{0}` isn't a `d!roleme` role.",
-            "no_roleme_roles": "This server doesen't have `d!roleme` roles.",
             "command": "Command",
             "role": "Role",
             "heres_a_list": "Here's a list of avaliable roles:",
@@ -213,7 +212,10 @@
             "no_args": "You need to specify a role ID!",
             "inexistent_role": "`{0}` isn't a valid role ID for this server.",
             "clear_success": "I cleared the default roles.",
-            "clear_error": "Something went wrong while clearing the default roles.\n\n`{0}`If you think this is a bug, please report it using `d!bugreport`"
+            "clear_error": "Something went wrong while clearing the default roles.\n\n`{0}`If you think this is a bug, please report it using `d!bugreport`",
+            "no_roles": "This server doesn't have autoroles.",
+            "everyone_role": "Members role",
+            "bots_role": "Bots role"
         },
         "translate": {
             "_usage": "d!translate [--desiredlanguage] <your text>",

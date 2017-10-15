@@ -157,7 +157,7 @@ class RoleMeRemove extends SubCommand {
             embed.setDescription(commandLang.not_roleme.replace('{0}', roleName));
           }
         } else {
-          embed.setDescription(commandLang.no_roleme_roles);
+          embed.setDescription(commandLang.no_roles);
         }
       } else {
         embed.setTitle(commandLang.insuficcient_args_remove);
