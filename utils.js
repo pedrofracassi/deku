@@ -2,18 +2,12 @@ const level = require('level');
 
 module.exports = {
   
-  arrayToStringWithCommas: (array, last) => {
-    var string = "";
-    for (i = 0; i < array.length; i++) {
-      if (i == (array.length - 1)) {
-        string = string + array[i];
-      } else if (i == (array.length - 2)) {
-        string = string + array[i] + last;
-      } else {
-        string = string + array[i] + ", ";
-      }
-    }
-    return string;
+  arrayToStringWithCommas: (array, and) => {
+    if(!array || !Array.isArray(array) || array.length < 1) return '';
+    if(array.length < 2) return array[0];
+    let lastIndex = array.length - 1;
+    let firstPart = array.slice(0, lastIndex).join(', ');
+    return firstPart + and + array[lastIndex];
   },
   
   initializeDatabase: (path) => {
@@ -25,9 +19,9 @@ module.exports = {
           if(err) {
             reject(err);
           } else {
-            try { res = JSON.parse(res) }
-            catch(e) {}
-            resolve(res);
+            try      { res = JSON.parse(res); }
+            catch(e) { res = res || {};       }
+            finally  { resolve(res);          }
           }
         });
       });
@@ -37,6 +31,15 @@ module.exports = {
       if(typeof value !== 'string') value = JSON.stringify(value);
       return new Promise((resolve, reject) => {
         db.put(key, value, (err) => {
+          if(err) reject(err);
+          else    resolve();
+        });
+      });
+    }
+    
+    db.delPromise = (key) => {
+      return new Promise((resolve, reject) => {
+        db.del(key, (err) => {
           if(err) reject(err);
           else    resolve();
         });
