@@ -31,7 +31,7 @@ class EmbedSay extends SubCommand {
     this.aliases = ["--embed"];
   }
 
-  async run(message, args, commandLang, databases, lang) {
+  run(message, args, commandLang, databases, lang) {
     if (message.member.hasPermission('MANAGE_GUILD')) {
       try {
         var json = JSON.parse(args.join(' '));
