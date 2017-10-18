@@ -26,7 +26,7 @@ module.exports = class Rule34 extends Command {
           if (rand) {
               embed.setColor(0x5f99cf);
               embed.setTitle(rand.title);
-              embed.setImage(rand.url);
+              embed.setImage(rand.url.replace('.gifv', '.gif'));
               embed.setURL('http://reddit.com' + rand.permalink)
           } else {
             embed.setDescription('**No images found.**');
