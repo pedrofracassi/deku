@@ -55,5 +55,5 @@ class EmbedSay extends SubCommand {
       embed.setColor(this.client.config.colors.error);
       message.channel.send(embed);
     }
-  };
+  }
 }

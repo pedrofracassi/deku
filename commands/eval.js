@@ -10,7 +10,7 @@ module.exports = class Eval extends Command {
     this.hideHelp = true;
   }
 
-  run(message, args, commandLang) {
+  run(message, args) {
     try {
       const args = message.content.split(" ").slice(1);
       const code = args.join(" ");
