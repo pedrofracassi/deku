@@ -8,7 +8,7 @@ module.exports = class Smart extends Command {
     this.name = "smart";
   }
 
-  run(message, args, commandLang) {
+  run(message) {
     let embed = this.client.getDekuEmbed(message);
     embed.setImage('https://i.imgur.com/MzwiZg8.png');
     message.channel.send({embed});

@@ -15,7 +15,7 @@ module.exports = class SetLang extends Command {
     if (message.member.hasPermission('MANAGE_GUILD')) {
       if (args[0]) {
         if (this.client.languages[args[0]]) {
-          databases.language_config.put(message.guild.id, args[0], (err) => {
+          databases.language_config.put(message.guild.id, args[0], () => {
             embed.setColor(this.client.config.colors.success);
             embed.setDescription(commandLang.success.replace('{0}', args[0]));
             message.channel.send({embed});
@@ -39,7 +39,7 @@ module.exports = class SetLang extends Command {
     }
   }
 
-  canRun(message, args) {
+  canRun(message) {
     return message.guild ? true : false;
   }
 

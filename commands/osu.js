@@ -1,5 +1,4 @@
 const Command = require('../structures/command.js');
-const Nodesu  = require('nodesu');
 
 const logo = 'https://vignette2.wikia.nocookie.net/fantendo/images/1/12/Osu%21_logo.png';
 
