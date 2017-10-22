@@ -12,7 +12,6 @@ module.exports = class Eval extends Command {
 
   run(message, args) {
     try {
-      const args = message.content.split(" ").slice(1);
       const code = args.join(" ");
       let evaled = this.clean(require("util").inspect(eval(code)));
       message.channel.send(evaled, {code: "xl" }).catch(err => {
