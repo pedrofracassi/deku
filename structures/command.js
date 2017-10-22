@@ -32,7 +32,7 @@ module.exports = class Command {
    * @param {Object} databases Bot's databases object
    * @param {Object} lang Current guild's language object
    */
-  run(message) {}
+  run() {}
   
   /**
    * Returns true if this command can be ran
