@@ -25,8 +25,8 @@ module.exports = class Deku extends Discord.Client {
     this.listeners   = [];
 
     // APIs
-    this.trello      = new Trello(this.config.trello_key, this.config.trello_token);
-    this.nodesu      = new Nodesu.Client(this.config.osu);
+    this.trello      = new Trello(process.env.TRELLO_API_KEY, process.env.TRELLO_ACCOUNT_TOKEN);
+    this.nodesu      = new Nodesu.Client(process.env.OSU_API_TOKEN);
 
     this.initializeCommands();
     this.initializeDatabases();
@@ -36,7 +36,7 @@ module.exports = class Deku extends Discord.Client {
 
   start(token) {
     this.log(['BOT', 'Discord'], "Authenticating...".yellow);
-    if (!token && this.config) token = this.config.discord;
+    if (!token && this.config) token = process.env.DISCORD_BOT_TOKEN;
     this.login(token);
   }
 
@@ -91,7 +91,7 @@ module.exports = class Deku extends Discord.Client {
     if (failed) this.log(['BOT', 'Commands'], `${this.commands.length} commands loaded succesfully, ${failed} failed.`.yellow);
     else this.log(['BOT', 'Commands'], `${this.commands.length} commands loaded succesfully`.green);
   }
-  
+
   initializeDatabases() {
     this.databases['autorole_config'] = utils.initializeDatabase('./databases/autorole');
     this.databases['language_config'] = utils.initializeDatabase('./databases/language');
