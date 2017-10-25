@@ -7,6 +7,7 @@ const utils      = require('./utils.js');
 // Apis
 const Trello     = require("node-trello");
 const Nodesu     = require('nodesu');
+const TeemoJS    = require('teemojs');
 
 // Self initializers
 require('./helpers/prototypes.js');
@@ -27,7 +28,7 @@ module.exports = class Deku extends Discord.Client {
     // APIs
     this.trello      = new Trello(this.config.trello_key, this.config.trello_token);
     this.nodesu      = new Nodesu.Client(this.config.osu);
-
+    this.riotapi     = TeemoJS(this.config.riot_token);
     this.initializeCommands();
     this.initializeDatabases();
     this.initializeLanguages();
@@ -91,7 +92,7 @@ module.exports = class Deku extends Discord.Client {
     if (failed) this.log(['BOT', 'Commands'], `${this.commands.length} commands loaded succesfully, ${failed} failed.`.yellow);
     else this.log(['BOT', 'Commands'], `${this.commands.length} commands loaded succesfully`.green);
   }
-  
+
   initializeDatabases() {
     this.databases['autorole_config'] = utils.initializeDatabase('./databases/autorole');
     this.databases['language_config'] = utils.initializeDatabase('./databases/language');

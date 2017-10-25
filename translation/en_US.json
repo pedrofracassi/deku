@@ -83,7 +83,10 @@
             },
             "best_champion": "Best Champion",
             "_description": "Shows information about a League of Legends summoner",
-            "_usage": "d!lol <region> <summoner>"
+            "_usage": "d!lol <region> <summoner>",
+            "nickname": "Nickname",
+            "summoner_not_found": "I couldn't find this summoner.",
+            "summoner_not_found_desc": "Did you choose the right region?"
         },
         "lmgtfy": {
             "_description": "Generates a \"Let Me Google That For You\" link",
