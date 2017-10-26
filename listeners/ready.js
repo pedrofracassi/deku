@@ -11,9 +11,9 @@ module.exports = class ReadyListener extends EventListener {
   	if(this.devMode && fs.existsSync('./.git/')) {
       let file = fs.readFileSync("./.git/HEAD").toString();
       let branch = /ref: refs\/heads\/(.+)(?:\\n)?/g.exec(file)[1];
-      this.user.setGame(`Branch: ${branch} - ${this.config.prefix}help`);
+      this.user.setGame(`Branch: ${branch} - ${process.env.PREFIX}help`);
     } else {
-      this.user.setGame(this.config.customGame || `${this.config.prefix}help`);
+      this.user.setGame(this.config.customGame || `${process.env.PREFIX}help`);
     }
     this.log(['BOT', 'Discord'], `Ready! Authenticated as ${this.user.tag}`.green.bold);
   }
