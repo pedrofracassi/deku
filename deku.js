@@ -93,6 +93,7 @@ module.exports = class Deku extends Discord.Client {
   }
 
   initializeDatabases() {
+    if (!fs.existsSync('./databases/')) fs.mkdirSync('./databases/');
     this.databases['autorole_config'] = utils.initializeDatabase('./databases/autorole');
     this.databases['language_config'] = utils.initializeDatabase('./databases/language');
     this.databases['roleme_config']   = utils.initializeDatabase('./databases/roleme');
