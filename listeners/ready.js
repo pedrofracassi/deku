@@ -8,7 +8,7 @@ module.exports = class ReadyListener extends EventListener {
   }
 
   onReady() {
-  	if(this.devMode) {
+  	if(this.devMode && fs.existsSync('./.git/')) {
       let file = fs.readFileSync("./.git/HEAD").toString();
       let branch = /ref: refs\/heads\/(.+)(?:\\n)?/g.exec(file)[1];
       this.user.setGame(`Branch: ${branch} - ${this.config.prefix}help`);
