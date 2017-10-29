@@ -12,7 +12,7 @@ module.exports = class Weather extends Command {
     this.aliases = ["forecast", "temperature", "temperatura"];
   }
 
-  run(message, args, commandLang, databases, lang) {
+  run(message, args, commandLang) {
     const embed = this.client.getDekuEmbed(message);
     if(args.length > 0) {
       const zone = args.join(" ");
