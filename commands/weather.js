@@ -27,7 +27,7 @@ module.exports = class Weather extends Command {
           if(rst) {
             embed.setAuthor(commandLang.forecast_on.replace('{0}', rst.location.name), Logo);
             embed.addField(commandLang.current, commandLang.temperature_before.replace('{0}', rst.current.temperature).replace('{1}', rst.current.humidity).replace('{2}', rst.current.winddisplay));
-            embed.addField(commandLang.forecast_day.replace('{0}', rst.forecast[0].date), commandLang.temperature_after.replace('{0}', rst.forecast[0].high).replace('{1}', rst.forecast[0].low));
+            embed.addField(commandLang.forecast_day.replace('{0}', rst.forecast[2].date), commandLang.temperature_after.replace('{0}', rst.forecast[2].high).replace('{1}', rst.forecast[2].low));
           } else {
             embed.setColor(this.client.config.colors.error);
             embed.addField(commandLang.error_title, commandLang.invalid_zone);
