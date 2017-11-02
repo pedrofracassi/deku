@@ -3,7 +3,6 @@ const Command = require('../structures/command.js');
 const Discord = require('discord.js');
 const request = require('request');
 const geoip = require('geoip-lite');
-const os = require('os');
 
 String.prototype.toHHMMSS = function () {
   var sec_num = parseInt(this, 10); // don't forget the second param
