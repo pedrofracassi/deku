@@ -12,16 +12,14 @@ module.exports = class RoleMe extends Command {
     this.subcommands    = [new RoleMeAdd(client, this), new RoleMeRemove(client, this)];
 
     this.blacklistNames = this.subcommands
-    .map(c => [c.name].concat(c.aliases))
-    .reduce((a, b) => a.concat(b));
+      .map(c => [c.name].concat(c.aliases))
+      .reduce((a, b) => a.concat(b));
   }
 
   async run(message, args, commandLang, databases, lang) {
     let embed    = this.client.getDekuEmbed(message);
     let rolemeDB = databases.roleme_config;
     let roles    = await rolemeDB.getPromise(message.guild.id) || {};
-	console.log(util.inspect(roles));
-    console.log(Object.keys(roles));
     if(roles && Object.keys(roles).length > 0) {
       if (args.length > 0) {
         let roleName = args.join(' ').toLowerCase();
