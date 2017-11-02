@@ -9,7 +9,7 @@ module.exports = class RoleMe extends Command {
     this.name           = "roleme";
     this.aliases        = ["role"];
     this.subcommands    = [new RoleMeAdd(client, this), new RoleMeRemove(client, this)];
-    
+
     this.blacklistNames = this.subcommands
       .map(c => [c.name].concat(c.aliases))
       .reduce((a, b) => a.concat(b));
@@ -18,7 +18,7 @@ module.exports = class RoleMe extends Command {
   async run(message, args, commandLang, databases, lang) {
     let embed    = this.client.getDekuEmbed(message);
     let rolemeDB = databases.roleme_config;
-    let roles    = await rolemeDB.getPromise(message.guild.id);
+    let roles    = await rolemeDB.getPromise(message.guild.id) || {};
     if(roles && Object.keys(roles).length > 0) {
       if (args.length > 0) {
         let roleName = args.join(' ').toLowerCase();
@@ -57,12 +57,12 @@ module.exports = class RoleMe extends Command {
   canRun(message, args) {
     return message.guild ? true : false;
   }
-  
+
   feedbackRun(message, lang, roleId, add) {
     return (hasError, err) => {
       let embed = this.client.getDekuEmbed(message);
       let role  = message.guild.roles.get(roleId);
-      
+
       if(hasError) {
         embed.setColor(this.client.config.colors.error);
         let title = add ? lang.role_give_fail : lang.role_remove_fail;
@@ -73,7 +73,7 @@ module.exports = class RoleMe extends Command {
         let description = add ? lang.role_give_success : lang.role_remove_success;
         embed.setDescription(description.replace('{0}', role));
       }
-      
+
       message.channel.send({embed});
     };
   }

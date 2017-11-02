@@ -14,11 +14,7 @@ module.exports = class Autorole extends Command {
   async run(message, args, commandLang, databases, lang) {
     let embed      = this.client.getDekuEmbed(message).setColor(this.client.config.colors.error);
     let autoroleDB = databases.autorole_config;
-    
-    let autorole;
-    try        { autorole = await autoroleDB.getPromise(message.guild.id) }
-    catch(err) { autorole = {} }
-    
+    let autorole = await autoroleDB.getPromise(message.guild.id) || {};
     if (args.length > 0) {
       if (message.member.hasPermission('MANAGE_GUILD')) {
         let role = message.guild.roles.get(args[0]);
