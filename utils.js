@@ -18,7 +18,7 @@ module.exports = {
         db.get(key, (err, res) => {
           if(err) {
             if(throwError) reject(err);
-			else           resolve(undefined);
+            else           resolve(undefined);
           } else {
             try      { res = JSON.parse(res); }
             catch(e) { res = res || {};       }
