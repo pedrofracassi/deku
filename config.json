@@ -1,0 +1,12 @@
+{
+    "ownerId": "169213934094647298",
+    "devMode": true,
+    "colors": {
+        "embed": "266B54",
+        "error": "F03A17",
+        "osu": "EA5F9C",
+        "success": "4cdc4c",
+        "npm": "C12127",
+        "xkcd": "96A8C8"
+    }
+}

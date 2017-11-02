@@ -26,6 +26,7 @@
     "colors": "^1.1.2",
     "countries-list": "^2.1.0",
     "discord.js": "^11.2.1",
+    "dotenv": "^4.0.0",
     "geoip-lite": "^1.2.1",
     "google-translate-api": "^2.3.0",
     "level": "^1.7.0",
@@ -37,5 +38,8 @@
     "teemojs": "^1.0.4",
     "weather-js": "^2.0.0",
     "xkcd-node": "^1.0.0"
+  },
+  "engines": {
+    "node": "7.10.0"
   }
 }

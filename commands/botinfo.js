@@ -53,6 +53,8 @@ module.exports = class BotInfo extends Command {
 
         var usedram = os.totalmem() - os.freemem();
         embed.addField(commandLang.ram, `${this.bytesToSize(usedram)}/${this.bytesToSize(os.totalmem())}`, true);
+
+        embed.addField('CPUs', os.cpus().length+"x "+os.cpus()[0].model, true);
       }
       message.channel.send({embed});
     });

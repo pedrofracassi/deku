@@ -1,3 +1,4 @@
+require('dotenv').config();
 const config = require('./config.json');
 const Deku   = require('./deku.js');
 const client = new Deku({config});

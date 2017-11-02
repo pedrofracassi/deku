@@ -16,10 +16,10 @@ module.exports = class MessageListener extends EventListener {
 
   async onMessage(message) {
   	if (message.author.bot) return;
-    if (message.content.startsWith(this.config.prefix)) {
+    if (message.content.startsWith(process.env.PREFIX)) {
       let fullCmd = message.content.split(" ").filter(a => a).map(s => s.trim());
       let args = fullCmd.slice(1);
-      let cmd = fullCmd[0].substring(this.config.prefix.length).toLowerCase();
+      let cmd = fullCmd[0].substring(process.env.PREFIX.length).toLowerCase();
       let command = this.commands.find(c => c.name.toLowerCase() == cmd || c.aliases.includes(cmd));
 
       if (command && command.canRun(message, args)) {

@@ -20,7 +20,7 @@ module.exports = class TheMovieDatabase extends Command {
     if (args[0]) {
       var language = lang.code.replace('_', '-');
       var url = search_urlbase
-      .replace('{0}', this.client.config.tmdb)
+      .replace('{0}', process.env.TMDB_API_TOKEN)
       .replace('{1}', language)
       .replace('{2}', args.join(' '))
       .replace('{3}', message.channel.nsfw);
@@ -32,7 +32,7 @@ module.exports = class TheMovieDatabase extends Command {
             var valid_types = ['tv', 'movie'];
             if (valid_types.includes(result.media_type)) {
               var moreUrl = more_urlbase.replace('{2}', result.id).replace('{4}', result.media_type);
-              var moreApiUrl = more_api.replace('{2}', result.id).replace('{4}', result.media_type).replace('{0}', this.client.config.tmdb).replace('{1}', language);
+              var moreApiUrl = more_api.replace('{2}', result.id).replace('{4}', result.media_type).replace('{0}', process.env.TMDB_API_TOKEN).replace('{1}', language);
               request(moreApiUrl, (err, resp, body) => {
                 if (!err) {
                   var json = JSON.parse(body);
