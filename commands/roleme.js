@@ -7,7 +7,7 @@ module.exports = class RoleMe extends Command {
     super(client);
 
     this.name           = "roleme";
-    this.aliases        = ["role"];
+    this.aliases        = ["role", "rolaemmim"];
     this.subcommands    = [new RoleMeAdd(client, this), new RoleMeRemove(client, this)];
 
     this.blacklistNames = this.subcommands
