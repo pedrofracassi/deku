@@ -24,7 +24,8 @@
             "global_ranking": "Colocação Global",
             "play_count": "Partidas Jogadas",
             "weird_error": "A API do osu! retornou um valor nulo pra esse perfil.",
-            "not_our_fault": "Isso não é minha culpa, é da ppy.\n\n[Você ainda pode ver o perfil no site se quiser.]({0})"
+            "not_our_fault": "Isso não é minha culpa, é da ppy.\n\n[Você ainda pode ver o perfil no site se quiser.]({0})",
+            "error_ocurred": "Um erro ocorreu ao encontrar esse perfil do osu!"
         },
         "playing": {
             "_description": "Mostra quantas pessoas estão jogando certo jogo no momento",
@@ -111,7 +112,8 @@
             "role_remove_success": "Tirei o cargo {0} de você.",
             "role_give_fail": "Eu não consegui te dar o cargo {0}.",
             "role_remove_fail": "Eu não consegui tirar o cargo {0} de você.",
-            "please_ask_owner": "Por favor, peça pro dono do servidor verificar minhas permissões."
+            "please_ask_owner": "Por favor, peça pro dono do servidor verificar minhas permissões.",
+            "invalid_rolename": "Você não pode usar esse nome de cargo!"
         },
         "roleids": {
             "_usage": "d!roleids",
@@ -201,7 +203,10 @@
             "no_args": "Você precisa especificar um ID de cargo!",
             "inexistent_role": "`{0}` não é um ID de cargo válido nesse servidor.",
             "clear_success": "E limpei os cargos padrão.",
-            "clear_error": "Algo deu errado ao limpar os cargos padrão.\n\n`{0}`\nSe você acha que isso é um bug, por favor reporte com `d!bugreport`"
+            "clear_error": "Algo deu errado ao limpar os cargos padrão.\n\n`{0}`\nSe você acha que isso é um bug, por favor reporte com `d!bugreport`",
+            "no_roles": "Esse servidor não tem autoroles.",
+            "everyone_role": "Cargo dos membros",
+            "bots_role": "Cargo dos bots"
         },
         "translate": {
             "_usage": "d!translate [--idiomadesejado] <seu texto>",
@@ -222,8 +227,56 @@
                 "weight": "Peso",
                 "height": "Altura"
             }
+        },
+        "tmdb": {
+            "_usage": "d!tmdb <nome do filme/série>",
+            "_example": "d!tmdb Boku No Hero",
+            "_description": "Mostra a sinopse de um filme ou série",
+            "nothing_found": "Eu não consegui encontrar nada com o nome *\"{0}\"**",
+            "tmdb_api_error": "Um erro ocorreu ao contatar a API do TMDB.\n`{0}`\n\nPor favor, use `d!bugreport` pra reportar isso.",
+            "no_name_specified": "Você precisa especificar o nome da série/filme!",
+            "no_overview_tv": "Essa série não tem uma sinopse disponível.",
+            "no_overview_movie": "Esse filme não tem uma sinopse disponível."
+        },
+        "xkcd": {
+            "_usage": "d!xkcd [id|\"latest\"]",
+            "_example": "d!xkcd 149",
+            "_description": "Mostra um XKCD. Se nenhum argumento for especificado, mostra um aleatório.",
+            "error_latest": "Eu não consegui puxar o último XKCD.",
+            "error_specific": "Eu não consegui baixar o XKCD #{0}",
+            "not_integer": "O número do XKCD deve ser inteiro.",
+            "error_random": "Eu não consegui baixar um XKCD aleatório."
+        },
+        "togethertube": {
+            "_usage": "d!togethertube",
+            "_description": "Cria uma sala no TogetherTube.",
+            "error_title": "Um erro ocorreu ao criar a sala.",
+            "error_description": "Por favor, reporte isso usando `d!bugreport`"
+        },
+        "say": {
+            "_usage": "!say <texto|--embed <json>>",
+            "_description": "Força o bot a dizer algo.",
+            "_example": "d!say Olá Mundo",
+            "json_error_title": "Um erro ocorreu ao ler o seu JSON",
+            "json_error_desc": "Você pode usar o [visualizador de embeds](https://leovoel.github.io/embed-visualizer/) do leovel pra descobrir o que há de errado."
+        },
+        "weather": {
+            "_usage": "d!weather <zona ou localização>",
+            "_description": "Mostra a previsão do tempo para o local especificado",
+            "_example": "d!weather Salvador",
+            "error_title": "Um erro ocorreu ao baixar a previsão do tempo",
+            "error_description": "Por favor reporte isso usando `d!bugreport`",
+            "specify_zone": "Por favor, especifique uma zona.",
+            "usage": "**Usage:** `d!weather <zona ou localização>`\n**Example:** `d!weather Salvador`",
+            "forecast_on": "Previsão do tempo em {0}",
+            "forecast_day": "Temperatura para {0} [Amanhã]",
+            "temperature_after": "{0}ºC no máximo e {1}ºC no mínimo.",
+            "invalid_zone": "Zona inválida.",
+            "current": "Temperatura atual:",
+            "temperature_before": "{0}ºC com {1}% de humidade no ar e velocidade do vento de {2} ."
         }
     },
     "usage": "**Uso:**",
-    "example": "**Exemplo:**"
+    "example": "**Exemplo:**",
+    "missing_manageguild_permission": "Precisas da permissão **\"Manage Guild\"** para fazer isso."
 }
