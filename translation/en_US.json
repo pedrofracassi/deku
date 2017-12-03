@@ -104,6 +104,7 @@
             "no_roles": "This server doesn't have `d!roleme` roles.",
             "remove_success": "I removed `{0}` from the `d!roleme` roles.",
             "not_roleme": "`{0}` isn't a `d!roleme` role.",
+            "no_roleme_roles": "This server doesen't have `d!roleme` roles.",
             "command": "Command",
             "role": "Role",
             "heres_a_list": "Here's a list of avaliable roles:",
@@ -173,23 +174,13 @@
             "someones_picture": "here's **{0}**'s profile picture:"
         },
         "suggestion": {
-          "_usage": "d!suggestion <your suggestion>",
-          "_example": "d!suggestion Add a command that shows me waifus",
-          "_description": "Sends a suggestion to my developer",
-          "no_suggestion": "You need to suggest something!",
-          "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
-          "trello_error_desc": "Please contact my owner or try again later.",
-          "card_add_success": "I've added your suggestion to my Trello board."
-        },
-        "tmdb": {
-          "_usage": "d!tmdb <film/tv show name>",
-          "_example": "d!tmdb Boku No Hero",
-          "_description": "Displays the overview of a film/tv show",
-          "nothing_found": "I couldn't find anything by the name **\"{0}\"**",
-          "tmdb_api_error": "An error ocurred while contacting the TMDB API.\n`{0}`\n\nPlease use `d!bugreport` to report this.",
-          "no_name_specified": "You need to specify a movie/tv show name!",
-          "no_overview_tv": "This TV Show doesn't have an overview avaliable.",
-          "no_overview_movie": "This movie doesn't have an overview avaliable."
+            "_usage": "d!suggestion <your suggestion>",
+            "_example": "d!suggestion Add a command that shows me waifus",
+            "_description": "Sends a suggestion to my developer",
+            "no_suggestion": "You need to suggest something!",
+            "trello_error": "An error ocurred while trying to add your suggestion to Trello.",
+            "trello_error_desc": "Please contact my owner or try again later.",
+            "card_add_success": "I've added your suggestion to my Trello board."
         },
         "bugreport": {
             "_usage": "d!bugreport <explain the bug>",
@@ -237,45 +228,55 @@
                 "height": "Height"
             }
         },
+        "tmdb": {
+            "_usage": "d!tmdb <film/tv show name>",
+            "_example": "d!tmdb Boku No Hero",
+            "_description": "Displays the overview of a film/tv show",
+            "nothing_found": "I couldn't find anything by the name **\"{0}\"**",
+            "tmdb_api_error": "An error ocurred while contacting the TMDB API.\n`{0}`\n\nPlease use `d!bugreport` to report this.",
+            "no_name_specified": "You need to specify a movie/tv show name!",
+            "no_overview_tv": "This TV Show doesn't have an overview avaliable.",
+            "no_overview_movie": "This movie doesn't have an overview avaliable."
+        },
         "xkcd": {
-          "_usage": "d!xkcd [id|\"latest\"]",
-          "_example": "d!xkcd 149",
-          "_description": "Shows a XKCD. If no argument is provided, will show a random XKCD.",
-          "error_latest": "I wasn't able to fetch the latest XKCD.",
-          "error_specific": "I wasn't able to fetch XKCD #{0}",
-          "not_integer": "The XKCD number should be an integer.",
-          "error_random": "I wasn't able to fetch the a random XKCD."
+            "_usage": "d!xkcd [id|\"latest\"]",
+            "_example": "d!xkcd 149",
+            "_description": "Shows a XKCD. If no argument is provided, will show a random XKCD.",
+            "error_latest": "I wasn't able to fetch the latest XKCD.",
+            "error_specific": "I wasn't able to fetch XKCD #{0}",
+            "not_integer": "The XKCD number should be an integer.",
+            "error_random": "I wasn't able to fetch the a random XKCD."
         },
         "togethertube": {
-          "_usage": "d!togethertube",
-          "_description": "Creates a TogetherTube room.",
-          "error_title": "An error ocurred while creating the room.",
-          "error_description": "Please report this using `d!bugreport`"
+            "_usage": "d!togethertube",
+            "_description": "Creates a TogetherTube room.",
+            "error_title": "An error ocurred while creating the room.",
+            "error_description": "Please report this using `d!bugreport`"
         },
         "say": {
-          "_usage": "d!say <text|--embed <json>>",
-          "_description": "Forces the bot to say something.",
-          "_example": "d!say Hello World",
-          "json_error_title": "An error ocurred while parsing your JSON.",
-          "json_error_desc": "You can use leovel's [embed visualizer](https://leovoel.github.io/embed-visualizer/) to check what's wrong."
+            "_usage": "d!say <text|--embed <json>>",
+            "_description": "Forces the bot to say something.",
+            "_example": "d!say Hello World",
+            "json_error_title": "An error ocurred while parsing your JSON.",
+            "json_error_desc": "You can use leovel's [embed visualizer](https://leovoel.github.io/embed-visualizer/) to check what's wrong."
         },
         "weather": {
-          "_usage": "d!weather <zone or location>",
-          "_description": "Sends over the forecast for the zone specified.",
-          "_example": "d!weather California",
-          "error_title": "An error ocured while fetching the forecast.",
-          "error_description": "Please report this using `d!bugreport`",
-          "specify_zone": "Please specify a zone.",
-          "usage": "**Usage:** `d!weather <zone or location>`\n**Example:** `d!weather California`",
-          "forecast_on": "Forecast on {0}",
-          "forecast_day": "Temperature for {0} [tomorrow]:",
-          "temperature_after": "{0}ºC maximum and {1}ºC minimum temperatures.",
-          "invalid_zone": "Invalid zone.",
-          "current": "Current Temperature:",
-          "temperature_before": "{0}ºC with {1}% of air humidity and {2} air speed."
+            "_usage": "d!weather <zone or location>",
+            "_description": "Sends over the forecast for the zone specified.",
+            "_example": "d!weather California",
+            "error_title": "An error ocured while fetching the forecast.",
+            "error_description": "Please report this using `d!bugreport`",
+            "specify_zone": "Please specify a zone.",
+            "usage": "**Usage:** `d!weather <zone or location>`\n**Example:** `d!weather California`",
+            "forecast_on": "Forecast on {0}",
+            "forecast_day": "Temperature for {0} [tomorrow]:",
+            "temperature_after": "{0}ºC maximum and {1}ºC minimum temperatures.",
+            "invalid_zone": "Invalid zone.",
+            "current": "Current Temperature:",
+            "temperature_before": "{0}ºC with {1}% of air humidity and {2} air speed."
         }
     },
-    "missing_manageguild_permission": "You need the **\"Manage Guild**\" permission in order to do this",
     "usage": "**Usage:**",
-    "example": "**Example:**"
+    "example": "**Example:**",
+    "missing_manageguild_permission": "You need the **\"Manage Guild**\" permission in order to do this"
 }
