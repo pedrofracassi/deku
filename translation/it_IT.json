@@ -24,7 +24,8 @@
             "global_ranking": "Rank globale.",
             "play_count": "Numero di partite.",
             "weird_error": "Le API di osu! non hanno prodotto risultati per questo account.",
-            "not_our_fault": "Non è colpa mia, è di ppy.\n\n[Puoi comunque controllare il profilo sul sito web se lo desideri.]({0})"
+            "not_our_fault": "Non è colpa mia, è di ppy.\n\n[Puoi comunque controllare il profilo sul sito web se lo desideri.]({0})",
+            "error_ocurred": "Impossibile recuperare il profilo osu!"
         },
         "playing": {
             "_description": "Mostra quante persone stanno giocando ad un determinato gioco in questo momento.",
@@ -111,7 +112,8 @@
             "role_remove_success": "Ti ho rimosso dal ruolo {0}.",
             "role_give_fail": "Non sono riuscito a darti il ruolo {0}.",
             "role_remove_fail": "Non sono riuscito a rimuoverti il ruolo {0}.",
-            "please_ask_owner": "Per favore chiedi al creatore del server di controllare i miei permessi.\n"
+            "please_ask_owner": "Per favore chiedi al creatore del server di controllare i miei permessi.\n",
+            "invalid_rolename": "Non puoi usare questo nome del ruolo!"
         },
         "roleids": {
             "_usage": "d!roleids",
@@ -201,7 +203,10 @@
             "no_args": "Devi specificare un ID del ruolo!",
             "inexistent_role": "`{0}` non è un ruolo valido su questo server.",
             "clear_success": "Ho eliminato i ruoli predefiniti.",
-            "clear_error": "Qualcosa è andato storto con l'eliminazione dei ruoli predefiniti.\n\n`{0}`Se pensi che sia un bug, segnalalo utilizzando il comando \"d!bugreport\""
+            "clear_error": "Qualcosa è andato storto con l'eliminazione dei ruoli predefiniti.\n\n`{0}`Se pensi che sia un bug, segnalalo utilizzando il comando \"d!bugreport\"",
+            "no_roles": "Questo server non ha ruoli automatici",
+            "everyone_role": "Ruoli degli utenti",
+            "bots_role": "Ruoli dei bot"
         },
         "translate": {
             "_usage": "d!translate [--desiredlanguage] <il tuo testo>",
@@ -222,8 +227,56 @@
                 "weight": "Peso",
                 "height": "Altezza"
             }
+        },
+        "tmdb": {
+            "_usage": "d!tmdb <nome della serie tv/film>",
+            "_example": "d!tmdb Boku No Hero",
+            "_description": "Mostra una panoramica della serie tv/film",
+            "nothing_found": "Non sono riuscito a trovare nulla col nome **\"{0}\"**",
+            "tmdb_api_error": "Impossibile contattare la API TMDB.\n`{0}`\n\nPer favore, utilizza il comando `d!bugreport` per segnalarlo.",
+            "no_name_specified": "Devi specificare il nome di un film o una serie tv",
+            "no_overview_tv": "Questa serie tv non ha una panoramica disponibile.",
+            "no_overview_movie": "Questo film non ha una panoramica disponibile."
+        },
+        "xkcd": {
+            "_usage": "d!xkcd [id|\"latest\"]",
+            "_example": "d!xkcd 1897",
+            "_description": "Mostra un XXKCD. Se non viene fornita alcuna informazione dopo mostrerà un XKCD casuale.",
+            "error_latest": "Non sono riuscito a recuperare l'ultimo XKCD.",
+            "error_specific": "Non sono riuscito a recuperare l'XKCD #{0}",
+            "not_integer": "Il numero dell'XKCD dovrebbe essere un intero.",
+            "error_random": "Non sono riuscito a recuperare un XKCD casuale."
+        },
+        "togethertube": {
+            "_usage": "d!togethertube",
+            "_description": "Crea una stanza per TogetherTube.",
+            "error_title": "Errore durante la creazione della stanza.",
+            "error_description": "Reporta l'errore usando il comando `'d!bugreport`"
+        },
+        "say": {
+            "_usage": "d!say < testo | embed <json> >",
+            "_description": "Obbliga il bot a dire qualcosa.",
+            "_example": "d!say Ciao Mondo",
+            "json_error_title": "Si è verificato un errore nell'analisi del tuo JSON.",
+            "json_error_desc": "Puoi usare il visualizzatore embed di leovel (https://leovoel.github.io/embed-visualizer/) per capire cosa è andato storto."
+        },
+        "weather": {
+            "_usage": "d!weather <zona o luogo>",
+            "_description": "Invia il meteo per la zona specificata.",
+            "_example": "d!weather California",
+            "error_title": "Si è verificato un errore mentre tentavo di recuperare le informazioni sul meteo.",
+            "error_description": "Reporta usando il comando `d!bugreport`",
+            "specify_zone": "Specifica una zona.",
+            "usage": "**Utilizzo:** `d!weather <zona o luogo>`\n**Esempio:** `d!weather California`",
+            "forecast_on": "Meteo di {0}",
+            "forecast_day": "Temperatura per {0} [domani]:",
+            "temperature_after": "{0}°C di temperatura massima e {1}°C di temperatura minima.",
+            "invalid_zone": "Zona non valida.",
+            "current": "Temperatura al momento:",
+            "temperature_before": "{0}°C con {1}% di umidità nell'aria e {2} velocità del vento."
         }
     },
     "usage": "**Utilizzo**",
-    "example": "**Esempio**"
+    "example": "**Esempio**",
+    "missing_manageguild_permission": "Devi avere il permesso gestione delle gilde per poterlo fare."
 }
