@@ -24,7 +24,8 @@
             "global_ranking": "Ranking Global",
             "play_count": "Contagem de Jogos",
             "weird_error": "A API do osu! deu valores nulos para esta conta.",
-            "not_our_fault": "Não é minha culpa, é do ppy.\n[Podes ver o teu perfil no osu.ppy.sh se quiseres.]({0})"
+            "not_our_fault": "Não é minha culpa, é do ppy.\n[Podes ver o teu perfil no osu.ppy.sh se quiseres.]({0})",
+            "error_ocurred": "Um erro ocorreu a obter o perfil do osu!"
         },
         "playing": {
             "_description": "Mostra quantas pessoas estão a jogar um certo jogo no momento",
@@ -111,7 +112,8 @@
             "role_remove_success": "Removi-te a role {0}.",
             "role_give_fail": "Não consegui dar-te a role {0}.",
             "role_remove_fail": "Não consegui tirar-te a role {0}.",
-            "please_ask_owner": "Por favor pede ao dono do servidor para ver as minhas permissões."
+            "please_ask_owner": "Por favor pede ao dono do servidor para ver as minhas permissões.",
+            "invalid_rolename": "Não podes usar essa role!"
         },
         "roleids": {
             "_usage": "d!roleids",
@@ -201,7 +203,10 @@
             "no_args": "Precisas de especificar um ID de role!",
             "inexistent_role": "`{0}` não é um ID de role válido para este servidor.",
             "clear_success": "Limpei as roles definidas.",
-            "clear_error": "Algo de mau aconteceu a limpar as roles definidas.\n\n`{0}`\nSe tu achas que é um bug, reporta-o pelo `d!bugreport`"
+            "clear_error": "Algo de mau aconteceu a limpar as roles definidas.\n\n`{0}`\nSe tu achas que é um bug, reporta-o pelo `d!bugreport`",
+            "no_roles": "Este servidor não tem roles automáticas.",
+            "everyone_role": "Role de membros",
+            "bots_role": "Role de bots"
         },
         "translate": {
             "_usage": "d!translate [--línguadesejada] <o teu texto>",
@@ -222,8 +227,56 @@
                 "weight": "Largura",
                 "height": "Altura"
             }
+        },
+        "tmdb": {
+            "_usage": "d!tmdb <nome do filme/série de tv>",
+            "_example": "d!tmdb Rick and Morty",
+            "_description": "Mostra a informação geral de um filme / série de TV",
+            "nothing_found": "Não encontrei nada pelo nome **\"{0}\"**",
+            "tmdb_api_error": "Um erro ocorreu a contactar a API do TMDB.\n`{0}`\n\nPor favor usa o `d!bugreport` para reportar isto.",
+            "no_name_specified": "Precisas de me dizer um nome de um filme / série de TV!",
+            "no_overview_tv": "Esta série de TV não tem informações disponíveis.",
+            "no_overview_movie": "Este filme não tem informações disponíveis."
+        },
+        "xkcd": {
+            "_usage": "d!xkcd [id|\"latest\"]",
+            "_example": "d!xkcd 149",
+            "_description": "Mostra um XKCD. Se não houver nenhum argumento, irei mandar um XKCD aleatório.",
+            "error_latest": "Não consegui pegar o último XKCD.",
+            "error_specific": "Não consegui pegar o XKCD #{0}",
+            "not_integer": "O número do XKCD tem de ser um número.",
+            "error_random": "Não consegui pegar um XKCD aleatório."
+        },
+        "togethertube": {
+            "_usage": "d!togethertube",
+            "_description": "Cria uma sala no TogetherTube.",
+            "error_title": "Um erro ocorreu a criar a sala.",
+            "error_description": "Por favor reporta isto com `d!bugreport`"
+        },
+        "say": {
+            "_usage": "d!say <texto|--embed <json>>",
+            "_description": "Força o bot a dizer algo.",
+            "_example": "d!say Olá Mundo",
+            "json_error_title": "Um erro ocorreu a executar o teu JSON.",
+            "json_error_desc": "Podes usar o [visualizador de embed](https://leovoel.github.io/embed-visualizer/) do leovoel para veres o que está errado.\n"
+        },
+        "weather": {
+            "_usage": "d!weather <zona ou localização>",
+            "_description": "Envia a temperatura para a zona especificada.",
+            "_example": "d!weather Lisboa",
+            "error_title": "Um erro ocorreu a buscar a temperatura.",
+            "error_description": "Por favor reporta isto usando `d!bugreport`",
+            "specify_zone": "Por favor, diz-me uma zona.",
+            "usage": "**Utilização:** `d!weather <zona ou localização>`\n**Exemplo:** `d!weather Lisboa`",
+            "forecast_on": "Temperatura em {0}",
+            "forecast_day": "Temperatura para {0} [amanhã]:",
+            "temperature_after": "Temperaturas entre os {0}ºC de máxima e {1}°C de mínima.",
+            "invalid_zone": "Zona inválida.",
+            "current": "Temperatura atual:",
+            "temperature_before": "{0}ºC com {1}% de humidade no ar e velocidade do ar {2}"
         }
     },
     "usage": "**Utilização:**",
-    "example": "**Exemplo:**"
+    "example": "**Exemplo:**",
+    "missing_manageguild_permission": "Precisas da permissão de **\"Gerenciar Servidor\"** para fazer isso."
 }
