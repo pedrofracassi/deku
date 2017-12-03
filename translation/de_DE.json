@@ -24,7 +24,8 @@
             "global_ranking": "Weltweites Ranking",
             "play_count": "Spielzähler",
             "weird_error": "Die osu! API gibt keine Variablen für diesen Account zurück.",
-            "not_our_fault": "Das ist nicht meine Schuld, es ist die Schuld von ppy.\n\n[Du kannst das Profil auf der Website überprüfen, wenn du willst]({0})"
+            "not_our_fault": "Das ist nicht meine Schuld, es ist die Schuld von ppy.\n\n[Du kannst das Profil auf der Website überprüfen, wenn du willst]({0})",
+            "error_ocurred": "Es ist ein Fehler beim beschaffen des !osu Profils aufgetreten."
         },
         "playing": {
             "_description": "Zeigt, wie viele Menschen ein bestimmtes Spiel im Moment spielen",
@@ -111,7 +112,8 @@
             "role_remove_success": "Ich habe die Rolle {0} für dich entfernt.",
             "role_give_fail": "Ich war nicht in der Lage, dir die Rolle {0} zu geben.",
             "role_remove_fail": "Ich war nicht in der Lage, die Rolle {0} von dir zu entfernen.",
-            "please_ask_owner": "Bitte frag' den Serverbesitzer, um meine Berechtigungen zu überprüfen"
+            "please_ask_owner": "Bitte frag' den Serverbesitzer, um meine Berechtigungen zu überprüfen",
+            "invalid_rolename": "Du kannst diese Rolle nicht verwenden!"
         },
         "roleids": {
             "_usage": "d!roleids",
@@ -201,7 +203,10 @@
             "no_args": "Du musste eine Rollen ID angeben.",
             "inexistent_role": "´{0}´ ist keine gültige Rollen ID auf diesem Server",
             "clear_success": "Ich habe die Default Rollen gereinigt.",
-            "clear_error": "Irgendetwas lief beim Bereinigen der Default Rollen falsch.\n\n´{0}´ Wenn du denkst, dass dies ein Bug ist, dann melde ihn bitte mit ´d!bugreport`"
+            "clear_error": "Irgendetwas lief beim Bereinigen der Default Rollen falsch.\n\n´{0}´ Wenn du denkst, dass dies ein Bug ist, dann melde ihn bitte mit ´d!bugreport`",
+            "no_roles": "Dieser Server besitzt keine Autorollen",
+            "everyone_role": "Mitgliederrolle",
+            "bots_role": "Botrolle"
         },
         "translate": {
             "_usage": "d!translate [--gewollte Sprache] <Dein Text>",
@@ -210,8 +215,68 @@
             "no_text": "Du musst mir Text zum übersetzen geben.",
             "lang_not_supported": "Die Sprache ´{0}´ wird nicht unterstützt.",
             "error_ocurred": "Es ist ein Fehler während des Übersetzens aufgetreten."
+        },
+        "pokedex": {
+            "_usage": "d!pokedex <Pokemonname>",
+            "_example": "d!pokedex Bisasam",
+            "_description": "Zeigt die Pokedexinformationenn über ein Pokemon.",
+            "error_ocurred": "Es ist ein Fehler beim Abrufen der PokeInfo aufgetreten.",
+            "not_found": "Ich konnte dieses Pokemon nicht finden.",
+            "no_args": "Du musste den Namen eines Pokemon angeben.",
+            "fields": {
+                "weight": "Breit",
+                "height": "Hoch"
+            }
+        },
+        "tmdb": {
+            "_usage": "d!tmdb <Film/TV-Show Name>",
+            "_example": "d!tmdb Boku No Hero",
+            "_description": "Zeigt die Übersicht über ein Film/TV-Show.",
+            "nothing_found": "Ich konnte nichts unter den Namen **\"{0}\"** finden.",
+            "tmdb_api_error": "Es ist ein Fehler während der Verbindung zu TMDB API aufgetreten.\n`{0}`\n\nBitte benutze `d!bugreport`um einen Report zu schicken.",
+            "no_name_specified": "Du musst einen spezifischen Film/ eine spezifische TV-Show eingeben.",
+            "no_overview_tv": "Für diese TV-Show ist keine Übersicht verfügbar.",
+            "no_overview_movie": "Für diesen Film ist keine Übersicht verfügbar."
+        },
+        "xkcd": {
+            "_usage": "d!xkcd [id|\"letztes\"]",
+            "_example": "d!xkcd 149",
+            "_description": "Zeigt eine XKCD. Wenn kein Argument genannt wurde, wird eine zufällige XKCD genannt!",
+            "error_latest": "Ich konnte die letzte XKCD nicht verwendend.",
+            "error_specific": "I wasn't able to fetch XKCD #{0}",
+            "not_integer": "Die XKCD Nummer sollte ein Integer sein!",
+            "error_random": "Ich konnte keine zufällige XKCD ermitteln"
+        },
+        "togethertube": {
+            "_usage": "d!togethertube",
+            "_description": "Erstellt ein TogetherTube  Raum.",
+            "error_title": "Ein Fehler ist beim erstellen des Raumes aufgetretten",
+            "error_description": "Bitte melde das mit ´d!bugreport´"
+        },
+        "say": {
+            "_usage": "d!say <Text|--embed <json>>",
+            "_description": "Zwingt den Bot etwas zu sagen.",
+            "_example": "d!say Hallo Welt",
+            "json_error_title": "Es ist ein Fehler beim auslesen, der JSON Datei aufgetretten.",
+            "json_error_desc": "You can use leovel's [embed visualizer](https://leovoel.github.io/embed-visualizer/) to check what's wrong."
+        },
+        "weather": {
+            "_usage": "d!weather <Ort oder Zone>",
+            "_description": "Sends over the forecast for the zone specified.",
+            "_example": "d!weather Californien",
+            "error_title": "An error ocured while fetching the forecast.",
+            "error_description": "Please report this using `d!bugreport`",
+            "specify_zone": "Bitte benenne eine Zone.",
+            "usage": "**Usage:** `d!weather <zone or location>`\n**Example:** `d!weather California`",
+            "forecast_on": "Forecast on {0}",
+            "forecast_day": "Temperatur für {0} [morgen]",
+            "temperature_after": "Höchsttemperatur: {0}ºC \nniedrigste Temperatur: {1}ºC",
+            "invalid_zone": "Falsche Zone.",
+            "current": "Aktuelle Temperatur:",
+            "temperature_before": "{0}ºC mit {1}% Luftfeuchtigkeit und einer Windgeschwindigkeit von {2}."
         }
     },
     "usage": "**Nutzung:**",
-    "example": "**Beispiel:**"
+    "example": "**Beispiel:**",
+    "missing_manageguild_permission": "Du brauchst die **Guildverwaltungsberechtigung** um dies zu benutzen."
 }
