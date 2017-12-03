@@ -273,9 +273,15 @@
           "invalid_zone": "Invalid zone.",
           "current": "Current Temperature:",
           "temperature_before": "{0}ºC with {1}% of air humidity and {2} air speed."
+        },
+        "generateinvite": {
+          "_usage": "d!generateinvite",
+          "_description": "Generates an instant invite to the current text or voice channel.",
+          "heres_your_invite": "Here's your invite link for \"{0}\""
         }
     },
     "missing_manageguild_permission": "You need the **\"Manage Guild**\" permission in order to do this",
+    "missing_invite_permission": "You need the **\"Create Instant Invites**\" permission in order to do this",
     "usage": "**Usage:**",
     "example": "**Example:**"
 }
