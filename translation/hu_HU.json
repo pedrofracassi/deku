@@ -1,0 +1,284 @@
+{
+    "code": "hu_HU",
+    "and": " és ",
+    "server_join": {
+        "hi_im_deku": "Szia, Deku vagyok!",
+        "description": "**pedrofracassi#4623** készített, hogy segítsek rendezni a gyönyörű szerveredet.\n\nHa szeretnéd többet megtudni rólam, használd a `d!help` parancsot.\n\n{0} [Hozzáadás a szerveredhez]({1}) | [Csatlakozás a szerveremhez]({2})"
+    },
+    "commands": {
+        "osu": {
+            "_description": "Megjelenít egy osu! profilt",
+            "_usage": "d!osu <id vagy felhasználónév>",
+            "title": "{0} profilja",
+            "player_doesnt_exist": "Ez a játékos nem létezik.",
+            "is_spelled_correctly": "Kérlek ellenőrizd, hogy jól írtad-e a játékos nevét",
+            "specify_player": "Kérlek adj meg egy játékost",
+            "usage": "**Használat:** `d!osu <id vagy felhasználónév>`\n**Példa:** `d!osu pedrofracassi`",
+            "accuracy": "Pontosság",
+            "ranked_score": "Rangsorolt pontszám",
+            "total_score": "Teljes pontszám",
+            "level": "Szint",
+            "ranks": "Rangok",
+            "performance": "Teljesítmény",
+            "country_ranking": "Országos rangsorolás",
+            "global_ranking": "Globális rangsorolás",
+            "play_count": "Játékok száma",
+            "weird_error": "Az osu! API nulla értékeket adott ehhez a fiókhoz.",
+            "not_our_fault": "Ez ppy hibája, nem az enyém.\n\n[Megnézheted a profilt a weboldalon, ha szeretnéd.]({0})",
+            "error_ocurred": "Hiba történt az osu! profil lekérése közben."
+        },
+        "playing": {
+            "_description": "Kiírja, hogy éppen hány ember játszik egy adott játékkal",
+            "_usage": "d!playing <játék>",
+            "zero": "Ezen a szerveren jelenleg **senki sem** játszik ezzel: `{0}`",
+            "one": "Ezen a szerveren jelenleg **egy ember** játszik ezzel: `{0}`",
+            "more": "Ezen a szerveren jelenleg **{1}** játszik ezzel: `{0}`",
+            "error_no_args": "Meg kell adnod egy játékot!",
+            "usage": "**Használat:** `d!playing <játék>`\n**Példa:** `d!playing Overwatch`"
+        },
+        "setlang": {
+            "_description": "Megváltoztatja a nyelvemet a szerveren",
+            "_usage": "d!setlang <nyelv>",
+            "no_args": "Meg kell adnod egy nyelvet",
+            "no_permission": "**„Szerver kezelése”** joggal kell rendelkezned, hogy megváltoztathasd a nyelvemet.",
+            "not_supported": "„{0}” nem egy támogatott nyelv.",
+            "usage": "**Használat:** `d!setlang <nyelv>`\n**Példa:** `d!setlang en_US`\n\n**Támogatott nyelvek:**\n{0}.",
+            "success": "Nyelv sikeresen átállítva erre: `{0}`!"
+        },
+        "botinfo": {
+            "_description": "Információkat ír ki rólam",
+            "_usage": "d!botinfo",
+            "error_ip": "Hiba történt a saját IP-m lekérdezése közben",
+            "error_ip_desc": "Kérlek szólj a tulajdosomnak, pedrofracassi#4623-nak",
+            "users": "Felhasználók",
+            "servers": "Szerverek",
+            "server_location": "Szerver helye",
+            "uptime": "Üzemidő",
+            "channels": "Csatornák",
+            "ram": "RAM használat",
+            "djs_v": "Discord.js verzió"
+        },
+        "lol": {
+            "mastery_points": "Mesterségpontok",
+            "summoner_level": "Idéző szint",
+            "rankeds": "Rangsoroltak",
+            "Region": "Régió",
+            "valid_regions": "**Érvényes régiók:**",
+            "summoner_error": "Hiba történt az idéző profiljának lekérdezése közben.",
+            "summoner_error_desc": "Kérlek szólj a tulajdosomnak (pedrofracassi#4623), hogy megjavíthassa.",
+            "summoner_region_error": "Meg kell adnod egy idézőt és egy régiót!",
+            "invalid_region_error": "A(z) „{0}” nem egy érvényes régió!",
+            "error_desc": "**Használat:** `d!lol <régió> <idéző>`\n**Példa:** `d!lol br pedrinholuizf`",
+            "error_desc_with_regions": "**Használat:** `d!lol <régió> <idéző>`\n**Példa:** `d!lol br pedrinholuizf`\n\n**Érvényes régiók:**\n{0}.",
+            "no_summoner_error": "Meg kell adnod egy idézőt!",
+            "elos": {
+                "UNRANKED": "Nincs rangsorolva",
+                "BRONZE": "Bronz",
+                "SILVER": "Ezüst",
+                "GOLD": "Arany",
+                "DIAMOND": "Gyémánt",
+                "MASTER": "Mester",
+                "CHALLENGER": "Kihívó",
+                "PLATINUM": "Platina"
+            },
+            "best_champion": "Legjobb hős",
+            "_description": "Információkat ír ki egy League of Legends idézőről",
+            "_usage": "d!lol <régió> <idéző>"
+        },
+        "lmgtfy": {
+            "_description": "Létrehoz egy „Let Me Google That For You” linket",
+            "_usage": "d!lmgtfy <keresett kifejezés> [--explain]",
+            "no_question": "Meg kell adnod a kérdést, amihez egy linket szeretnél létrehozni.",
+            "_example": "d!lmgtfy Hogyan kell letölteni a Discord Canary-t --explain"
+        },
+        "roleme": {
+            "_description": "Hozzád ad egy rangot a szerver rangjai közül.",
+            "_usage": "d!roleme [--add|--remove] <rang> [rang ID]",
+            "add_success": "{0} hozzáadva a `d!roleme` parancshoz eképpen: `{1}`",
+            "id_not_role": "`{0}` nem egy érvényes rang ID ezen a szerveren.",
+            "no_permission": "**„Szerver kezelése”** joggal kell rendelkezned, hogy ezt megtehesd",
+            "insuficcient_args_add": "Meg kell adnod egy rangnevet és rang ID-t!",
+            "insuficcient_args_remove": "Meg kell adnod egy rangnevet!",
+            "add_usage": "**Használat:** `d!roleme --add <rang neve> <rang id>`\n**Példa:** `d!roleme --add lol 358446520334286851`\n\nProfi tipp: Megszerezheted a rang ID-ket a d!roleids paranccsal",
+            "remove_usage": "**Használat:** `d!roleme --remove <rang neve>`\n**Példa:** `d!roleme --remove lol`",
+            "no_roles": "Ennek a szervernek nincsenek `d!roleme` rangjai.",
+            "remove_success": "Töröltem a(z) `{0}` rangot a `d!roleme` rangok közül.",
+            "not_roleme": "A(z) `{0}` nem egy `d!roleme` rang.",
+            "no_roleme_roles": "Ennek a szervernek nincsenek `d!roleme` rangjai.",
+            "command": "Parancs",
+            "role": "Rang",
+            "heres_a_list": "Itt egy lista az elérhető rangokkal:",
+            "role_give_success": "Odaadtam a(z) {0} rangot.",
+            "role_remove_success": "Elvettem tőled a(z) {0} rangot.",
+            "role_give_fail": "Nem tudtam odaadni a(z) {0} rangot.",
+            "role_remove_fail": "Nem tudtam elvenni tőled a(z) {0} rangot.",
+            "please_ask_owner": "Kérlek szólj a szerver tulajdonosának, hogy megnézze a jogaimat.",
+            "invalid_rolename": "Nem használhatod ezt a rangnevet!"
+        },
+        "roleids": {
+            "_usage": "d!roleids",
+            "_description": "Kilistázza a szerver rangjainak az ID-jét",
+            "role": "Rang",
+            "id": "ID"
+        },
+        "npm": {
+            "_usage": "d!npm <csomag neve>",
+            "_example": "d!npm discord.js",
+            "no_args": "Meg kell adnod egy csomagnevet.",
+            "package_not_found": "Nem találtam ilyen nevű npm csomagot.",
+            "package_not_found_desc": "Kérlek ellenőrizd, hogy jól írtad-e.",
+            "_description": "Információt ír ki egy npm csomagról"
+        },
+        "help": {
+            "check_dm": "Nézd meg a privát üzeneteidet, oda elküldtem a parancsaim listáját.",
+            "_description": "Küld egy privát üzenetet az összes parancsommal",
+            "_usage": "d!help"
+        },
+        "topgames": {
+            "_description": "Kilistázza a szerver legjátszottabb játékait.",
+            "_usage": "d!topgames",
+            "most_played": "Legjátszottabb játékok",
+            "line_singular": "`#{0}` `{1}` játékossal: **{2}**",
+            "line_plural": "`#{0}` `{1}` játékossal: **{2}**"
+        },
+        "serverinfo": {
+            "regions": {
+                "brazil": "flag_br: Brazília",
+                "eu-central": ":flag_eu: Közép-Európa",
+                "hongkong": ":flag_hk: Hongkong",
+                "us-central": ":flag_us: Közép-Egyesült Államok",
+                "us-east": ":flag_us: Kelet-Egyesült Államok",
+                "us-south": ":flag_us: Dél-Egyesült Államok",
+                "us-west": ":flag_us: Nyugat-Egyesült Államok",
+                "russia": ":flag_ru: Oroszország",
+                "sydney": ":flag_au: Sydney",
+                "eu-west": ":flag_eu: Nyugat-Európa"
+            },
+            "_description": "Információt ír ki a szerverről",
+            "_usage": "d!serverinfo",
+            "name": "Név",
+            "members": "Tagok",
+            "owner": "Tulajdonos",
+            "region": "Régió",
+            "emojis": "Emotikonok",
+            "roles": "Rangok",
+            "id": "ID"
+        },
+        "stoptyping": {
+            "_description": "Használd ezt, ha örökké írok",
+            "_usage": "d!stoptyping",
+            "trying_to_stop": "megpróbálok leállni a gépeléssel..."
+        },
+        "avatar": {
+            "own_picture": "itt van a profilképed:",
+            "someones_picture": "itt van **{0}** profilképe:",
+            "_description": "Megjeleníti teljes méretben a saját vagy más felhasználó avatárját",
+            "_usage": "d!avatar [user]"
+        },
+        "suggestion": {
+            "_usage": "d!suggestion <javaslatod>",
+            "_example": "d!suggestion Egy parancs hozzáadása, amely waifukat mutat nekem",
+            "_description": "Egy javaslatot küld a fejlesztőmnek",
+            "no_suggestion": "Javasolnod kell valamit!",
+            "trello_error": "Egy hiba történt a javaslatod Trello-hoz hozzáadása során.",
+            "trello_error_desc": "Kérlek szólj a fejlesztőmnek, vagy próbáld újra később.",
+            "card_add_success": "Hozzáadtam a javaslatodat a Trello táblámhoz."
+        },
+        "bugreport": {
+            "_usage": "d!bugreport <hiba részletezése>",
+            "_example": "d!bugreport Deku nem tudja az erőinek a 100%-át használni a szerveremen",
+            "_description": "Jelent egy hibát a fejlesztőmnek",
+            "no_text": "Részletezned kell egy hibát!",
+            "trello_error": "Egy hiba történt a jelentésed Trello-hoz hozzáadása során.",
+            "trello_error_desc": "Kérlek szólj a fejlesztőmnek vagy próbáld újra később.",
+            "card_add_success": "Hozzáadtam a jelentésedet a Trello táblámhoz."
+        },
+        "autorole": {
+            "_usage": "d!autorole <role id [--bots]|--clear>",
+            "_example": "d!autorole 363453489181097984",
+            "_description": "Beállít egy alapértelmezett rangot az új tagoknak (vagy botoknak)",
+            "no_permission": "**„Szerver kezelése”** joggal kell rendelkezned, hogy megváltoztathasd a nyelvemet.",
+            "db_put_error": "Hiba történt az adatbázisba történő mentés közben.",
+            "db_put_success": "Elmentettem a(z) {0} rangot alapértelmezett rangként az új tagoknak.",
+            "db_put_success_bots": "Elmentettem a(z) {0} rangot alapértelmezett rangként az új botoknak.",
+            "pro_tip": "Profi tipp: Megszerezheted a role ID-ket a d!roleids paranccsal",
+            "no_args": "Meg kell adnod egy rang ID-t!",
+            "inexistent_role": "`{0}` nem egy érvényes rang ID ezen a szerveren.",
+            "clear_success": "Kitöröltem az alapértelmezett rangokat.",
+            "clear_error": "Valami hiba történt az alapértelmezett rangok törlése közben.\n\n`{0}` Ha úgy gondolod, hogy ez egy hiba, kérlek jelentsd a `d!bugreport` paranccsal",
+            "no_roles": "Ennek a szervernek nincsenek automatikus rangjai.",
+            "everyone_role": "Tagok rangja",
+            "bots_role": "Botok rangja"
+        },
+        "translate": {
+            "_usage": "d!translate [--célnyelv] <szöveged>",
+            "_example": "d!translate --en omae wa mou shindeiru",
+            "_description": "Lefordítja a szöveget a megadott nyelvre Google Fordító használatával.",
+            "no_text": "Adnod kell egy szöveget amit lefordíthatok!",
+            "lang_not_supported": "A(z) `{0}` nyelv nem támogatott.",
+            "error_ocurred": "Egy hiba történt a szöveged fordítása közben."
+        },
+        "pokedex": {
+            "_usage": "d!pokedex <pokémon neve>",
+            "_example": "d!pokedex bulbasaur",
+            "_description": "Megjeleníti egy pokémon pokedex információit.",
+            "error_ocurred": "Hiba történt a pokémon információ lekérése közben.",
+            "not_found": "Nem találtam ezt a pokémont!",
+            "no_args": "Meg kell adnod egy pokémon nevet!",
+            "fields": {
+                "weight": "Tömeg",
+                "height": "Magasság"
+            }
+        },
+        "tmdb": {
+            "_usage": "d!tmdb <film/tv sorozat neve>",
+            "_example": "d!tmdb Boku No Hero",
+            "_description": "Megjeleníti a film/tv sorozat előnézetét",
+            "nothing_found": "Nem találtam semmit sem **„{0}”** néven",
+            "tmdb_api_error": "Egy hiba történt a TMDB API kapcsolatfelvétele közben.\n`{0}`\n\nKérlek használd a `d!bugreport` parancsot, hogy jelenthesd.",
+            "no_name_specified": "Meg kell adnod egy film/tv sorozat nevet",
+            "no_overview_tv": "Ennek a TV sorozatnak nincsen elérhető előnézete.",
+            "no_overview_movie": "Ennek a filmnek nincsen elérhető előnézete."
+        },
+        "xkcd": {
+            "_usage": "d!xkcd [id|\"latest\"]",
+            "_example": "d!xkcd 149",
+            "_description": "Megjelenít egy XKCD-t. Ha nincs megadva téma, egy véletlenszerű XKCD-t fog megjeleníteni.",
+            "error_latest": "Nem tudtam megszerezni a legutóbbi XKCD-t.",
+            "error_specific": "Nem tudtam megszerezni a #{0} számú XKCD-t.",
+            "not_integer": "Az XKCD számnak egész számnak kell lennie.",
+            "error_random": "Nem tudtam megszerezni egy random XKCD-t."
+        },
+        "togethertube": {
+            "_usage": "d!togethertube",
+            "_description": "Létrehoz egy TogetherTube szobát.",
+            "error_title": "Hiba történt a szoba létrehozása közben.",
+            "error_description": "Kérlek jelentsd a `d!bugreport` parancs használatával."
+        },
+        "say": {
+            "_usage": " d!say <szöveg|--embed <json>>",
+            "_description": "Kényszeríti a botot, hogy mondjon valamit.",
+            "_example": "d!say Hello világ",
+            "json_error_title": "Hiba történt a JSON elemzése közben.",
+            "json_error_desc": "Használhatod leovel [embed visualizer](https://leovoel.github.io/embed-visualizer/)-jét, hogy láthasd mi a hiba."
+        },
+        "weather": {
+            "_usage": "d!weather <terület vagy hely>",
+            "_description": "Kiírja a megadott terület időjárás előrejelzését.",
+            "_example": "d!weather California",
+            "error_title": "Hiba történt az időjárás előrejelzés lekérdezése közben.",
+            "error_description": "Kérlek jelentsd a `d!bugreport` paranccsal",
+            "specify_zone": "Kérlek adj meg egy területet.",
+            "usage": "**Használat:** `d!weather <terület vagy hely>`\n**Példa:** `d!weather California`",
+            "forecast_on": "{0} előrejelzése",
+            "forecast_day": "{0} [holnapi] hőmérséklete:",
+            "temperature_after": "{0}ºC maximális és {1}ºC minimális hőmérséklet.",
+            "invalid_zone": "Helytelen terület.",
+            "current": "Jelenlegi hőmérséklet:",
+            "temperature_before": "{0}ºC {1}% levegő páratartalommal és {2} légsebességgel."
+        }
+    },
+    "usage": "**Használat:**",
+    "example": "**Példa:**",
+    "missing_manageguild_permission": "**„Szerver kezelése”** joggal kell rendelkezned, hogy ezt megtehesd"
+}
