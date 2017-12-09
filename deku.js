@@ -6,6 +6,7 @@ const utils      = require('./utils.js');
 // Apis
 const Trello     = require("node-trello");
 const Nodesu     = require('nodesu');
+const snoowrap = require('snoowrap');
 
 // Self initializers
 require('./helpers/prototypes.js');
@@ -27,6 +28,8 @@ module.exports = class Deku extends Discord.Client {
     // APIs
     this.trello      = new Trello(this.config.trello_key, this.config.trello_token);
     this.nodesu      = new Nodesu.Client(this.config.osu);
+    this.reddit      = new snoowrap({userAgent: 'Discord Bot - deku.pedrofracassi.me', clientId: this.config.reddit_client_id, clientSecret: this.config.reddit_client_secret, refreshToken: this.config.reddit_refresh_token
+    });
 
     this.initializeCommands();
     this.initializeDatabases();
@@ -91,7 +94,7 @@ module.exports = class Deku extends Discord.Client {
     if (failed) this.log(['BOT', 'Commands'], `${this.commands.length} commands loaded succesfully, ${failed} failed.`.yellow);
     else this.log(['BOT', 'Commands'], `${this.commands.length} commands loaded succesfully`.green);
   }
-  
+
   initializeDatabases() {
     this.databases['autorole_config'] = utils.initializeDatabase('./databases/autorole');
     this.databases['language_config'] = utils.initializeDatabase('./databases/language');
