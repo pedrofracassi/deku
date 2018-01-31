@@ -261,6 +261,15 @@
           "_example": "d!say Hello World",
           "json_error_title": "An error ocurred while parsing your JSON.",
           "json_error_desc": "You can use leovel's [embed visualizer](https://leovoel.github.io/embed-visualizer/) to check what's wrong."
+        },
+        "roleinfo": {
+            "_usage": "d!roleinfo <role>",
+            "_description": "Shows information about a specific role.",
+            "_example": "d!roleinfo @Role",
+            "mention_plz": "You need to @Mention the role you want to get information about",
+            "memberCount": "Member count",
+            "colorHEX": "Color",
+            "id": "ID"
         }
     },
     "missing_manageguild_permission": "You need the **\"Manage Guild**\" permission in order to do this",
