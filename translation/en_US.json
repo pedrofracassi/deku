@@ -263,13 +263,15 @@
           "json_error_desc": "You can use leovel's [embed visualizer](https://leovoel.github.io/embed-visualizer/) to check what's wrong."
         },
         "roleinfo": {
-            "_usage": "d!roleinfo <role>",
+            "_usage": "d!roleinfo <@mention|role id|role name>",
             "_description": "Shows information about a specific role.",
             "_example": "d!roleinfo @Role",
-            "mention_plz": "You need to @Mention the role you want to get information about",
+            "no_role_specified": "You need to specify the role you want to get information about",
             "memberCount": "Member count",
-            "colorHEX": "Color",
-            "id": "ID"
+            "color": "Color",
+            "id": "ID",
+            "roleName": "Name",
+            "role_not_found": "I couldn't find a role with the information you gave me."
         }
     },
     "missing_manageguild_permission": "You need the **\"Manage Guild**\" permission in order to do this",

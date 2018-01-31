@@ -9,19 +9,24 @@ module.exports = class RoleIds extends Command {
         this.aliases = ["rinfo"];
     }
 
-    run (message, args, commandLang) {
+    run (message, args, commandLang, db, lang) {
         let embed = this.client.getDekuEmbed(message);
-        if (message.mentions.roles.first()) {
-            let role = message.mentions.roles.first();
-            embed.setTitle(role.name);
-            embed.addField(commandLang.memberCount, role.members.size, true);
-            embed.addField(commandLang.id, role.id, true);
-            if (role.color) {
-                embed.addField(commandLang.colorHEX, `[#${role.color.toString(16)}](http://www.color-hex.com/color/${role.color.toString(16)})`, true);
-            }
-        } else {
+        if (!args[0]) {
             embed.setColor(this.client.config.colors.error);
-            embed.setTitle(commandLang.mention_plz);
+            embed.addField(commandLang.no_role_specified, `\n${lang.usage} ${commandLang._usage}\n${lang.example} ${commandLang._example}`);
+        } else {
+            let role = message.mentions.roles.first() || message.guild.roles.get(args[0]) || message.guild.roles.find(r => r.name.toLowerCase() == args.join(' ').toLocaleLowerCase());
+            if (role) {
+                embed.addField(commandLang.roleName, role, true);
+                embed.addField(commandLang.id, role.id, true);
+                embed.addField(commandLang.memberCount, role.members.size, true);
+                if (role.color) {
+                    embed.addField(commandLang.color, `[#${role.color.toString(16)}](http://www.color-hex.com/color/${role.color.toString(16)})`, true);
+                }
+            } else {
+                embed.setColor(this.client.config.colors.error);
+                embed.setTitle(commandLang.role_not_found);
+            }
         }
         message.channel.send({embed})
     }
