@@ -299,6 +299,6 @@
     "usage": "**Usage:**",
     "example": "**Example:**",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
     "missing_manageguild_permission": "You need the **\"Manage Guild**\" permission in order to do this"
 }
