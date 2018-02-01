@@ -1,7 +1,6 @@
 const Discord    = require('discord.js');
 const fs         = require('fs');
 
-const colors     = require('colors');
 const utils      = require('./utils.js');
 
 // Apis
@@ -10,6 +9,7 @@ const Nodesu     = require('nodesu');
 
 // Self initializers
 require('./helpers/prototypes.js');
+require('colors');
 
 module.exports = class Deku extends Discord.Client {
 
@@ -45,7 +45,7 @@ module.exports = class Deku extends Discord.Client {
    */
   getGuildLanguage(guild) {
     let self = this;
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       self.databases.language_config.get(guild.id, (err, value) => {
         if (err || !value) value = 'en_US';
         resolve(self.languages[value] || self.languages['en_US']);

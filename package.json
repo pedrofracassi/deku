@@ -35,6 +35,7 @@
     "pokedex-promise-v2": "^3.0.3",
     "request": "^2.81.0",
     "teemojs": "^1.0.4",
+    "weather-js": "^2.0.0",
     "xkcd-node": "^1.0.0"
   }
 }

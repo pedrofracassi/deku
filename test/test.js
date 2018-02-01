@@ -1,4 +1,3 @@
-var assert = require('assert');
 const fs = require('fs');
 const Discord = require('discord.js');
 

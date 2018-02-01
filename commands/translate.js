@@ -26,7 +26,7 @@ module.exports = class Translate extends Command {
       let input = args.join(" ");
       let language = lang.code.substring(0, 2);
 
-      let expression = /\-\-([a-zA-Z]{2})\ (.*)/;
+      let expression = /--([a-zA-Z]{2}) (.*)/;
       let match = input.match(expression);
       if (match) {
         language = match[1];

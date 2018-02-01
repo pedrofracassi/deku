@@ -24,7 +24,8 @@
             "global_ranking": "Ranking Global",
             "play_count": "Partidas Jugadas",
             "weird_error": "El osu! El API devolvió valores nulos para esta cuenta.",
-            "not_our_fault": "Esto no es mi culpa, es ppy.\n\n[Usted puede todavía comprobar el perfil en el Web site si usted quiere a.]({0})"
+            "not_our_fault": "Esto no es mi culpa, es ppy.\n\n[Usted puede todavía comprobar el perfil en el Web site si usted quiere a.]({0})",
+            "error_ocurred": "Ha ocurrido un error al obtener un perfil en osu!"
         },
         "playing": {
             "_description": "Muestra cuánta gente esta en un determinado juego en este momento",
@@ -111,7 +112,8 @@
             "role_remove_success": "Quité el rol {0} de ti.",
             "role_give_fail": "No pude darle el rol {0}.",
             "role_remove_fail": "No te pude eliminar el rol {0}.",
-            "please_ask_owner": "Solicite al propietario del servidor que verifique mis permisos."
+            "please_ask_owner": "Solicite al propietario del servidor que verifique mis permisos.",
+            "invalid_rolename": "¡No puedes usar este nombre de rol!"
         },
         "roleids": {
             "_usage": "d!roleids",
@@ -201,7 +203,10 @@
             "no_args": "¡Debe especificar un la ID de un rol!",
             "inexistent_role": "`{0}` no es una ID de rol válida para este servidor.",
             "clear_success": "Quité los roles predeterminados.",
-            "clear_error": "Algo salió mal al borrar los roles predeterminados.\n\n`{0}`Si crees que se trata de un error, reportalo usando `d!bugreport`"
+            "clear_error": "Algo salió mal al borrar los roles predeterminados.\n\n`{0}`Si crees que se trata de un error, reportalo usando `d!bugreport`",
+            "no_roles": "Este servidor no tiene autoroles.",
+            "everyone_role": "Rol de los miembros",
+            "bots_role": "Roles de los Bots"
         },
         "translate": {
             "_usage": "d!translate [--lenguaje] <texto>",
@@ -222,8 +227,56 @@
                 "weight": "Peso",
                 "height": "Altura"
             }
+        },
+        "tmdb": {
+            "_usage": "d!tmdb <pelicula/show>",
+            "_example": "d!tmdb Boku No Hero",
+            "_description": "Muestra el resumen de una película o serie.",
+            "nothing_found": "No pude encontrar algo con el nombre **\"{0}\"**",
+            "tmdb_api_error": "Un error ha ocurrido al conectar a la API de TMDB API.\n`{0}`\n\nPor favor usa `d!bugreport` para reportar esto.",
+            "no_name_specified": "¡Debes especificar el nombre de una pelicula/show!",
+            "no_overview_tv": "Este programa de televisión no tiene una descripción general disponible.",
+            "no_overview_movie": "Esta película no tiene una descripción general disponible."
+        },
+        "xkcd": {
+            "_usage": "d!xkcd [id|\"latest\"]",
+            "_example": "d!xkcd 149",
+            "_description": "Muestra un XKCD. Si no se proporciona ningún argumento, mostrará un XKCD aleatorio.",
+            "error_latest": "No pude obtener el último XKCD.",
+            "error_specific": "No pude obtener XKCD #{0}",
+            "not_integer": "El número XKCD debe ser un entero.",
+            "error_random": "No pude obtener el XKCD aleatorio."
+        },
+        "togethertube": {
+            "_usage": "d!togethertube",
+            "_description": "Crea una sala TogetherTube.",
+            "error_title": "Se produjo un error al crear la habitación.",
+            "error_description": "Informe esto usando `d!bugreport`"
+        },
+        "say": {
+            "_usage": "d!say <text|--embed <json>>",
+            "_description": "Obliga al bot a decir algo.",
+            "_example": "d!say Hola mundo!",
+            "json_error_title": "Se produjo un error al analizar su JSON.",
+            "json_error_desc": "Puede usar leovel [embed visualizer] (https://leovoel.github.io/embed-visualizer/) para verificar qué ocurre."
+        },
+        "weather": {
+            "_usage": "d!weather <zone or location>",
+            "_description": "Sends over the forecast for the zone specified.",
+            "_example": "d!weather California",
+            "error_title": "An error ocured while fetching the forecast.",
+            "error_description": "Please report this using `d!bugreport`",
+            "specify_zone": "Please specify a zone.",
+            "usage": "**Usage:** `d!weather <zone or location>`\n**Example:** `d!weather California`",
+            "forecast_on": "Forecast on {0}",
+            "forecast_day": "Temperature for {0} [tomorrow]:",
+            "temperature_after": "{0}ºC maximum and {1}ºC minimum temperatures.",
+            "invalid_zone": "Invalid zone.",
+            "current": "Current Temperature:",
+            "temperature_before": "{0}ºC with {1}% of air humidity and {2} air speed."
         }
     },
     "usage": "**Uso:**",
-    "example": "**Ejemplo:**"
+    "example": "**Ejemplo:**",
+    "missing_manageguild_permission": "Necesitas el permiso **\"Manage Guild**\" para hacer esto"
 }

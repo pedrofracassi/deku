@@ -13,11 +13,12 @@ module.exports = {
   initializeDatabase: (path) => {
     let db = level(path);
     
-    db.getPromise = (key) => {
+    db.getPromise = (key, throwError) => {
       return new Promise((resolve, reject) => {
         db.get(key, (err, res) => {
           if(err) {
-            reject(err);
+            if(throwError) reject(err);
+            else           resolve(undefined);
           } else {
             try      { res = JSON.parse(res); }
             catch(e) { res = res || {};       }
