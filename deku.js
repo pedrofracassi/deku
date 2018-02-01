@@ -102,7 +102,7 @@ module.exports = class Deku extends Discord.Client {
     fs.readdirSync("./translation").forEach(file => {
       if (file.endsWith(".json")) {
         try {
-          this.languages[file.replace('.json', '')] = require("./translation/"+file);
+          this.languages[file.replace('.json', '')] = Object.assign(require("./translation/en_US.json"), require("./translation/"+file));
         } catch (e) {
           if (this.devMode) console.error(e);
           this.log(['BOT', 'Languages'], `${file} failed to load. Exiting...`.red);
