@@ -21,8 +21,12 @@ module.exports = class RoleIds extends Command {
                 embed.addField(commandLang.id, role.id, true);
                 embed.addField(commandLang.memberCount, role.members.size, true);
                 if (role.color) {
+                    embed.setColor(role.color);
                     embed.addField(commandLang.color, `[#${role.color.toString(16)}](http://www.color-hex.com/color/${role.color.toString(16)})`, true);
                 }
+                embed.addField(commandLang.hoist, role.hoist ? ":white_check_mark: " + lang.yes : ":cross~1: " + lang.no, true);
+                embed.addField(commandLang.position, role.position, true);
+                embed.addField(commandLang.creationTimestamp, role.createdAt, false);
             } else {
                 embed.setColor(this.client.config.colors.error);
                 embed.setTitle(commandLang.role_not_found);

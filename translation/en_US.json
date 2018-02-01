@@ -271,10 +271,16 @@
             "color": "Color",
             "id": "ID",
             "roleName": "Name",
+            "rolePosition": "Position",
+            "creationTimestamp": "Creation timestamp",
+            "hoist": "Showed separately",
+            "position": "Position",
             "role_not_found": "I couldn't find a role with the information you gave me."
         }
     },
     "missing_manageguild_permission": "You need the **\"Manage Guild**\" permission in order to do this",
     "usage": "**Usage:**",
-    "example": "**Example:**"
+    "example": "**Example:**",
+    "yes": "Yes",
+    "no": "No"
 }
