@@ -1,6 +1,6 @@
 const Command = require('../structures/command.js');
 
-module.exports = class RoleIds extends Command {
+module.exports = class RoleInfo extends Command {
 
     constructor(client) {
         super(client);
