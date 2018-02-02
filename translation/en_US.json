@@ -286,5 +286,5 @@
     "missing_manageguild_permission": "You need the **\"Manage Guild**\" permission in order to do this",
     "missing_invite_permission": "You need the **\"Create Instant Invites**\" permission in order to do this",
     "usage": "**Usage:**",
-    "example": "**Example:**",
+    "example": "**Example:**"
 }
