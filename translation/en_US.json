@@ -263,22 +263,28 @@
             "json_error_desc": "You can use leovel's [embed visualizer](https://leovoel.github.io/embed-visualizer/) to check what's wrong."
         },
         "weather": {
-            "_usage": "d!weather <zone or location>",
-            "_description": "Sends over the forecast for the zone specified.",
-            "_example": "d!weather California",
-            "error_title": "An error ocured while fetching the forecast.",
-            "error_description": "Please report this using `d!bugreport`",
-            "specify_zone": "Please specify a zone.",
-            "usage": "**Usage:** `d!weather <zone or location>`\n**Example:** `d!weather California`",
-            "forecast_on": "Forecast on {0}",
-            "forecast_day": "Temperature for {0} [tomorrow]:",
-            "temperature_after": "{0}ºC maximum and {1}ºC minimum temperatures.",
-            "invalid_zone": "Invalid zone.",
-            "current": "Current Temperature:",
-            "temperature_before": "{0}ºC with {1}% of air humidity and {2} air speed."
+          "_usage": "d!weather <zone or location>",
+          "_description": "Sends over the forecast for the zone specified.",
+          "_example": "d!weather California",
+          "error_title": "An error ocured while fetching the forecast.",
+          "error_description": "Please report this using `d!bugreport`",
+          "specify_zone": "Please specify a zone.",
+          "usage": "**Usage:** `d!weather <zone or location>`\n**Example:** `d!weather California`",
+          "forecast_on": "Forecast on {0}",
+          "forecast_day": "Temperature for {0} [tomorrow]:",
+          "temperature_after": "{0}ºC maximum and {1}ºC minimum temperatures.",
+          "invalid_zone": "Invalid zone.",
+          "current": "Current Temperature:",
+          "temperature_before": "{0}ºC with {1}% of air humidity and {2} air speed."
+        },
+        "generateinvite": {
+          "_usage": "d!generateinvite",
+          "_description": "Generates an instant invite to the current text or voice channel.",
+          "heres_your_invite": "Here's your invite link for \"{0}\""
         }
     },
+    "missing_manageguild_permission": "You need the **\"Manage Guild**\" permission in order to do this",
+    "missing_invite_permission": "You need the **\"Create Instant Invites**\" permission in order to do this",
     "usage": "**Usage:**",
-    "example": "**Example:**",
-    "missing_manageguild_permission": "You need the **\"Manage Guild**\" permission in order to do this"
+    "example": "**Example:**"
 }
