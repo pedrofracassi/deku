@@ -3,7 +3,6 @@ const Command = require('../structures/command.js');
 const Discord = require('discord.js');
 const request = require('request');
 const geoip = require('geoip-lite');
-const os = require('os');
 
 String.prototype.toHHMMSS = function () {
   var sec_num = parseInt(this, 10); // don't forget the second param
@@ -41,18 +40,24 @@ module.exports = class BotInfo extends Command {
         embed.setThumbnail(message.client.user.displayAvatarURL);
         embed.addField(commandLang.servers, message.client.guilds.size, true);
 
-        let members = this.client.guilds.map(g => g.members).reduce((a, b) => a.concat(b)).array().length;
+        let members = this.client.guilds
+          .map(g => g.members)
+          .reduce((a, b) => a.concat(b))
+          .array().length;
         embed.addField(commandLang.users, members, true);
 
-        let uptime = process.uptime().toString().toHHMMSS();
+        const uptime = process.uptime().toString().toHHMMSS();
         embed.addField(commandLang.uptime, uptime, true);
 
-        let channels = this.client.guilds.map(g => g.channels).reduce((a, b) => a.concat(b)).array().length
+        const channels = this.client.guilds
+          .map(g => g.channels)
+          .reduce((a, b) => a.concat(b))
+          .array().length;
         embed.addField(commandLang.channels, channels, true);
         embed.addField(commandLang.djs_v, Discord.version, true);
-
-        var usedram = os.totalmem() - os.freemem();
-        embed.addField(commandLang.ram, `${this.bytesToSize(usedram)}/${this.bytesToSize(os.totalmem())}`, true);
+        
+        const memUsage = process.memoryUsage();
+        embed.addField(commandLang.ram, this.bytesToSize(memUsage.heapUsed), true);
       }
       message.channel.send({embed});
     });

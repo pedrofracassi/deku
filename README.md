@@ -19,6 +19,6 @@ You can ask to join Deku's [POEditor project](https://poeditor.com/join/project/
 
 Use `d!suggestion` to add suggestions to the [Trello board](https://trello.com/b/zNj0m3rO/deku), or `d!bugreport` to report bugs.
 ### Contribute with code
-Yes, please! Fork the repo, code something really cool (don't forget to follow the [standard](https://github.com/pedrofracassi/deku/wiki/How-to-create-a-command)) and create a Pull Request! I'll review and merge it if I like it.)
+Yes, please! Fork the repo, code something really cool (don't forget to follow the [standard](https://github.com/pedrofracassi/deku/wiki/Deku's-Command-Standard-(DCS))) and create a Pull Request! You can find an example [here](https://github.com/pedrofracassi/deku/wiki/Command-Example).
 
 _Deku is named after Izuku Midoriya, Boku No Hero Academia's main character._

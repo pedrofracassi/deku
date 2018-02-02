@@ -24,7 +24,8 @@
             "global_ranking": "Globalní Hodnocení",
             "play_count": "Počet her",
             "weird_error": "osu! API vrátilo nulové hodnoty pro tento účet.",
-            "not_our_fault": "Za to já nemůžu, to ppy.\n\n[Pořád se na ten profil můžeš kouknout na stránce, jestli chceš.]({0})"
+            "not_our_fault": "Za to já nemůžu, to ppy.\n\n[Pořád se na ten profil můžeš kouknout na stránce, jestli chceš.]({0})",
+            "error_ocurred": "Vyskytla se chyba při získávání osu! profilu."
         },
         "playing": {
             "_description": "Ukáže kolik lidí zrovna hraje danou hru",
@@ -100,7 +101,7 @@
             "insuficcient_args_remove": "Musíš specifikovat jméno role!",
             "add_usage": "**Použití:** `d!roleme --add <jméno role> <ID role>`\n**Příklad:** `d!roleme --add lol 358446520334286851`\n\nProfesionální tip: ID rolí můžeš získat z d!roleids",
             "remove_usage": "**Použití:** `d!roleme --remove <jméno role>`\n**Příklad:** `d!roleme --remove lol`",
-            "no_roles": "Tento server nemám `d!roleme` role.",
+            "no_roles": "Tento server nemá `d!roleme` role.",
             "remove_success": "Vymazal jsem `{0}` z `d!roleme` rolí.",
             "not_roleme": "`{0}` není `d!roleme` role.",
             "no_roleme_roles": "Tento server nemá `d!roleme` role.",
@@ -111,7 +112,8 @@
             "role_remove_success": "Odebral jsem ti roli {0}:",
             "role_give_fail": "Nebyl jsem schopen ti dát roli {0}.",
             "role_remove_fail": "Nebyl jsem schopen ti odebrat roli {0}.",
-            "please_ask_owner": "Prosím, zeptej se majitele serveru aby omrknul moje práva."
+            "please_ask_owner": "Prosím, zeptej se majitele serveru aby omrknul moje práva.",
+            "invalid_rolename": "Nemůžeš použít toto jméno role!"
         },
         "roleids": {
             "_usage": "d!roleids",
@@ -201,17 +203,80 @@
             "no_args": "Musíš specifikovat ID role!",
             "inexistent_role": "`{0}` není platné ID role pro tento server.",
             "clear_success": "Vyčistil jsem výchozí role.",
-            "clear_error": "Něco se zkazilo při čištění výchozích rolí.\n\n`{0}`Pokud si myslíš že je to bug, prosím nahlaš ho pomocí `d!bugreport`"
+            "clear_error": "Něco se zkazilo při čištění výchozích rolí.\n\n`{0}`Pokud si myslíš že je to bug, nahlaš ho prosím pomocí `d!bugreport`",
+            "no_roles": "Tento sever nemá autorole.",
+            "everyone_role": "Role členů",
+            "bots_role": "Role botů"
         },
         "translate": {
             "_usage": "d!translate [--jazyk] <tvůj text>",
             "_example": "d!translate --en omae wa mou shindeiru",
-            "_description": "Přeloží tvůj text do daného jazyka pomocí Google překladače.",
+            "_description": "Přeloží text do daného jazyka pomocí Google překladače.",
             "no_text": "Musíš mi dát nějakej text, jinak to nepřeložím!",
             "lang_not_supported": "Jazyk `{0}` není podporován.",
             "error_ocurred": "Nastala chyba při překládání textu."
+        },
+        "pokedex": {
+            "_usage": "d!pokedex <jméno pokémona>",
+            "_example": "d!pokedex bulbasaur",
+            "_description": "Ukáže pokedexové informace o pokémonovi.",
+            "error_ocurred": "Vyskytla se chyba při získávání informací o pokémonovi.",
+            "not_found": "Nemohl jsem najít tohoto pokémona!",
+            "no_args": "Musíš specifikovat jméno pokémona!",
+            "fields": {
+                "weight": "Hmotnost",
+                "height": "Výška"
+            }
+        },
+        "tmdb": {
+            "_usage": "d!tmdb <film/jméno seriálu>",
+            "_example": "d!tmdb Boku No Hero",
+            "_description": "Ukáže přehled filmu/seriálu",
+            "nothing_found": "Nemůžu najít nic se jménem **\"{0}\"**",
+            "tmdb_api_error": "Nastala chyba při kontaktování TMDB API.\n`{0}`\n\nProsím použij `d!bugreport` pro nahlášení.",
+            "no_name_specified": "Musíš specifikovat jméno filmu/seriálu!",
+            "no_overview_tv": "Tenhle seriál nemá žádný dostupný přehled.",
+            "no_overview_movie": "Tenhle film nemá žádný dostupný přehled."
+        },
+        "xkcd": {
+            "_usage": "d!xkcd [id|\"latest\"]",
+            "_example": "d!xkcd 149",
+            "_description": "Ukáže XKCD. Pokud není dodán argument, ukáže náhodné XKCD.",
+            "error_latest": "Nebyl jsem schopen dosáhnout posledního XKCD.",
+            "error_specific": "Nebyl jsem schopen dosáhnout XKCD #{0}",
+            "not_integer": "XKCD číslo by neměl být integer.",
+            "error_random": "Nebyl jsem schopen dosáhnout náhodného XKCD."
+        },
+        "togethertube": {
+            "_usage": "d!togethertube",
+            "_description": "Vytvoří TogetherTube místnost.",
+            "error_title": "Vyskytla se chyba při vytváření místnosti.",
+            "error_description": "Nahlaš problém pomocí `d!bugreport`"
+        },
+        "say": {
+            "_usage": "d!say <text|--embed <json>> ",
+            "_description": "Donutí bota něco říct.",
+            "_example": "d!say Ahoj světe.",
+            "json_error_title": "Nastala chyba při parsování tvého JSON.",
+            "json_error_desc": "Pro zjištění co je špatně můžeš použít leovelův [embed visualizer](https://leovoel.github.io/embed-visualizer/)."
+        },
+        "weather": {
+            "_usage": "d!weather <oblast či lokace>",
+            "_description": "Pošle předpověď počasí pro zadanou oblast.",
+            "_example": "d!weather California",
+            "error_title": "Nastala chyba při zjišťování předpovědi počasí.",
+            "error_description": "Prosím nahlaš tento problém pomocí `d!bugreport`",
+            "specify_zone": "Prosím specifikuj oblast.",
+            "usage": "**Použití:** `d!weather <oblast či lokace>`\n**Příklad:** `d!weather California`",
+            "forecast_on": "Předpověď pro {0}",
+            "forecast_day": "Teplota pro {0} [zítřek]:",
+            "temperature_after": "{0}ºC nejvyšší a {1}ºC nejnižší teploty.",
+            "invalid_zone": "Neplatná oblast.",
+            "current": "Aktualní Teplota:",
+            "temperature_before": "{0}°C, {1}% vlhkost vzduchu a rychlost větru {2}."
         }
     },
     "usage": "**Použití:**",
-    "example": "**Příklad:**"
+    "example": "**Příklad:**",
+    "missing_manageguild_permission": "Musíš mít právo **\"Spravovat Server\"** abys to mohl udělat"
 }
