@@ -294,6 +294,13 @@
             "invalid_zone": "Invalid zone.",
             "current": "Current Temperature:",
             "temperature_before": "{0}ºC with {1}% of air humidity and {2} air speed."
+        },
+        "knowyourmeme": {
+            "_usage": "d!knowyourmeme [meme]",
+            "_description": "Shows information about a meme from KnowYourMeme",
+            "_example": "d!knowyourmeme ugandanknuckles",
+            "not_found": "No meme was found for \"{0}\".",
+            "meme_error": "Something went wrong while finding your meme"
         }
     },
     "usage": "**Usage:**",
