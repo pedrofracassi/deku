@@ -1,0 +1,19 @@
+{
+    "discord": "DISCORD_TOKEN",
+    "osu": "OSU_API_KEY",
+    "trello_key": "TRELLO_API_KEY",
+    "trello_token": "TRELLO_USER_TOKEN",
+    "tmdb": "THE_MOVIE_DATABASE_TOKEN",
+
+    "prefix": "d!",
+    "ownerId": "169213934094647298",
+    "devMode": false,
+
+    "colors": {
+        "embed": "266B54",
+        "error": "F03A17",
+        "osu": "EA5F9C",
+        "success": "4cdc4c",
+        "npm": "C12127"
+    }
+}
