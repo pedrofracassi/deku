@@ -24,7 +24,7 @@ module.exports = class IsItUp extends Command {
         this.aliases = ['isup', 'online', 'website'];
     }
 
-    run(message, args, commandLang, databases, lang) {
+    run(message, args, commandLang) {
         const embed = this.client.getDekuEmbed(message);
         if(!args[0]) {
             embed.addField(commandLang.invalid, commandLang.usage);
