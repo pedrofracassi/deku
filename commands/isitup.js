@@ -1,6 +1,4 @@
 const Command = require('../structures/command.js');
-const url = 'http://isitup.org/${0}.json';
-const request = require('request');
 const fetch = require('isomorphic-fetch');
 function getStatus(website, API_BASE_URL = 'https://isitup.org') {
   const address = `${API_BASE_URL}/${website}.json`;
@@ -36,7 +34,7 @@ module.exports = class IsItUp extends Command {
             embed.addField(commandLang.invalid, commandLang.usage);
             embed.setColor(this.client.config.colors.error);
             message.channel.send({embed});
-        } else if(args.length = 0) {
+        } else {
             getStatus(checkHttp(args[0])).then(data => {
                 message.channel.startTyping();
                 embed.setAuthor(commandLang.title.replace('${0}', data.domain), 'https://isitup.org/static/img/icon.png');
