@@ -47,7 +47,7 @@ module.exports = class Deku extends Discord.Client {
     let self = this;
     return new Promise((resolve) => {
       self.databases.language_config.get(guild.id, (err, value) => {
-        if (err || !value) { console.log(err); value = 'en_US'; };
+        if (err || !value) { console.log(err); value = 'en_US'; }
         let language = self.languages[value];
         if(language !== 'en_US' && language) language = Object.assign(self.languages['en_US'], language);
         resolve(language || self.languages['en_US']);
