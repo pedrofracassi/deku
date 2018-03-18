@@ -17,11 +17,11 @@ module.exports = class Pokedex extends Command {
     let embed = this.client.getDekuEmbed(message);
     if (args[0]) {
       message.channel.startTyping();
-      this.getFullPokemonInfo(args.join('%20'))
+      this.getFullPokemonInfo(encodeURIComponent(args.join(' ')))
         .then(data => {
           let language = lang.code.substring(0, 2);
-          let description = data.species.flavor_text_entries.filter(e => e.language.name == "en")[0].flavor_text;
-          if(language != "en") {
+          let description = data.species.flavor_text_entries.filter(e => e.language.name == 'en')[0].flavor_text;
+          if(language != 'en') {
             translate(description, {to: language}).then(res => {
               this.pokemonEmbed(embed, data, res.text, commandLang);
               message.channel.stopTyping();
@@ -46,8 +46,8 @@ module.exports = class Pokedex extends Command {
         });
     } else {
       embed.setColor(this.client.config.colors.error);
-      embed.setTitle(currentLang.no_args);
-      embed.setDescription(`\u200b\n${lang.usage} \`${currentLang. _usage}\`\n${lang.example} \`${currentLang._example}\``);
+      embed.setTitle(commandLang.no_args);
+      embed.setDescription(`\u200b\n${lang.usage} \`${commandLang. _usage}\`\n${lang.example} \`${commandLang._example}\``);
       message.channel.send({embed});
     }
   }
@@ -65,23 +65,10 @@ module.exports = class Pokedex extends Command {
     return numbers.length > 1 ? `${numbers.slice(0, numbers.length-1).join('')}.${numbers[numbers.length-1]}${type}` : `0.${height}${type}`;
   }
 
-  getFullPokemonInfo(query) {
-    let self = this;
-    return new Promise((resolve, reject) => {
-      self.pokedex.getPokemonByName(query)
-        .then(pokemon => {
-          self.pokedex.getPokemonSpeciesByName(pokemon.id)
-            .then(species => {
-              resolve({pokemon, species});
-            })
-            .catch(err => { // isso não deveria acontecer
-              reject(err)
-            });
-        })
-        .catch(err => {
-          reject(err)
-        });
-    });
+  async getFullPokemonInfo(query) {
+    const pokemon = await this.pokedex.getPokemonByName(query);
+    const species = await this.pokedex.getPokemonSpeciesByName(pokemon.id);
+    return {pokemon, species};
   }
 
 }

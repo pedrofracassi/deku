@@ -47,8 +47,10 @@ module.exports = class Deku extends Discord.Client {
     let self = this;
     return new Promise((resolve) => {
       self.databases.language_config.get(guild.id, (err, value) => {
-        if (err || !value) value = 'en_US';
-        resolve(self.languages[value] || self.languages['en_US']);
+        if (err || !value) { console.log(err); value = 'en_US'; }
+        let language = self.languages[value];
+        if(language !== 'en_US' && language) language = Object.assign(self.languages['en_US'], language);
+        resolve(language || self.languages['en_US']);
       })
     });
   }
@@ -101,7 +103,7 @@ module.exports = class Deku extends Discord.Client {
     fs.readdirSync("./translation").forEach(file => {
       if (file.endsWith(".json")) {
         try {
-          this.languages[file.replace('.json', '')] = Object.assign(require("./translation/en_US.json"), require("./translation/"+file));
+          this.languages[file.replace('.json', '')] = require("./translation/"+file);
         } catch (e) {
           if (this.devMode) console.error(e);
           this.log(['BOT', 'Languages'], `${file} failed to load. Exiting...`.red);
