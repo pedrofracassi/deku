@@ -67,8 +67,8 @@ module.exports = class Pokedex extends Command {
 
   async getFullPokemonInfo(query) {
     const pokemon = await this.pokedex.getPokemonByName(query);
-	const species = await this.pokedex.getPokemonSpeciesByName(pokemon.id);
-	return {pokemon, species};
+    const species = await this.pokedex.getPokemonSpeciesByName(pokemon.id);
+    return {pokemon, species};
   }
 
 }
