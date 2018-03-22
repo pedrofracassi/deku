@@ -6,11 +6,11 @@ module.exports = class ServerInfo extends Command {
     super(client);
 
     this.name    = "serverinfo";
-    this.aliases = ["si"];
+    this.aliases = ["si", "server"];
   }
 
   run(message, args, commandLang) {
-    let guild = message.guild;
+    let guild = this.client.guilds.get(args[0]) ? this.client.guilds.get(args[0]) : message.guild;
     let embed = this.client.getDekuEmbed(message);
     let region = commandLang.regions[guild.region] || guild.region;
     let online = guild.members.filter(m => m.presence.status != "offline").size;
