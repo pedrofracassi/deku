@@ -6,7 +6,7 @@ module.exports = class ServerInfo extends Command {
     super(client);
 
     this.name    = "serverinfo";
-    this.aliases = ["si"];
+    this.aliases = ["si", "server"];
   }
 
   run(message, args, commandLang) {
