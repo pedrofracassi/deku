@@ -301,6 +301,18 @@
             "_example": "d!knowyourmeme ugandanknuckles",
             "not_found": "No meme was found for \"{0}\".",
             "meme_error": "Something went wrong while finding your meme"
+        },
+        "isitup": {
+            "_usage": "d!isitup <website url>",
+            "_description": "Shows if a website is online or not",
+            "_example": "d!isitup discordapp.com",
+            "title": "Status about ${0}",
+            "isup": "${0} is up.",
+            "isdown": "${0} is down.",
+            "timeTook": "It took ${0} ms for a ${1} response code with an ip of ${2}",
+            "error": "An error has occured",
+            "invalid": "Invalid usage",
+            "usage": "**Usage:** `d!isitup <website url>`\n**Example:** `d!isitup discordapp.com`"
         }
     },
     "usage": "**Usage:**",
