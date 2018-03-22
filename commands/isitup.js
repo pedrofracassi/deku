@@ -12,8 +12,7 @@ function getStatus(website, API_BASE_URL = 'https://isitup.org') {
   });
 }
 function checkHttp(link) {
-    if(link.startsWith('http://')) return link.replace('http://', '');
-    else if(link.startsWith('https://')) return link.replace('https://', '');
+    return link.replace(/^http(?:s)?:\/\//, '');
 }
 
 module.exports = class IsItUp extends Command {
@@ -35,22 +34,20 @@ module.exports = class IsItUp extends Command {
             embed.setColor(this.client.config.colors.error);
             message.channel.send({embed});
         } else {
+            message.channel.startTyping();
             getStatus(checkHttp(args[0])).then(data => {
-                message.channel.startTyping();
                 embed.setAuthor(commandLang.title.replace('${0}', data.domain), 'https://isitup.org/static/img/icon.png');
                 if(data.status_code == 1) {
                     embed.setDescription(commandLang.isup.replace('${0}', data.domain));
                     embed.setColor(this.client.config.colors.success);
                     embed.addField(commandLang.timeTook.replace('${0}', (data.reponse_time * 100)).replace('${1}', data.response_code).replace('${2}', data.response_ip))
-                    message.channel.stopTyping();
-                    message.channel.send({embed});
                 }
                 else if(data.status_code == 2) {
                     embed.setDescription(commandLang.isdown.replace('${0}', data.domain));
                     embed.setColor(this.client.config.colors.error);
-                    message.channel.stopTyping();
-                    message.channel.send({embed});
                 }
+                message.channel.stopTyping();
+                message.channel.send({embed});
             }).catch(err => {
                 embed.addField(commandLang.error, err);
                 embed.setColor(this.client.config.colors.error);
